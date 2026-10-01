@@ -4,40 +4,113 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hall High Redesigns — Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="gallery.css">
+  <script src="gallery.js" defer></script>
 </head>
 <body>
-  <header class="gallery-header">
-    <h1>25 Redesigns of hall.whps.org</h1>
-    <p>Pick a tile to open that version's landing page.</p>
+  <a class="skip" href="#grid">Skip to the versions</a>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <img class="masthead-logo" src="shared/img/logo.png" alt="" width="751" height="900">
+      <div class="masthead-text">
+        <p class="eyebrow">Hall High School · West Hartford, CT</p>
+        <h1>25 Redesigns of hall.whps.org</h1>
+        <p class="lede">One landing page, explored 25 ways. Each tile is a live miniature — open one to see the full page.</p>
+      </div>
+      <dl class="progress" aria-label="Progress">
+        <div><dt>Built</dt><dd><span id="built-count">5</span> / 25</dd></div>
+        <div class="progress-bar" aria-hidden="true"><span style="--p: 20%"></span></div>
+      </dl>
+    </div>
   </header>
 
-  <main class="grid">
-    <a class="tile" href="versions/v01/index.html"><span class="tile-label">v01</span></a>
-    <a class="tile" href="versions/v02/index.html"><span class="tile-label">v02</span></a>
-    <a class="tile" href="versions/v03/index.html"><span class="tile-label">v03</span></a>
-    <a class="tile" href="versions/v04/index.html"><span class="tile-label">v04</span></a>
-    <a class="tile" href="versions/v05/index.html"><span class="tile-label">v05</span></a>
-    <a class="tile" href="versions/v06/index.html"><span class="tile-label">v06</span></a>
-    <a class="tile" href="versions/v07/index.html"><span class="tile-label">v07</span></a>
-    <a class="tile" href="versions/v08/index.html"><span class="tile-label">v08</span></a>
-    <a class="tile" href="versions/v09/index.html"><span class="tile-label">v09</span></a>
-    <a class="tile" href="versions/v10/index.html"><span class="tile-label">v10</span></a>
-    <a class="tile" href="versions/v11/index.html"><span class="tile-label">v11</span></a>
-    <a class="tile" href="versions/v12/index.html"><span class="tile-label">v12</span></a>
-    <a class="tile" href="versions/v13/index.html"><span class="tile-label">v13</span></a>
-    <a class="tile" href="versions/v14/index.html"><span class="tile-label">v14</span></a>
-    <a class="tile" href="versions/v15/index.html"><span class="tile-label">v15</span></a>
-    <a class="tile" href="versions/v16/index.html"><span class="tile-label">v16</span></a>
-    <a class="tile" href="versions/v17/index.html"><span class="tile-label">v17</span></a>
-    <a class="tile" href="versions/v18/index.html"><span class="tile-label">v18</span></a>
-    <a class="tile" href="versions/v19/index.html"><span class="tile-label">v19</span></a>
-    <a class="tile" href="versions/v20/index.html"><span class="tile-label">v20</span></a>
-    <a class="tile" href="versions/v21/index.html"><span class="tile-label">v21</span></a>
-    <a class="tile" href="versions/v22/index.html"><span class="tile-label">v22</span></a>
-    <a class="tile" href="versions/v23/index.html"><span class="tile-label">v23</span></a>
-    <a class="tile" href="versions/v24/index.html"><span class="tile-label">v24</span></a>
-    <a class="tile" href="versions/v25/index.html"><span class="tile-label">v25</span></a>
+  <main id="grid" class="grid" aria-label="Versions">
+    <!-- Built versions: live previews (iframe is decorative; the link carries the name) -->
+    <a class="tile is-built" href="versions/v01/index.html">
+      <div class="frame" aria-hidden="true">
+        <div class="chrome"><i></i><i></i><i></i><span>hall.whps.org</span></div>
+        <div class="preview"><iframe src="versions/v01/index.html" title="" tabindex="-1" loading="lazy"></iframe></div>
+      </div>
+      <div class="meta">
+        <span class="num">01</span>
+        <span class="name">Today Dashboard</span>
+        <span class="desc">Live “now / next” bell schedule and one-tap portals first.</span>
+      </div>
+    </a>
+    <a class="tile is-built" href="versions/v02/index.html">
+      <div class="frame" aria-hidden="true">
+        <div class="chrome"><i></i><i></i><i></i><span>hall.whps.org</span></div>
+        <div class="preview"><iframe src="versions/v02/index.html" title="" tabindex="-1" loading="lazy"></iframe></div>
+      </div>
+      <div class="meta">
+        <span class="num">02</span>
+        <span class="name">Editorial Split</span>
+        <span class="desc">Magazine-style story of Hall with a split, text-safe hero.</span>
+      </div>
+    </a>
+    <a class="tile is-built" href="versions/v03/index.html">
+      <div class="frame" aria-hidden="true">
+        <div class="chrome"><i></i><i></i><i></i><span>hall.whps.org</span></div>
+        <div class="preview"><iframe src="versions/v03/index.html" title="" tabindex="-1" loading="lazy"></iframe></div>
+      </div>
+      <div class="meta">
+        <span class="num">03</span>
+        <span class="name">Ask Hall</span>
+        <span class="desc">Search-first and task-based, set in a low-vision typeface.</span>
+      </div>
+    </a>
+    <a class="tile is-built" href="versions/v04/index.html">
+      <div class="frame" aria-hidden="true">
+        <div class="chrome"><i></i><i></i><i></i><span>hall.whps.org</span></div>
+        <div class="preview"><iframe src="versions/v04/index.html" title="" tabindex="-1" loading="lazy"></iframe></div>
+      </div>
+      <div class="meta">
+        <span class="num">04</span>
+        <span class="name">Warrior Varsity</span>
+        <span class="desc">Bold, dark, school-spirit scoreboard of pride and game days.</span>
+      </div>
+    </a>
+    <a class="tile is-built" href="versions/v05/index.html">
+      <div class="frame" aria-hidden="true">
+        <div class="chrome"><i></i><i></i><i></i><span>hall.whps.org</span></div>
+        <div class="preview"><iframe src="versions/v05/index.html" title="" tabindex="-1" loading="lazy"></iframe></div>
+      </div>
+      <div class="meta">
+        <span class="num">05</span>
+        <span class="name">Portal Sidebar</span>
+        <span class="desc">App-like sidebar and bento dashboard, with light and dark themes.</span>
+      </div>
+    </a>
+
+    <!-- Not started yet -->
+    <a class="tile is-empty" href="versions/v06/index.html"><div class="frame" aria-hidden="true"><span class="ghost">06</span></div><div class="meta"><span class="num">06</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v07/index.html"><div class="frame" aria-hidden="true"><span class="ghost">07</span></div><div class="meta"><span class="num">07</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v08/index.html"><div class="frame" aria-hidden="true"><span class="ghost">08</span></div><div class="meta"><span class="num">08</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v09/index.html"><div class="frame" aria-hidden="true"><span class="ghost">09</span></div><div class="meta"><span class="num">09</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v10/index.html"><div class="frame" aria-hidden="true"><span class="ghost">10</span></div><div class="meta"><span class="num">10</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v11/index.html"><div class="frame" aria-hidden="true"><span class="ghost">11</span></div><div class="meta"><span class="num">11</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v12/index.html"><div class="frame" aria-hidden="true"><span class="ghost">12</span></div><div class="meta"><span class="num">12</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v13/index.html"><div class="frame" aria-hidden="true"><span class="ghost">13</span></div><div class="meta"><span class="num">13</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v14/index.html"><div class="frame" aria-hidden="true"><span class="ghost">14</span></div><div class="meta"><span class="num">14</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v15/index.html"><div class="frame" aria-hidden="true"><span class="ghost">15</span></div><div class="meta"><span class="num">15</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v16/index.html"><div class="frame" aria-hidden="true"><span class="ghost">16</span></div><div class="meta"><span class="num">16</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v17/index.html"><div class="frame" aria-hidden="true"><span class="ghost">17</span></div><div class="meta"><span class="num">17</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v18/index.html"><div class="frame" aria-hidden="true"><span class="ghost">18</span></div><div class="meta"><span class="num">18</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v19/index.html"><div class="frame" aria-hidden="true"><span class="ghost">19</span></div><div class="meta"><span class="num">19</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v20/index.html"><div class="frame" aria-hidden="true"><span class="ghost">20</span></div><div class="meta"><span class="num">20</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v21/index.html"><div class="frame" aria-hidden="true"><span class="ghost">21</span></div><div class="meta"><span class="num">21</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v22/index.html"><div class="frame" aria-hidden="true"><span class="ghost">22</span></div><div class="meta"><span class="num">22</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v23/index.html"><div class="frame" aria-hidden="true"><span class="ghost">23</span></div><div class="meta"><span class="num">23</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v24/index.html"><div class="frame" aria-hidden="true"><span class="ghost">24</span></div><div class="meta"><span class="num">24</span><span class="name">Not started</span></div></a>
+    <a class="tile is-empty" href="versions/v25/index.html"><div class="frame" aria-hidden="true"><span class="ghost">25</span></div><div class="meta"><span class="num">25</span><span class="name">Not started</span></div></a>
   </main>
+
+  <footer class="foot">
+    <p>Design, Build, Ship · Assignment 1 — static redesign concepts, not the official Hall High School site. Schedule, lunch and some notices are sample data.</p>
+  </footer>
 </body>
 </html>

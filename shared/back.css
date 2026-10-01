@@ -1,22 +1,37 @@
-/* Shared back-to-gallery arrow, used by every version */
+/* Shared back-to-gallery arrow, used by every version.
+   Sits bottom-left so it never covers a version's logo (top-left). */
 .back-link {
   position: fixed;
-  top: 1rem;
   left: 1rem;
+  bottom: 1rem;
   z-index: 1000;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.5rem 0.9rem;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid #d4d4d8;
+  min-height: 40px;
+  padding: 0.45rem 0.9rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #c8d1e3;
   border-radius: 999px;
-  color: #18181b;
-  font: 500 0.95rem system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #0b2a5b;
+  font: 600 0.9rem/1 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
   text-decoration: none;
+  box-shadow: 0 4px 14px rgba(4, 18, 45, 0.18);
 }
 
 .back-link:hover,
 .back-link:focus-visible {
   background: #fff;
+}
+
+.back-link:focus-visible {
+  outline: 3px solid #ffbf3c;
+  outline-offset: 3px;
+}
+
+/* Hidden inside the gallery's mini previews */
+html.in-frame .back-link {
+  display: none;
 }

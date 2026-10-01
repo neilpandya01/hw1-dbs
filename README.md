@@ -35,8 +35,10 @@ Repository layout:
 │   │   └── ...
 │   └── v25/
 ├── shared/
-│   └── back.css        # "← Gallery" back-arrow styles used by every version
-│                       # (later: logo, images, common content)
+│   ├── back.css        # "← Gallery" back-link styles used by every version
+│   ├── a11y.css        # Shared accessibility panel + high-contrast/text-size effects
+│   ├── a11y.js         # Injects the "Accessibility" button and panel
+│   └── img/            # Hall Warriors logo + campus photos (from hall.whps.org)
 ├── vercel.json         # Enables clean URLs (no build step)
 └── README.md
 ```
@@ -46,7 +48,7 @@ Repository layout:
 - A responsive **5×5 grid** of 25 tiles.
 - Each tile shows a **miniature preview** of its version — either a scaled-down `<iframe>` of the real page (CSS `transform: scale(...)`, with pointer events disabled) or a static screenshot thumbnail if iframes prove too heavy.
 - Each tile has a short label (version number + theme name).
-- _Current state:_ tiles are plain labelled cards (`v01`–`v25`); previews will be added once the versions have content.
+- Built versions show a live, scaled `<iframe>` preview (rendered at 1280×800, scaled by `gallery.js`); versions not yet started show a quiet numbered placeholder.
 - Clicking a tile navigates to that version's full page.
 - On smaller screens the grid collapses to fewer columns so tiles remain legible.
 
@@ -59,13 +61,24 @@ Each version is a self-contained static page (HTML + CSS, with minimal or no Jav
 - Quick links (calendar, staff directory, athletics, counseling, etc.)
 - Contact information and footer
 
-Every version page includes a fixed **"← Gallery"** back arrow (top-left) that returns to the home page. Its styles live in `shared/back.css` so it looks the same everywhere, while each version's own look goes in its `style.css`.
+Every version page includes a fixed **"← Gallery"** back link (bottom-left, so it never covers the logo) that returns to the home page. Its styles live in `shared/back.css` so it looks the same everywhere, while each version's own look goes in its `style.css`.
+
+### Shared accessibility kit
+
+Every built version loads `shared/a11y.css` and `shared/a11y.js`, which add a large, labelled **Accessibility** button (bottom-right; also `Alt+A`, or any `[data-a11y-toggle]` element) that opens a panel with: text size, high contrast, readable font (Atkinson Hyperlegible), line spacing, underline links, stop motion, and translate. Choices persist per browser. For high contrast to work, versions put every color through the tokens `--bg --surface --surface-2 --text --muted --brand --brand-2 --accent --line --on-brand`, and mark photo backgrounds with `data-a11y-bgimg` and scrims with `data-a11y-scrim`. Inside the gallery's previews, the button and back link are hidden.
 
 What changes between versions is the design language: layout, typography, color palette, imagery, and overall tone. Themes will be documented here as they are built.
 
-| #  | Theme | Status |
-|----|-------|--------|
-| 01–25 | _TBD_ | Blank placeholder page |
+Today's schedule, lunch and some notices are **sample data** (fixed to Thu Oct 1, 2026); events, stats, mission and contact details come from hall.whps.org. Some sub-page and portal URLs are guesses or `#`.
+
+| #  | Theme | Idea it tests | Status |
+|----|-------|---------------|--------|
+| 01 | Today Dashboard | No hero photo: a live "now / next" bell-schedule panel, six one-tap portal tiles, notices list, dismissible alert banner. Add `?t=HH:MM` to preview a time. | Built |
+| 02 | Editorial Split | Magazine tone for prospective families: split navy/photo hero (name never over the photo), one-row "Today at Hall" strip, serif "by the numbers", newsroom lead story. | Built |
+| 03 | Ask Hall | Search replaces the nav: plain-language search with synonyms ("sick" → report an absence), audience tabs, notices inbox with filters, Atkinson Hyperlegible throughout. | Built |
+| 04 | Warrior Varsity | Dark, bold school spirit: condensed caps, scoreboard-style Today ribbon and pride stats, grouped game-day board, deliberately calm help panel. | Built |
+| 05 | Portal Sidebar | App layout: fixed navy sidebar (no top bar), bento dashboard with live bell timeline, month calendar, light/dark theme toggle. | Built |
+| 06–25 | _TBD_ | | Blank placeholder page |
 
 ## Tech Stack
 
@@ -92,8 +105,8 @@ then visit http://localhost:8000.
 ## Roadmap
 
 - [x] Set up the repository structure and gallery page skeleton (blank gallery + 25 blank landing pages with back arrow)
-- [ ] Gather the core content from hall.whps.org
-- [ ] Build the 25 versions
-- [ ] Add mini previews to the gallery grid
+- [x] Gather the core content from hall.whps.org
+- [ ] Build the 25 versions (5 / 25 done)
+- [x] Add mini previews to the gallery grid
 - [ ] Make the gallery and every version responsive
 - [ ] Deploy to Vercel

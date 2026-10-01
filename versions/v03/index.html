@@ -3,15 +3,410 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hall High Redesign — v03</title>
+  <title>Hall High School — v03 Ask Hall</title>
+  <meta name="description" content="Hall High School, West Hartford, CT — search-first landing page.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
   <link rel="stylesheet" href="../../shared/back.css">
+  <link rel="stylesheet" href="../../shared/a11y.css">
   <link rel="stylesheet" href="style.css">
+  <script src="../../shared/a11y.js" defer></script>
+  <script src="script.js" defer></script>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <a class="back-link" href="../../index.html" aria-label="Back to gallery">&larr; Gallery</a>
+  <a class="skip" href="#main">Skip to main content</a>
 
-  <main>
-    <!-- v03 landing page goes here -->
+  <!-- ============ Header ============ -->
+  <header class="site-head">
+    <div class="wrap head-row">
+      <a class="brand" href="./">
+        <img src="../../shared/img/logo.png" alt="" width="751" height="900" data-a11y-keep>
+        <span class="brand-name">Hall High School</span>
+      </a>
+
+      <nav class="head-tools" aria-label="Site">
+        <a class="tool tool-wide" href="https://hall.whps.org/calendar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+          Calendar
+        </a>
+        <a class="tool tool-wide" href="https://translate.google.com/translate?sl=en&amp;tl=es&amp;u=https://hall.whps.org" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h9M8.5 3v2M6 5c.7 3 2.8 5.6 5.5 7M11 5c-.6 3.4-3 6.4-6.5 8"/><path d="M12.5 21l4-9 4 9M14 18h5"/></svg>
+          Translate<span class="vh"> (opens in new tab)</span>
+        </a>
+        <button type="button" class="tool" data-a11y-toggle>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.5" r="1.8" fill="currentColor" stroke="none"/><path d="M5 8l7 1.5L19 8M12 9.5v5m0 0l-3 6m3-6l3 6"/></svg>
+          <span class="tool-label">Accessibility</span>
+        </button>
+        <button type="button" class="tool tool-menu" id="menu-btn" aria-expanded="false" aria-controls="site-menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <span class="menu-long">Browse all pages</span><span class="menu-short" aria-hidden="true">Menu</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Full menu (disclosure). Without JS it is a normal block of links at the bottom of the header. -->
+    <div class="site-menu" id="site-menu" data-menu>
+      <div class="wrap menu-grid">
+        <section aria-labelledby="m-students">
+          <h2 id="m-students">Students</h2>
+          <ul>
+            <li><a href="#">PowerSchool</a></li>
+            <li><a href="#">Schoology</a></li>
+            <li><a href="https://student.naviance.com" target="_blank" rel="noopener">Naviance<span class="vh"> (opens in new tab)</span></a></li>
+            <li><a href="https://hall.whps.org/school-information/bell">Bell schedule</a></li>
+            <li><a href="#">Lunch menu</a></li>
+            <li><a href="#">Clubs &amp; Publications</a></li>
+            <li><a href="#">Library</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="m-families">
+          <h2 id="m-families">Families</h2>
+          <ul>
+            <li><a href="#">Report an absence</a></li>
+            <li><a href="https://hall.whps.org/calendar">Calendar</a></li>
+            <li><a href="#">eCollect annual forms</a></li>
+            <li><a href="#">Weekly newsletter</a></li>
+            <li><a href="https://hall.whps.org/announcements">Announcements</a></li>
+            <li><a href="https://translate.google.com/translate?sl=en&amp;tl=es&amp;u=https://hall.whps.org" target="_blank" rel="noopener">Translate<span class="vh"> (opens in new tab)</span></a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="m-support">
+          <h2 id="m-support">Support</h2>
+          <ul>
+            <li><a href="https://hall.whps.org/school-counseling">School Counseling</a></li>
+            <li><a href="#">Support Services</a></li>
+            <li><a href="#">Anonymous Alerts</a></li>
+            <li><a href="#">Health office</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="m-about">
+          <h2 id="m-about">About Hall</h2>
+          <ul>
+            <li><a href="https://hall.whps.org/athletics">Athletics</a></li>
+            <li><a href="#">New families &amp; enrollment</a></li>
+            <li><a href="#">School profile</a></li>
+            <li><a href="https://hall.whps.org/directory">Directory</a></li>
+            <li><a href="https://hall.whps.org/contact-us">Contact us</a></li>
+            <li><a href="https://www.whps.org" target="_blank" rel="noopener">West Hartford Public Schools<span class="vh"> (opens in new tab)</span></a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- ============ Hero / Search ============ -->
+    <section class="band" aria-labelledby="school-name">
+      <div class="band-inner">
+        <p class="eyebrow">West Hartford, CT <span aria-hidden="true">·</span> Home of the Warriors</p>
+        <h1 id="school-name">Hall High School</h1>
+
+        <form class="ask" role="search" action="https://www.google.com/search" method="get" id="ask-form">
+          <label for="ask" class="ask-label">What do you need today?</label>
+          <div class="ask-field">
+            <svg class="ask-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
+            <input id="ask" name="q" type="search" autocomplete="off" spellcheck="false"
+                   placeholder="Try “absent” or “grades”"
+                   aria-describedby="ask-hint">
+            <input type="hidden" name="as_sitesearch" value="hall.whps.org">
+            <button type="submit" class="ask-go">Search</button>
+            <ul class="ask-results" id="ask-results" role="listbox" aria-label="Suggested pages" hidden></ul>
+          </div>
+          <p id="ask-hint" class="vh">Suggestions appear as you type. Use the up and down arrow keys to choose one, then press Enter.</p>
+          <p class="vh" id="ask-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="chips" aria-label="Popular">
+          <span class="chips-label" aria-hidden="true">Popular:</span>
+          <ul>
+            <li><a class="chip" href="https://hall.whps.org/school-information/bell">Bell schedule</a></li>
+            <li><a class="chip" href="#">Lunch</a></li>
+            <li><a class="chip" href="#">PowerSchool</a></li>
+            <li><a class="chip" href="#">Schoology</a></li>
+            <li><a class="chip" href="https://student.naviance.com" target="_blank" rel="noopener">Naviance<span class="vh"> (opens in new tab)</span></a></li>
+            <li><a class="chip" href="#">Report an absence</a></li>
+          </ul>
+        </div>
+
+        <div class="today">
+          <p class="today-line">
+            <strong class="today-tag">Today</strong>
+            <span><time datetime="2026-10-01">Thursday, Oct 1</time></span>
+            <span class="sep" aria-hidden="true">·</span>
+            <span class="today-day">Even Day</span>
+            <span class="sep" aria-hidden="true">·</span>
+            <span>7:30–2:10</span>
+            <span class="sep" aria-hidden="true">·</span>
+            <span>Lunch: Chicken teriyaki rice bowl</span>
+          </p>
+          <details class="today-more">
+            <summary>Today’s blocks &amp; lunch</summary>
+            <div class="today-grid">
+              <ol class="blocks">
+                <li><span>Block 2</span><span>7:30–8:52</span></li>
+                <li><span>Block 4</span><span>8:58–10:20</span></li>
+                <li><span>Advisory</span><span>10:26–10:46</span></li>
+                <li><span>Block 6 <small>Lunch A 10:52 · B 11:24 · C 11:56</small></span><span>10:52–12:44</span></li>
+                <li><span>Block 8</span><span>12:50–2:10</span></li>
+              </ol>
+              <div class="lunch">
+                <p><strong>Lunch</strong></p>
+                <ul>
+                  <li>Chicken teriyaki rice bowl</li>
+                  <li>Vegetarian: black bean burrito</li>
+                  <li>Salad bar &amp; fruit</li>
+                </ul>
+                <a href="https://hall.whps.org/school-information/bell">Full bell schedule</a>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Audience tabs ============ -->
+    <section class="wrap section start" aria-labelledby="start-h">
+      <h2 id="start-h" class="h2">Start here</h2>
+      <div class="tabs" role="tablist" aria-label="Who are you?">
+        <button type="button" role="tab" id="tab-students" aria-controls="panel-students" aria-selected="true">Students</button>
+        <button type="button" role="tab" id="tab-families" aria-controls="panel-families" aria-selected="false" tabindex="-1">Families</button>
+        <button type="button" role="tab" id="tab-new" aria-controls="panel-new" aria-selected="false" tabindex="-1">New to Hall</button>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-students" aria-labelledby="tab-students" tabindex="0">
+        <h3 class="vh">For students</h3>
+        <ul class="tasks">
+          <li><a href="#"><strong>Check grades</strong><span>PowerSchool — grades, attendance, and your schedule.</span></a></li>
+          <li><a href="#"><strong>Find homework</strong><span>Schoology — assignments and class materials.</span></a></li>
+          <li><a href="https://student.naviance.com" target="_blank" rel="noopener"><strong>Plan for college<span class="vh"> (opens in new tab)</span></strong><span>Naviance — applications, careers, scholarships.</span></a></li>
+          <li><a href="https://hall.whps.org/school-information/bell"><strong>Bell schedule</strong><span>Odd and even day block times, lunch waves.</span></a></li>
+          <li><a href="#"><strong>Lunch menu</strong><span>What’s being served this week.</span></a></li>
+          <li><a href="#"><strong>Join a club</strong><span>Clubs &amp; Publications — find your people.</span></a></li>
+          <li><a href="https://hall.whps.org/athletics"><strong>Athletics</strong><span>Teams, tryouts, schedules and scores.</span></a></li>
+          <li><a href="#"><strong>Library</strong><span>Research databases, books and study space.</span></a></li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-families" aria-labelledby="tab-families" tabindex="0" hidden>
+        <h3 class="vh">For families</h3>
+        <ul class="tasks">
+          <li><a href="#"><strong>Report an absence</strong><span>Sick, late, or leaving early — let the attendance office know.</span></a></li>
+          <li><a href="#"><strong>See grades &amp; attendance</strong><span>PowerSchool parent portal.</span></a></li>
+          <li><a href="https://hall.whps.org/calendar"><strong>School calendar</strong><span>Days off, testing dates, events.</span></a></li>
+          <li><a href="#"><strong>Complete annual forms</strong><span>eCollect — emergency and permission forms online.</span></a></li>
+          <li><a href="#"><strong>Pay for lunch</strong><span>Add money to your student’s lunch account.</span></a></li>
+          <li><a href="#"><strong>Weekly newsletter</strong><span>The principal’s Friday update.</span></a></li>
+          <li><a href="https://hall.whps.org/directory"><strong>Contact a teacher</strong><span>Staff directory with emails.</span></a></li>
+          <li><a href="https://hall.whps.org/school-counseling"><strong>Talk to a counselor</strong><span>Course choices, college, and support.</span></a></li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-new" aria-labelledby="tab-new" tabindex="0" hidden>
+        <h3 class="vh">New to Hall</h3>
+        <ul class="tasks">
+          <li><a href="#"><strong>Enroll or register</strong><span>Moving to West Hartford? Start here.</span></a></li>
+          <li><a href="#"><strong>Visit or take a tour</strong><span>See the school with a student guide.</span></a></li>
+          <li><a href="#"><strong>Browse courses</strong><span>Program of studies, AP and UConn ECE.</span></a></li>
+          <li><a href="https://hall.whps.org/athletics"><strong>Sports &amp; activities</strong><span>Athletics, arts, clubs and publications.</span></a></li>
+          <li><a href="https://translate.google.com/translate?sl=en&amp;tl=es&amp;u=https://hall.whps.org" target="_blank" rel="noopener"><strong>Read this site in your language<span class="vh"> (opens in new tab)</span></strong><span>Español, 中文, Português, Tiếng Việt, العربية…</span></a></li>
+          <li><a href="https://hall.whps.org/contact-us"><strong>Contact the main office</strong><span>860-232-4561 · 975 North Main Street.</span></a></li>
+        </ul>
+        <h3 class="pride-h">Hall at a glance</h3>
+        <dl class="pride">
+          <div><dt>State titles in 10 years</dt><dd>9</dd></div>
+          <div><dt>Languages spoken at home</dt><dd>37</dd></div>
+          <div><dt>AP participation</dt><dd>72%</dd></div>
+          <div><dt>US News &amp; World Report</dt><dd>Gold</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ Notices + Next up ============ -->
+    <div class="wrap section split">
+      <section class="notices" aria-labelledby="notices-h">
+        <div class="sec-head">
+          <h2 id="notices-h" class="h2">Notices</h2>
+          <a href="https://hall.whps.org/announcements">All announcements</a>
+        </div>
+        <div class="filters" role="group" aria-label="Filter notices">
+          <button type="button" class="filter" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter" data-filter="form" aria-pressed="false">Forms</button>
+          <button type="button" class="filter" data-filter="testing" aria-pressed="false">Testing</button>
+          <button type="button" class="filter" data-filter="event" aria-pressed="false">Events</button>
+        </div>
+        <p class="vh" id="notice-status" role="status" aria-live="polite"></p>
+
+        <ul class="inbox" id="inbox">
+          <li data-type="event" class="is-new">
+            <span class="n-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>
+            <div class="n-body">
+              <p class="n-meta"><span class="n-type">Event</span> <span aria-hidden="true">·</span> <time datetime="2026-10-01">Today</time> <span class="n-new">New</span></p>
+              <h3><a href="#">Senior portrait sign-ups are open</a></h3>
+              <p>Indoor sessions in E131/E119 run through Oct 24. Book a time before slots fill.</p>
+            </div>
+          </li>
+          <li data-type="testing" class="is-new">
+            <span class="n-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></svg></span>
+            <div class="n-body">
+              <p class="n-meta"><span class="n-type">Testing</span> <span aria-hidden="true">·</span> <time datetime="2026-09-30">Yesterday</time> <span class="n-new">New</span></p>
+              <h3><a href="#">PSAT on Wednesday, Oct 14 — what to bring</a></h3>
+              <p>Grades 9–11. Bring a charged device with Bluebook installed, a pencil, and an approved calculator.</p>
+            </div>
+          </li>
+          <li data-type="testing">
+            <span class="n-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></svg></span>
+            <div class="n-body">
+              <p class="n-meta"><span class="n-type">Testing</span> <span aria-hidden="true">·</span> <time datetime="2026-09-29">2 days ago</time></p>
+              <h3><a href="#">SAT weekend testing this Saturday</a></h3>
+              <p>Registered students: arrive by 7:45 AM on Oct 3 with photo ID and admission ticket.</p>
+            </div>
+          </li>
+          <li data-type="news">
+            <span class="n-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></span>
+            <div class="n-body">
+              <p class="n-meta"><span class="n-type">Newsletter</span> <span aria-hidden="true">·</span> <time datetime="2026-09-28">3 days ago</time></p>
+              <h3><a href="#">Weekly Newsletter — September 28</a></h3>
+              <p>Homecoming recap, fall sports updates, and reminders for the month ahead.</p>
+            </div>
+          </li>
+          <li data-type="form">
+            <span class="n-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span>
+            <div class="n-body">
+              <p class="n-meta"><span class="n-type">Form</span> <span aria-hidden="true">·</span> <time datetime="2026-09-24">1 week ago</time></p>
+              <h3><a href="#" target="_blank" rel="noopener">eCollect tutorial: completing annual forms online<span class="vh"> (opens in new tab)</span></a></h3>
+              <p>A step-by-step guide for families to finish this year’s required forms in PowerSchool.</p>
+            </div>
+          </li>
+          <li data-type="celebration">
+            <span class="n-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg></span>
+            <div class="n-body">
+              <p class="n-meta"><span class="n-type">Celebration</span> <span aria-hidden="true">·</span> <time datetime="2026-09-15">Sep 15</time></p>
+              <h3><a href="#">Hispanic/Latinx Heritage Month, Sept 15 – Oct 15</a></h3>
+              <p>We encourage students, staff, and families to explore, celebrate, and deepen their understanding of the people, histories, and traditions that continue to enrich our schools, communities, and society.</p>
+            </div>
+          </li>
+        </ul>
+        <p class="inbox-empty" id="inbox-empty" hidden>No notices of this type right now.</p>
+      </section>
+
+      <section class="nextup" aria-labelledby="next-h">
+        <div class="sec-head">
+          <h2 id="next-h" class="h2">Next up</h2>
+          <a href="https://hall.whps.org/calendar">Full calendar</a>
+        </div>
+
+        <h3 class="when">This week</h3>
+        <ul class="events">
+          <li>
+            <span class="d"><span class="d-m">Oct</span><span class="d-n">1–24</span></span>
+            <div><p class="e-t">Senior Portraits (Indoor Only) <span class="count">8 sessions</span></p>
+            <p class="e-m">Room E131/E119 · 12:45–8:00 PM</p></div>
+          </li>
+          <li>
+            <span class="d"><span class="d-m">Fri</span><span class="d-n">2</span></span>
+            <div><p class="e-t">Home football <span class="count">3 games</span></p>
+            <p class="e-m">vs. Enfield, 7:00 PM · then Oct 9 Bristol Central, Oct 23 Wethersfield</p></div>
+          </li>
+          <li>
+            <span class="d"><span class="d-m">Sat</span><span class="d-n">3</span></span>
+            <div><p class="e-t">SAT Weekend Testing</p></div>
+          </li>
+        </ul>
+
+        <h3 class="when">Later in October</h3>
+        <ul class="events">
+          <li>
+            <span class="d"><span class="d-m">Wed</span><span class="d-n">7</span></span>
+            <div><p class="e-t">Odd-schedule Wednesdays <span class="count">2 days</span></p>
+            <p class="e-m">Oct 7 and Oct 28</p></div>
+          </li>
+          <li class="noschool">
+            <span class="d"><span class="d-m">Mon</span><span class="d-n">12</span></span>
+            <div><p class="e-t">No School — Indigenous Peoples’ Day</p></div>
+          </li>
+          <li>
+            <span class="d"><span class="d-m">Wed</span><span class="d-n">14</span></span>
+            <div><p class="e-t">PSAT Testing Day</p><p class="e-m">Grades 9–11</p></div>
+          </li>
+          <li>
+            <span class="d"><span class="d-m">Sat</span><span class="d-n">17</span></span>
+            <div><p class="e-t">ACT Weekend Testing</p><p class="e-m">E119 · also: Gifts of Music Gala, Music/Fine Arts</p></div>
+          </li>
+          <li>
+            <span class="d"><span class="d-m">Wed</span><span class="d-n">21</span></span>
+            <div><p class="e-t">Even Schedule Wednesday</p></div>
+          </li>
+          <li>
+            <span class="d"><span class="d-m">Thu</span><span class="d-n">22</span></span>
+            <div><p class="e-t">Theater Historical Figure Day</p><p class="e-m">Schoolwide</p></div>
+          </li>
+          <li>
+            <span class="d"><span class="d-m">Wed</span><span class="d-n">28</span></span>
+            <div><p class="e-t">School Picture Day</p><p class="e-m">All students &amp; staff, 7:30 AM–12:48 PM · also: Choir Midfest</p></div>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- ============ Help ============ -->
+    <section class="help" aria-labelledby="help-h">
+      <div class="wrap help-row">
+        <h2 id="help-h" class="help-h">If you need help</h2>
+        <ul>
+          <li><a href="https://hall.whps.org/school-counseling"><strong>School Counseling</strong><span>Guiding every student toward the best possible opportunities, in a supportive environment.</span></a></li>
+          <li><a href="#"><strong>Support Services</strong><span>Psychologists, social workers, and special education support.</span></a></li>
+          <li><a href="#"><strong>Anonymous Alerts</strong><span>Report bullying or a safety concern privately, any time.</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Mission ============ -->
+    <section class="wrap section mission" aria-labelledby="mission-h">
+      <img src="../../shared/img/campus1.jpg" alt="The stepped concrete sculpture on Hall’s front lawn under a blue sky, with trees behind it." width="1200" height="800" loading="lazy">
+      <div>
+        <h2 id="mission-h" class="h2">Our mission</h2>
+        <blockquote>
+          <p>Hall High School prepares all students to be educated, responsible citizens who contribute collaboratively, independently, and innovatively to a dynamic global community.</p>
+        </blockquote>
+        <p class="mission-note">A comprehensive public high school of West Hartford Public Schools, #7 in the UConn Early College Experience program — 215 students earning 1,724 college credit hours.</p>
+      </div>
+    </section>
   </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="site-foot">
+    <div class="wrap foot-grid">
+      <div>
+        <p class="foot-name">Hall High School</p>
+        <address>
+          975 North Main Street<br>
+          West Hartford, CT 06117<br>
+          Phone <a href="tel:+18602324561">860-232-4561</a><br>
+          Fax 860-236-2486
+        </address>
+      </div>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="https://hall.whps.org/contact-us">Contact us</a></li>
+          <li><a href="https://hall.whps.org/directory">Directory</a></li>
+          <li><a href="https://www.whps.org" target="_blank" rel="noopener">West Hartford Public Schools<span class="vh"> (opens in new tab)</span></a></li>
+          <li><a href="https://translate.google.com/translate?sl=en&amp;tl=es&amp;u=https://hall.whps.org" target="_blank" rel="noopener">Translate<span class="vh"> (opens in new tab)</span></a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="#">Staff</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="foot-sub">Follow the Warriors</p>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">X (Twitter)</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="wrap foot-small">We want everyone to be able to use this site. If something doesn’t work for you, call 860-232-4561 and we’ll help.</p>
+  </footer>
 </body>
 </html>
