@@ -39,6 +39,7 @@ Repository layout:
 │   ├── a11y.css        # Shared accessibility panel + high-contrast/text-size effects
 │   ├── a11y.js         # Injects the "Accessibility" button and panel
 │   └── img/            # Hall Warriors logo + campus photos (from hall.whps.org)
+├── PROCESS.md          # Design process log: rounds, decisions, what was dropped
 ├── vercel.json         # Enables clean URLs (no build step)
 └── README.md
 ```
