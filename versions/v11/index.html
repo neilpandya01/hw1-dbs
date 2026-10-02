@@ -3,15 +3,483 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hall High Redesign — v11</title>
+  <title>Hall High School — v11 Game Day</title>
+  <meta name="description" content="Hall High School, West Hartford, CT — Home of the Warriors. Next game, recent results, fall teams and the home football schedule.">
+  <meta name="theme-color" content="#0b2a5b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
   <link rel="stylesheet" href="../../shared/back.css">
+  <link rel="stylesheet" href="../../shared/a11y.css">
   <link rel="stylesheet" href="style.css">
+  <script src="../../shared/a11y.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="back-link" href="../../index.html" aria-label="Back to gallery">&larr; Gallery</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <main>
-    <!-- v11 landing page goes here -->
+  <!-- ============ MASTHEAD (program cover) ============ -->
+  <header class="masthead">
+    <div class="wrap mast-top">
+      <a class="brand" href="#top">
+        <img src="../../shared/img/logo.png" alt="" width="751" height="900" data-a11y-keep>
+        <span class="brand-text">
+          <span class="brand-name">Hall High School</span>
+          <span class="brand-sub">West Hartford, CT <span aria-hidden="true">·</span> Home of the Warriors</span>
+        </span>
+      </a>
+      <div class="header-tools">
+        <button type="button" class="tool-btn menu-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <span class="tool-label">Menu</span>
+        </button>
+        <button type="button" class="tool-btn a11y-btn" data-a11y-toggle>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="4" r="2.2" fill="currentColor"/><path d="M4 7.5l8 1.6 8-1.6M12 9.1v5.4m0 0l-3.6 7m3.6-7l3.6 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="tool-label">Accessibility</span>
+        </button>
+        <div class="portals">
+          <button type="button" class="tool-btn portals-btn" aria-expanded="false" aria-controls="portal-menu">
+            <span>Portals</span>
+            <svg class="chev" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="portal-menu" id="portal-menu">
+            <li><a href="https://westhartford.powerschool.com" target="_blank" rel="noopener"><strong>PowerSchool</strong><span>Grades &amp; attendance</span><span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://whps.schoology.com" target="_blank" rel="noopener"><strong>Schoology</strong><span>Classes &amp; assignments</span><span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://student.naviance.com/hallhs" target="_blank" rel="noopener"><strong>Naviance</strong><span>College &amp; career planning</span><span class="sr-only"> (opens in new tab)</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="Main">
+      <div class="wrap">
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li><a class="nav-hot" href="https://hall.whps.org/athletics">Athletics</a></li>
+            <li><a href="#results">Scores</a></li>
+            <li><a href="#teams">Teams</a></li>
+            <li><a href="https://hall.whps.org/academics">Academics</a></li>
+            <li><a href="https://hall.whps.org/arts">Arts</a></li>
+            <li><a href="https://hall.whps.org/school-counseling">Counseling</a></li>
+            <li><a href="https://hall.whps.org/about">About</a></li>
+          </ul>
+          <ul class="nav-portals" aria-label="Student portals">
+            <li><a href="https://westhartford.powerschool.com" target="_blank" rel="noopener">PowerSchool<span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://whps.schoology.com" target="_blank" rel="noopener">Schoology<span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://student.naviance.com/hallhs" target="_blank" rel="noopener">Naviance<span class="sr-only"> (opens in new tab)</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+  <!-- ============ TODAY STRIP (compact) ============ -->
+  <section class="today" id="today" aria-labelledby="today-title">
+    <div class="wrap">
+      <div class="strip">
+        <h2 class="s-cell s-date" id="today-title"><span class="s-label">Today</span> <span class="s-val">Thu, Oct 1</span></h2>
+        <p class="s-cell s-day"><span class="s-label">Schedule</span> <span class="s-val">Even day</span></p>
+        <p class="s-cell s-hours"><span class="s-label">Regular</span> <span class="s-val"><time datetime="07:30">7:30</time>–<time datetime="14:10">2:10</time></span></p>
+        <p class="s-cell s-lunch"><span class="s-label">Lunch</span> <span class="s-text">Chicken teriyaki rice bowl</span></p>
+        <div class="s-cell s-actions">
+          <button type="button" class="s-btn" aria-expanded="false" aria-controls="today-detail" data-disclosure>
+            <span>Bell<span class="s-more"> &amp; lunch</span></span>
+            <svg class="chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <a class="s-btn" href="https://hall.whps.org/calendar">Calendar</a>
+        </div>
+        <ul class="s-cell s-portals" aria-label="Portals">
+          <li><a href="https://westhartford.powerschool.com" target="_blank" rel="noopener">PowerSchool<span class="sr-only"> (opens in new tab)</span></a></li>
+          <li><a href="https://whps.schoology.com" target="_blank" rel="noopener">Schoology<span class="sr-only"> (opens in new tab)</span></a></li>
+          <li><a href="https://student.naviance.com/hallhs" target="_blank" rel="noopener">Naviance<span class="sr-only"> (opens in new tab)</span></a></li>
+        </ul>
+      </div>
+
+      <div class="today-detail" id="today-detail">
+        <div class="bell">
+          <h3>Even-day bell schedule</h3>
+          <table>
+            <caption class="sr-only">Even-day bell schedule for Thursday, October 1</caption>
+            <thead><tr><th scope="col">Block</th><th scope="col">Time</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Block 2</th><td>7:30–8:52</td></tr>
+              <tr><th scope="row">Block 4</th><td>8:58–10:20</td></tr>
+              <tr><th scope="row">Advisory</th><td>10:26–10:46</td></tr>
+              <tr><th scope="row">Block 6 <span class="sub">with lunch</span></th><td>10:52–12:44</td></tr>
+              <tr class="wave"><th scope="row">Lunch A</th><td>10:52–11:20</td></tr>
+              <tr class="wave"><th scope="row">Lunch B</th><td>11:24–11:52</td></tr>
+              <tr class="wave"><th scope="row">Lunch C</th><td>11:56–12:24</td></tr>
+              <tr><th scope="row">Block 8</th><td>12:50–2:10</td></tr>
+            </tbody>
+          </table>
+          <a class="text-link" href="https://hall.whps.org/school-information/bell">All bell schedules</a>
+        </div>
+        <div class="menu">
+          <h3>Lunch today</h3>
+          <ul>
+            <li>Chicken teriyaki rice bowl</li>
+            <li><span class="tag">Vegetarian</span> Black bean burrito</li>
+            <li>Salad bar &amp; fruit</li>
+          </ul>
+          <a class="text-link" href="https://hall.whps.org/lunch">Full lunch menu</a>
+          <h3 class="ql-h">Quick links</h3>
+          <ul class="ql">
+            <li><a href="https://hall.whps.org/attendance">Report an absence</a></li>
+            <li><a href="https://hall.whps.org/clubs">Clubs &amp; publications</a></li>
+            <li><a href="https://hall.whps.org/library">Library</a></li>
+            <li><a href="https://hall.whps.org/directory">Directory</a></li>
+            <li><a href="https://translate.google.com/translate?sl=en&amp;tl=es&amp;u=https://hall.whps.org" target="_blank" rel="noopener">Translate<span class="sr-only"> (opens in new tab)</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- ============ HERO: NEXT GAME (ticket) ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="hero-kicker">Fall 2026 <span aria-hidden="true">·</span> Game-day program</p>
+          <h1 id="hero-title" class="hero-h1">Next up: <span class="nowrap">home football</span></h1>
+
+          <div class="ticket" role="group" aria-label="Next game ticket">
+            <div class="ticket-main">
+              <p class="t-presents">Hall High School Athletics presents</p>
+              <p class="t-sport"><span class="badge-home">Home</span> Varsity football</p>
+              <div class="teams">
+                <div class="team team-us">
+                  <span class="patch" aria-hidden="true">H</span>
+                  <span class="team-text"><span class="team-name">Hall</span><span class="team-tag">Warriors · Home</span></span>
+                </div>
+                <span class="vs-mark">vs.</span>
+                <div class="team team-them">
+                  <span class="team-text"><span class="team-name">Enfield</span><span class="team-tag">Visitors</span></span>
+                </div>
+              </div>
+              <p class="t-when"><time datetime="2026-10-02T19:00">Friday, Oct 2 · 7:00 PM</time></p>
+
+              <div class="clock" id="clock">
+                <p class="clock-label" id="clock-label">Kickoff in</p>
+                <div class="clock-digits" aria-hidden="true">
+                  <span class="dig"><b id="cd-d">01</b><i>Days</i></span>
+                  <span class="dig"><b id="cd-h">07</b><i>Hrs</i></span>
+                  <span class="dig"><b id="cd-m">00</b><i>Min</i></span>
+                  <span class="dig cd-sec"><b id="cd-s">00</b><i>Sec</i></span>
+                </div>
+                <p class="sr-only">Kickoff is tomorrow, Friday October 2, at 7:00 PM.</p>
+              </div>
+
+              <div class="where-row">
+                <p class="where-text">
+                  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 22s7-6.6 7-12.3A7 7 0 0 0 5 9.7C5 15.4 12 22 12 22Z" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="9.7" r="2.5" fill="currentColor"/></svg>
+                  <span><strong>Hall High School</strong> · 975 North Main St, West Hartford</span>
+                </p>
+                <div class="where-ctas">
+                  <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Hall+High+School+975+North+Main+Street+West+Hartford+CT" target="_blank" rel="noopener">Get directions<span class="sr-only"> (opens in new tab)</span></a>
+                  <a class="btn btn-ghost" href="#home-games">All home games</a>
+                </div>
+              </div>
+            </div>
+            <div class="ticket-stub" aria-hidden="true">
+              <span class="stub-admit">Admit one</span>
+              <span class="stub-date">Fri Oct 2</span>
+              <span class="stub-time">7:00 PM</span>
+              <span class="stub-gate">Home · Hall vs. Enfield</span>
+            </div>
+          </div>
+        </div>
+
+        <figure class="hero-photo">
+          <img src="../../shared/img/athletics.jpg" alt="Close-up of dew-covered grass on a playing field, with the word Athletics" width="1200" height="949">
+          <figcaption>Fall season 2026</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ RESULTS (box score) + HOME FOOTBALL ============ -->
+    <section class="results" id="results" aria-labelledby="results-title">
+      <div class="wrap results-grid">
+        <div class="box">
+          <div class="section-head row">
+            <div>
+              <p class="eyebrow">This week <span class="sample-tag">Sample scores</span></p>
+              <h2 id="results-title">Recent results</h2>
+            </div>
+            <a class="text-link" href="https://hall.whps.org/athletics">All scores</a>
+          </div>
+          <table class="boxscore">
+            <caption class="sr-only">Recent results, sample scores for the week of September 25, 2026</caption>
+            <thead>
+              <tr><th scope="col">Game</th><th scope="col">Opponent</th><th scope="col" class="num">Hall</th><th scope="col" class="num">Opp</th><th scope="col" class="res-col">Result</th></tr>
+            </thead>
+            <tbody>
+              <tr class="r-w"><th scope="row"><span class="bs-sport">Volleyball</span> <time class="bs-date" datetime="2026-09-30">Wed 9/30</time></th><td>Conard <span class="bs-note">sets</span></td><td class="num">3</td><td class="num">2</td><td class="res-col"><span class="res">W</span></td></tr>
+              <tr class="r-w"><th scope="row"><span class="bs-sport">Girls’ soccer</span> <time class="bs-date" datetime="2026-09-29">Tue 9/29</time></th><td>Northwest Catholic</td><td class="num">3</td><td class="num">1</td><td class="res-col"><span class="res">W</span></td></tr>
+              <tr class="r-t"><th scope="row"><span class="bs-sport">Boys’ soccer</span> <time class="bs-date" datetime="2026-09-29">Tue 9/29</time></th><td>Simsbury</td><td class="num">1</td><td class="num">1</td><td class="res-col"><span class="res">T</span></td></tr>
+              <tr class="r-w"><th scope="row"><span class="bs-sport">Field hockey</span> <time class="bs-date" datetime="2026-09-28">Mon 9/28</time></th><td>Glastonbury</td><td class="num">2</td><td class="num">0</td><td class="res-col"><span class="res">W</span></td></tr>
+              <tr class="r-w"><th scope="row"><span class="bs-sport">Boys’ cross country</span> <time class="bs-date" datetime="2026-09-26">Sat 9/26</time></th><td>CCC Preview</td><td class="num place" colspan="2">1st place</td><td class="res-col"><span class="res">1st</span></td></tr>
+              <tr class="r-l"><th scope="row"><span class="bs-sport">Football</span> <time class="bs-date" datetime="2026-09-25">Fri 9/25</time></th><td>at Southington</td><td class="num">14</td><td class="num">21</td><td class="res-col"><span class="res">L</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <article class="homegames" id="home-games" aria-labelledby="home-title">
+          <h2 class="hg-head" id="home-title">Home football</h2>
+          <p class="hg-meta">3 games · all at 7:00 PM</p>
+          <ol class="hg-list">
+            <li class="hg-next"><time class="hg-date" datetime="2026-10-02">Fri, Oct 2</time><span class="hg-dots" aria-hidden="true"></span><span class="hg-opp">vs. Enfield</span><span class="hg-flag">Next</span></li>
+            <li><time class="hg-date" datetime="2026-10-09">Fri, Oct 9</time><span class="hg-dots" aria-hidden="true"></span><span class="hg-opp">vs. Bristol Central</span></li>
+            <li><time class="hg-date" datetime="2026-10-23">Fri, Oct 23</time><span class="hg-dots" aria-hidden="true"></span><span class="hg-opp">vs. Wethersfield</span></li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FALL TEAMS (patches) + ATHLETICS LINKS ============ -->
+    <section class="season" id="teams" aria-labelledby="teams-title">
+      <div class="wrap season-grid">
+        <div>
+          <div class="section-head">
+            <p class="eyebrow">Fall season</p>
+            <h2 id="teams-title">Warrior teams</h2>
+          </div>
+          <ul class="patches">
+            <li class="patch-card">
+              <span class="patch-disc"><svg class="patch-ico" viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="24" rx="19" ry="11" transform="rotate(-35 24 24)" fill="none" stroke="currentColor" stroke-width="3"/><path d="M18 30l12-12M20 23l3 3M23 20l3 3M26 17l3 3" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+              <h3><a href="#">Football</a></h3>
+              <p>3 home games in October</p>
+            </li>
+            <li class="patch-card">
+              <span class="patch-disc"><svg class="patch-ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 16l7 5-2.7 8h-8.6L17 21z" fill="currentColor"/><path d="M24 16V7M31 21l8-3M28.3 29l5 7M19.7 29l-5 7M17 21l-8-3" stroke="currentColor" stroke-width="2.4"/></svg></span>
+              <h3><a href="#">Boys’ soccer</a></h3>
+              <p>Team page</p>
+            </li>
+            <li class="patch-card">
+              <span class="patch-disc"><svg class="patch-ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 16l7 5-2.7 8h-8.6L17 21z" fill="currentColor"/><path d="M24 16V7M31 21l8-3M28.3 29l5 7M19.7 29l-5 7M17 21l-8-3" stroke="currentColor" stroke-width="2.4"/></svg></span>
+              <h3><a href="#">Girls’ soccer</a></h3>
+              <p>Team page</p>
+            </li>
+            <li class="patch-card">
+              <span class="patch-disc"><svg class="patch-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M30 6L17 34c-1.5 3.3-4.6 5-8 4.2" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><circle cx="34" cy="38" r="4.5" fill="currentColor"/></svg></span>
+              <h3><a href="#">Field hockey</a></h3>
+              <p>Team page</p>
+            </li>
+            <li class="patch-card">
+              <span class="patch-disc"><svg class="patch-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 34c5 0 8-2 10-6l4-8 6 3 4-6M26 23l-2 9 6 6M20 20l-6-1" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="31" cy="10" r="3.6" fill="currentColor"/><path d="M4 42h40" stroke="currentColor" stroke-width="2.4" stroke-dasharray="4 4"/></svg></span>
+              <h3><a href="#">Cross country</a></h3>
+              <p>Boys’ &amp; girls’</p>
+            </li>
+            <li class="patch-card">
+              <span class="patch-disc"><svg class="patch-ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 6c-4 8-4 16 0 18M24 24c8 1 14 6 16 10M24 24c-6 5-12 7-18 5" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></span>
+              <h3><a href="#">Volleyball</a></h3>
+              <p>Team page</p>
+            </li>
+            <li class="patch-card">
+              <span class="patch-disc"><svg class="patch-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 30c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3M4 39c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><circle cx="31" cy="12" r="3.6" fill="currentColor"/><path d="M10 22l10-7 6 4 8-3" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <h3><a href="#">Swimming &amp; diving</a></h3>
+              <p>Team page</p>
+            </li>
+            <li class="patch-card patch-card-all">
+              <span class="patch-disc"><svg class="patch-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 24h26M28 15l9 9-9 9" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <h3><a href="https://hall.whps.org/athletics">All teams</a></h3>
+              <p>Fall, winter &amp; spring</p>
+            </li>
+          </ul>
+        </div>
+
+        <nav class="ath-links" aria-labelledby="ath-links-title">
+          <h2 class="ath-h" id="ath-links-title">Athletics office</h2>
+          <ul>
+            <li><a href="https://hall.whps.org/athletics"><strong>Full athletics schedule</strong><span>Every team, home and away</span></a></li>
+            <li><a href="#"><strong>Tryouts &amp; registration</strong><span>Sign-ups, physicals and forms</span></a></li>
+            <li><a href="#"><strong>Team pages</strong><span>Rosters, coaches and news</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ TROPHY CASE (pennants) ============ -->
+    <section class="trophy" aria-labelledby="trophy-title">
+      <div class="wrap">
+        <div class="section-head center">
+          <p class="eyebrow">Warrior pride</p>
+          <h2 id="trophy-title">The trophy case</h2>
+        </div>
+        <ul class="pennants">
+          <li class="pennant pennant-gold"><span class="pen-num">9</span><span class="pen-text"><span class="pen-label">State titles</span><span class="pen-note">In the last 10 years</span></span></li>
+          <li class="pennant"><span class="pen-num">9</span><span class="pen-text"><span class="pen-label">State runner-up</span><span class="pen-note">In the same 10 years</span></span></li>
+          <li class="pennant"><span class="pen-num">48</span><span class="pen-text"><span class="pen-label">CCC titles</span><span class="pen-note">Central Connecticut Conference</span></span></li>
+        </ul>
+        <div class="beyond">
+          <p class="beyond-h">Beyond the field</p>
+          <ul>
+            <li><b>37</b> languages spoken at home</li>
+            <li><b>72%</b> AP participation</li>
+            <li><b>Gold</b> US News Best High Schools</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NOTICES + OTHER EVENTS ============ -->
+    <div class="wrap split">
+      <section class="bulletin" aria-labelledby="bulletin-title">
+        <div class="section-head row">
+          <div>
+            <p class="eyebrow">Notices</p>
+            <h2 id="bulletin-title">Bulletin</h2>
+          </div>
+          <a class="text-link" href="https://hall.whps.org/announcements">All news</a>
+        </div>
+        <ul class="notes">
+          <li class="note note-culture">
+            <p class="note-meta"><span class="note-type">Heritage month</span><span>Sept 15 – Oct 15</span></p>
+            <h3><a href="https://hall.whps.org/announcements">Hispanic/Latinx Heritage Month</a></h3>
+            <p>We encourage students, staff, and families to explore, celebrate, and deepen their understanding of the people, histories, and traditions that continue to enrich our schools.</p>
+          </li>
+          <li class="note note-test">
+            <p class="note-meta"><span class="note-type">Testing</span><time datetime="2026-10-14">Oct 14</time></p>
+            <h3><a href="#">PSAT for grades 9–11: what to bring</a></h3>
+            <p>Testing runs during the school day. See what to bring and where to report.</p>
+          </li>
+          <li class="note note-senior">
+            <p class="note-meta"><span class="note-type">Seniors</span><span>Open now</span></p>
+            <h3><a href="#">Senior portrait sign-ups are open</a></h3>
+          </li>
+          <li class="note note-family">
+            <p class="note-meta"><span class="note-type">Families</span><span>Annual forms</span></p>
+            <h3><a href="#" target="_blank" rel="noopener">eCollect tutorial: complete forms online<span class="sr-only"> (opens in new tab)</span></a></h3>
+          </li>
+          <li class="note note-news">
+            <p class="note-meta"><span class="note-type">Newsletter</span><time datetime="2026-09-28">Sept 28</time></p>
+            <h3><a href="#">This week’s Hall newsletter</a></h3>
+          </li>
+        </ul>
+      </section>
+
+      <section class="events" id="events" aria-labelledby="events-title">
+        <div class="section-head row">
+          <div>
+            <p class="eyebrow">October</p>
+            <h2 id="events-title">Off the field</h2>
+          </div>
+          <a class="text-link" href="https://hall.whps.org/calendar">Full calendar</a>
+        </div>
+
+        <div class="schedule">
+          <article class="group">
+            <h3 class="group-head"><span>Testing</span><span class="group-meta">3 dates</span></h3>
+            <ul class="rows">
+              <li><time class="d" datetime="2026-10-03"><b>Sat</b> Oct 3</time><span class="what">SAT weekend testing</span></li>
+              <li><time class="d" datetime="2026-10-14"><b>Wed</b> Oct 14</time><span class="what">PSAT testing day <span class="where">Grades 9–11</span></span></li>
+              <li><time class="d" datetime="2026-10-17"><b>Sat</b> Oct 17</time><span class="what">ACT weekend testing <span class="where">Room E119</span></span></li>
+            </ul>
+          </article>
+
+          <article class="group">
+            <h3 class="group-head"><span>Arts</span><span class="group-meta">3 events</span></h3>
+            <ul class="rows">
+              <li><time class="d" datetime="2026-10-17"><b>Sat</b> Oct 17</time><span class="what">Gifts of Music Gala <span class="where">Music &amp; Fine Arts Dept.</span></span></li>
+              <li><time class="d" datetime="2026-10-22"><b>Thu</b> Oct 22</time><span class="what">Theater Historical Figure Day <span class="where">Schoolwide</span></span></li>
+              <li><time class="d" datetime="2026-10-28"><b>Wed</b> Oct 28</time><span class="what">Choir Midfest <span class="where">Schoolwide</span></span></li>
+            </ul>
+          </article>
+
+          <article class="group">
+            <h3 class="group-head"><span>Schedule notes</span><span class="group-meta">October</span></h3>
+            <ul class="rows">
+              <li><time class="d" datetime="2026-10-07"><b>Wed</b> Oct 7</time><span class="what">Odd-schedule Wednesdays <span class="where">Again Wed, Oct 28</span></span></li>
+              <li class="row-off"><time class="d" datetime="2026-10-12"><b>Mon</b> Oct 12</time><span class="what">No school <span class="where">Indigenous Peoples’ Day</span></span></li>
+              <li><time class="d" datetime="2026-10-21"><b>Wed</b> Oct 21</time><span class="what">Even-schedule Wednesday</span></li>
+              <li><time class="d" datetime="2026-10-28"><b>Wed</b> Oct 28</time><span class="what">School picture day <span class="where">All students &amp; staff, 7:30 AM–12:48 PM</span></span></li>
+            </ul>
+          </article>
+
+          <article class="group">
+            <h3 class="group-head"><span>Senior portraits</span><span class="group-meta">8 sessions</span></h3>
+            <div class="senior-row">
+              <p><strong>Oct 1–24</strong>, 12:45–8:00 PM · Indoor only · Rooms E131/E119</p>
+              <a class="text-link" href="#">Book a session</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ HELP (calm) ============ -->
+    <section class="help" aria-labelledby="help-title">
+      <div class="wrap">
+        <div class="help-panel">
+          <div class="help-intro">
+            <h2 id="help-title">Need help? We’re here.</h2>
+            <p>Every student has adults at Hall to talk to. Reach out any time — you don’t need a reason.</p>
+          </div>
+          <ul class="help-list">
+            <li>
+              <h3><a href="https://hall.whps.org/school-counseling">School counseling</a></h3>
+              <p>We guide all students toward the best possible educational opportunities in a supportive environment.</p>
+            </li>
+            <li>
+              <h3><a href="https://hall.whps.org/support-services">Support services</a></h3>
+              <p>Learning, health and wellness support for students and families.</p>
+            </li>
+            <li>
+              <h3><a href="https://www.anonymousalerts.com" target="_blank" rel="noopener">Anonymous Alerts<span class="sr-only"> (opens in new tab)</span></a></h3>
+              <p>Report bullying or a safety concern privately through the app.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-id">
+        <img src="../../shared/img/logo.png" alt="" width="751" height="900" data-a11y-keep>
+        <div>
+          <p class="footer-name">Hall High School</p>
+          <p class="footer-sub">Home of the Warriors · West Hartford Public Schools</p>
+        </div>
+      </div>
+      <address class="footer-contact">
+        <h2 class="footer-h">Contact</h2>
+        975 North Main Street<br>West Hartford, CT 06117<br>
+        Phone <a href="tel:+18602324561">860-232-4561</a><br>
+        <a href="https://hall.whps.org/contact-us">Contact us</a>
+      </address>
+      <nav class="footer-links" aria-label="Footer">
+        <h2 class="footer-h">More</h2>
+        <ul>
+          <li><a href="https://hall.whps.org/athletics">Athletics</a></li>
+          <li><a href="https://hall.whps.org/directory">Directory</a></li>
+          <li><a href="https://www.whps.org" target="_blank" rel="noopener">West Hartford Public Schools<span class="sr-only"> (opens in new tab)</span></a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="https://hall.whps.org/staff">Staff</a></li>
+        </ul>
+      </nav>
+      <div class="footer-social">
+        <h2 class="footer-h">Follow</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>
+            Instagram<span class="sr-only"> (opens in new tab)</span></a></li>
+          <li><a href="https://x.com/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            X (Twitter)<span class="sr-only"> (opens in new tab)</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="wrap">
+        <p class="footer-sample">Design concept v11, “Game Day.” The date, schedule, lunch menu, notices and events are sample data for October 1, 2026. All recent results are invented sample scores (girls’ soccer, volleyball, field hockey, boys’ cross country, boys’ soccer, football), as are the Oct 2 countdown baseline and the “Fall season 2026” caption; team pages, tryouts &amp; registration and some other links are placeholders.</p>
+        <p>© 2026 Hall High School · West Hartford, CT</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

@@ -26,9 +26,11 @@ Redesign the landing page of **Hall High School** (West Hartford, CT), the high 
 
 ## Gallery organization
 
-- Versions are grouped by what they vary, each group with a centered heading: **Five layouts** (v01–v05), **Three moods** (v06–v08: calm, loud, warm).
-- Tile captions name that variable (e.g. "Magazine layout", "Calm"), not the theme.
-- Next: v09 onward combine a little of each of v01–v08.
+- Versions are grouped by what they vary, each group with a centered heading: **Five layouts** (v01–v05), **Three moods** (v06–v08: calm, loud, warm), **Four content priorities** (v09–v12: announcements, events, athletics, student life first).
+- Tile captions name that variable (e.g. "Magazine layout", "Calm", "Events first"), not the theme.
+- The content-priority idea came from v04 (good for sports fans), but each of v09–v12 has its own look, to widen the range of ideas.
+- Even when today's essentials aren't the priority, they stay one tap away near the top.
+- Next (v13+): still exploring, then narrow down by combining what works.
 
 ## Working agreement
 

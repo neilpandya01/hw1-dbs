@@ -3,15 +3,497 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hall High Redesign — v10</title>
+  <title>Hall High School — v10 On the Calendar</title>
+  <meta name="description" content="Hall High School, West Hartford, CT — Home of the Warriors. Tomorrow, this week and the October calendar.">
+  <meta name="theme-color" content="#0b2a5b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
   <link rel="stylesheet" href="../../shared/back.css">
+  <link rel="stylesheet" href="../../shared/a11y.css">
   <link rel="stylesheet" href="style.css">
+  <script src="../../shared/a11y.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="back-link" href="../../index.html" aria-label="Back to gallery">&larr; Gallery</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <main>
-    <!-- v10 landing page goes here -->
+  <!-- ============ MASTHEAD ============ -->
+  <header class="mast">
+    <div class="wrap mast-grid">
+      <a class="mast-id" href="#top">
+        <img src="../../shared/img/logo.png" alt="" width="751" height="900" data-a11y-keep>
+        <span class="mast-name">Hall High School</span>
+      </a>
+      <p class="mast-place">West Hartford, CT<br>Home of the Warriors</p>
+
+      <nav class="mast-nav" aria-label="Main">
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li><a href="https://hall.whps.org/calendar" aria-current="page">Calendar</a></li>
+            <li><a href="https://hall.whps.org/academics">Academics</a></li>
+            <li><a href="https://hall.whps.org/athletics">Athletics</a></li>
+            <li><a href="https://hall.whps.org/arts">Arts</a></li>
+            <li><a href="https://hall.whps.org/school-counseling">Counseling</a></li>
+          </ul>
+          <ul class="nav-portals" aria-label="Student portals">
+            <li><a href="https://westhartford.powerschool.com" target="_blank" rel="noopener">PowerSchool<span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://whps.schoology.com" target="_blank" rel="noopener">Schoology<span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://student.naviance.com/hallhs" target="_blank" rel="noopener">Naviance<span class="sr-only"> (opens in new tab)</span></a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="mast-tools">
+        <button type="button" class="tool a11y-btn" data-a11y-toggle>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="4" r="2.2" fill="currentColor"/><path d="M4 7.5l8 1.6 8-1.6M12 9.1v5.4m0 0l-3.6 7m3.6-7l3.6 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="tool-label">Accessibility</span>
+        </button>
+        <div class="portals">
+          <button type="button" class="tool portals-btn" aria-expanded="false" aria-controls="portal-menu">Portals <span class="plus" aria-hidden="true"></span></button>
+          <ul class="portal-menu" id="portal-menu">
+            <li><a href="https://westhartford.powerschool.com" target="_blank" rel="noopener"><strong>PowerSchool</strong><span>Grades and attendance</span><span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://whps.schoology.com" target="_blank" rel="noopener"><strong>Schoology</strong><span>Classes and assignments</span><span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://student.naviance.com/hallhs" target="_blank" rel="noopener"><strong>Naviance</strong><span>College and career planning</span><span class="sr-only"> (opens in new tab)</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ TODAY STRIP ============ -->
+  <section class="today" id="today" aria-labelledby="today-title">
+    <div class="wrap today-grid">
+      <h2 class="t-cell t-date" id="today-title"><span class="t-k">Today</span><span class="t-v"><time datetime="2026-10-01">Thu 1 Oct</time></span></h2>
+      <p class="t-cell"><span class="t-k">Day</span><span class="t-v"><span class="sig" aria-hidden="true"></span>Even</span></p>
+      <p class="t-cell"><span class="t-k">Schedule</span><span class="t-v">Regular, <time datetime="07:30">7:30</time>–<time datetime="14:10">2:10</time></span></p>
+      <p class="t-cell t-lunch"><span class="t-k">Lunch</span><span class="t-v">Chicken teriyaki rice bowl</span></p>
+      <details class="t-cell t-bell">
+        <summary>Bell schedule and lunch <span class="plus" aria-hidden="true"></span></summary>
+        <div class="t-panel">
+          <div class="bell">
+            <h3>Even-day bell schedule</h3>
+            <table>
+              <caption class="sr-only">Even-day bell schedule for Thursday, October 1</caption>
+              <thead><tr><th scope="col">Block</th><th scope="col">Time</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Block 2</th><td>7:30–8:52</td></tr>
+                <tr><th scope="row">Block 4</th><td>8:58–10:20</td></tr>
+                <tr><th scope="row">Advisory</th><td>10:26–10:46</td></tr>
+                <tr><th scope="row">Block 6 <span class="sub">with lunch</span></th><td>10:52–12:44</td></tr>
+                <tr class="wave"><th scope="row">Lunch A</th><td>10:52–11:20</td></tr>
+                <tr class="wave"><th scope="row">Lunch B</th><td>11:24–11:52</td></tr>
+                <tr class="wave"><th scope="row">Lunch C</th><td>11:56–12:24</td></tr>
+                <tr><th scope="row">Block 8</th><td>12:50–2:10</td></tr>
+              </tbody>
+            </table>
+            <a class="arrow" href="https://hall.whps.org/school-information/bell">All bell schedules</a>
+          </div>
+          <div class="menu">
+            <h3>Lunch today</h3>
+            <ul>
+              <li>Chicken teriyaki rice bowl</li>
+              <li>Black bean burrito <span class="tag">vegetarian</span></li>
+              <li>Salad bar and fruit</li>
+            </ul>
+            <a class="arrow" href="https://hall.whps.org/lunch">Full lunch menu</a>
+          </div>
+        </div>
+      </details>
+      <ul class="t-cell t-links" aria-label="Calendar and portals">
+        <li><a href="https://hall.whps.org/calendar">Calendar</a></li>
+        <li><a href="https://westhartford.powerschool.com" target="_blank" rel="noopener">PowerSchool<span class="sr-only"> (opens in new tab)</span></a></li>
+        <li><a href="https://whps.schoology.com" target="_blank" rel="noopener">Schoology<span class="sr-only"> (opens in new tab)</span></a></li>
+        <li><a href="https://student.naviance.com/hallhs" target="_blank" rel="noopener">Naviance<span class="sr-only"> (opens in new tab)</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============ HERO: THE WALL CALENDAR ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+
+        <div class="rail">
+          <p class="rail-k">October 2026</p>
+          <h1 id="hero-title">On the calendar.</h1>
+          <p class="rail-sub">Hall High School, West Hartford, CT, home of the Warriors. What’s on this week, next week and all month.</p>
+
+          <fieldset class="filters" aria-describedby="filter-note">
+            <legend>Show</legend>
+            <div class="chips">
+              <input type="radio" name="cat" id="f-all" value="all" checked><label for="f-all" class="chip"><span class="mk mk-all" aria-hidden="true"></span>Everything</label>
+              <input type="radio" name="cat" id="f-games" value="games"><label for="f-games" class="chip"><span class="mk c-games" aria-hidden="true"></span>Games</label>
+              <input type="radio" name="cat" id="f-test" value="test"><label for="f-test" class="chip"><span class="mk c-test" aria-hidden="true"></span>Testing</label>
+              <input type="radio" name="cat" id="f-arts" value="arts"><label for="f-arts" class="chip"><span class="mk c-arts" aria-hidden="true"></span>Arts</label>
+              <input type="radio" name="cat" id="f-sched" value="sched"><label for="f-sched" class="chip"><span class="mk c-sched" aria-hidden="true"></span>Schedule</label>
+              <input type="radio" name="cat" id="f-senior" value="senior"><label for="f-senior" class="chip"><span class="mk c-senior" aria-hidden="true"></span>Seniors</label>
+            </div>
+            <p class="sr-only" id="filter-note">Filters the week, the month and the repeating events below. No-school days always stay marked.</p>
+          </fieldset>
+
+          <a class="sub-link" href="#">Subscribe to Hall’s calendar <span class="sub-d">Google, Apple or Outlook</span></a>
+        </div>
+
+        <div class="board">
+          <!-- tomorrow -->
+          <section class="tomorrow" aria-labelledby="tmr-title">
+            <p class="tmr-num" aria-hidden="true">2</p>
+            <div class="tmr-body">
+              <h2 class="tmr-k" id="tmr-title">Tomorrow <span class="sr-only">— next up</span></h2>
+              <p class="tmr-day">Friday 2 October, 7:00 pm</p>
+              <p class="tmr-what">Home football vs. Enfield</p>
+              <p class="tmr-links"><a href="#">Add to calendar</a> <a href="#series">All 3 home games</a></p>
+            </div>
+          </section>
+
+          <!-- this week -->
+          <section class="week week-this" aria-labelledby="wk1">
+            <h2 class="week-h" id="wk1">This week <span>1–4 Oct</span></h2>
+            <ol class="days days-4">
+              <li class="day is-today">
+                <h3 class="day-h"><span class="dnum">1</span><span class="dow">Thu</span><span class="sr-only">October</span><span class="day-tag">today, even day</span></h3>
+                <ul class="evs">
+                  <li class="ev c-senior"><span class="mk c-senior" aria-hidden="true"></span><span class="ev-w">Senior portraits</span><span class="ev-x">12:45–8:00 pm, E131/E119, session 1 of 8</span></li>
+                </ul>
+              </li>
+              <li class="day">
+                <h3 class="day-h"><span class="dnum">2</span><span class="dow">Fri</span><span class="sr-only">October</span></h3>
+                <ul class="evs">
+                  <li class="ev c-games"><span class="mk c-games" aria-hidden="true"></span><span class="ev-w">Home football vs. Enfield</span><span class="ev-x">7:00 pm, home game 1 of 3</span></li>
+                </ul>
+              </li>
+              <li class="day">
+                <h3 class="day-h"><span class="dnum">3</span><span class="dow">Sat</span><span class="sr-only">October</span></h3>
+                <ul class="evs">
+                  <li class="ev c-test"><span class="mk c-test" aria-hidden="true"></span><span class="ev-w">SAT testing</span><span class="ev-x">Weekend, registered students</span></li>
+                </ul>
+              </li>
+              <li class="day day-quiet">
+                <h3 class="day-h"><span class="dnum">4</span><span class="dow">Sun</span><span class="sr-only">October</span></h3>
+                <p class="day-empty">Nothing scheduled</p>
+              </li>
+            </ol>
+            <p class="run ev c-senior"><span class="mk c-senior" aria-hidden="true"></span><span>Senior portraits run through Sat 24 Oct. 8 sessions, indoor only.</span> <a href="#">Book a session</a></p>
+          </section>
+
+          <!-- next week -->
+          <section class="week week-next" aria-labelledby="wk2">
+            <h2 class="week-h" id="wk2">Next week <span>5–11 Oct</span></h2>
+            <ol class="days days-7">
+              <li class="day day-quiet"><h3 class="day-h"><span class="dnum">5</span><span class="dow">Mon</span><span class="sr-only">October</span></h3></li>
+              <li class="day day-quiet"><h3 class="day-h"><span class="dnum">6</span><span class="dow">Tue</span><span class="sr-only">October</span></h3></li>
+              <li class="day">
+                <h3 class="day-h"><span class="dnum">7</span><span class="dow">Wed</span><span class="sr-only">October</span></h3>
+                <ul class="evs"><li class="ev c-sched"><span class="mk c-sched" aria-hidden="true"></span><span class="ev-w">Odd-schedule Wednesday</span></li></ul>
+              </li>
+              <li class="day day-quiet"><h3 class="day-h"><span class="dnum">8</span><span class="dow">Thu</span><span class="sr-only">October</span></h3></li>
+              <li class="day">
+                <h3 class="day-h"><span class="dnum">9</span><span class="dow">Fri</span><span class="sr-only">October</span></h3>
+                <ul class="evs">
+                  <li class="ev c-sched"><span class="mk c-sched" aria-hidden="true"></span><span class="ev-w">11:30 early dismissal</span></li>
+                  <li class="ev c-games"><span class="mk c-games" aria-hidden="true"></span><span class="ev-w">7 pm football vs. Bristol Central</span></li>
+                </ul>
+              </li>
+              <li class="day day-quiet"><h3 class="day-h"><span class="dnum">10</span><span class="dow">Sat</span><span class="sr-only">October</span></h3></li>
+              <li class="day day-quiet"><h3 class="day-h"><span class="dnum">11</span><span class="dow">Sun</span><span class="sr-only">October</span></h3></li>
+            </ol>
+          </section>
+
+          <p class="noschool">
+            <span class="ns-num" aria-hidden="true">12</span>
+            <span class="ns-text"><strong>No school</strong> <time datetime="2026-10-12">Monday 12 October</time><span class="ns-why">Indigenous Peoples’ Day. School is closed.</span></span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MONTH ============ -->
+    <section class="month" id="month" aria-labelledby="month-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="sec-k">Month view</p>
+          <h2 id="month-title">October 2026</h2>
+          <div class="sec-links">
+            <a class="arrow" href="#">Subscribe to Hall’s calendar</a>
+            <a class="arrow" href="https://hall.whps.org/calendar">Full school calendar</a>
+          </div>
+        </div>
+
+        <ul class="legend" aria-label="Legend">
+          <li><span class="mk c-games" aria-hidden="true"></span>Games</li>
+          <li><span class="mk c-test" aria-hidden="true"></span>Testing</li>
+          <li><span class="mk c-arts" aria-hidden="true"></span>Arts</li>
+          <li><span class="mk c-sched" aria-hidden="true"></span>Schedule</li>
+          <li><span class="mk c-senior" aria-hidden="true"></span>Seniors</li>
+          <li><span class="mk-off" aria-hidden="true"></span>No school</li>
+          <li><span class="mk-today" aria-hidden="true"></span>Today</li>
+        </ul>
+
+        <table class="cal">
+          <caption class="sr-only">October 2026 events at Hall High School. On small screens this shows as a list of days that have events.</caption>
+          <thead>
+            <tr>
+              <th scope="col"><abbr title="Sunday">Sun</abbr></th>
+              <th scope="col"><abbr title="Monday">Mon</abbr></th>
+              <th scope="col"><abbr title="Tuesday">Tue</abbr></th>
+              <th scope="col"><abbr title="Wednesday">Wed</abbr></th>
+              <th scope="col"><abbr title="Thursday">Thu</abbr></th>
+              <th scope="col"><abbr title="Friday">Fri</abbr></th>
+              <th scope="col"><abbr title="Saturday">Sat</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="out"><span class="dn">27<span class="dw"> Sep</span></span></td>
+              <td class="out"><span class="dn">28<span class="dw"> Sep</span></span></td>
+              <td class="out"><span class="dn">29<span class="dw"> Sep</span></span></td>
+              <td class="out"><span class="dn">30<span class="dw"> Sep</span></span></td>
+              <td class="today"><span class="dn">1<span class="dw"> Thu</span></span><span class="tag-today">Today</span>
+                <ul><li class="ev c-senior">Senior portraits begin</li></ul></td>
+              <td><span class="dn">2<span class="dw"> Fri</span></span>
+                <ul><li class="ev c-games">7 pm Football vs. Enfield</li></ul></td>
+              <td><span class="dn">3<span class="dw"> Sat</span></span>
+                <ul><li class="ev c-test">SAT testing</li></ul></td>
+            </tr>
+            <tr>
+              <td class="quiet"><span class="dn">4<span class="dw"> Sun</span></span></td>
+              <td class="quiet"><span class="dn">5<span class="dw"> Mon</span></span></td>
+              <td class="quiet"><span class="dn">6<span class="dw"> Tue</span></span></td>
+              <td><span class="dn">7<span class="dw"> Wed</span></span>
+                <ul><li class="ev c-sched">Odd-schedule Wednesday</li></ul></td>
+              <td class="quiet"><span class="dn">8<span class="dw"> Thu</span></span></td>
+              <td><span class="dn">9<span class="dw"> Fri</span></span>
+                <ul><li class="ev c-sched">11:30 Early dismissal</li><li class="ev c-games">7 pm Football vs. Bristol Central</li></ul></td>
+              <td class="quiet"><span class="dn">10<span class="dw"> Sat</span></span></td>
+            </tr>
+            <tr>
+              <td class="quiet"><span class="dn">11<span class="dw"> Sun</span></span></td>
+              <td class="off"><span class="dn">12<span class="dw"> Mon</span></span>
+                <strong class="off-tag">No school</strong><span class="off-why">Indigenous Peoples’ Day</span></td>
+              <td class="quiet"><span class="dn">13<span class="dw"> Tue</span></span></td>
+              <td><span class="dn">14<span class="dw"> Wed</span></span>
+                <ul><li class="ev c-test">PSAT, grades 9–11</li></ul></td>
+              <td class="quiet"><span class="dn">15<span class="dw"> Thu</span></span></td>
+              <td class="quiet"><span class="dn">16<span class="dw"> Fri</span></span></td>
+              <td><span class="dn">17<span class="dw"> Sat</span></span>
+                <ul><li class="ev c-test">ACT testing, E119</li><li class="ev c-arts">Gifts of Music Gala</li></ul></td>
+            </tr>
+            <tr>
+              <td class="quiet"><span class="dn">18<span class="dw"> Sun</span></span></td>
+              <td class="quiet"><span class="dn">19<span class="dw"> Mon</span></span></td>
+              <td class="quiet"><span class="dn">20<span class="dw"> Tue</span></span></td>
+              <td><span class="dn">21<span class="dw"> Wed</span></span>
+                <ul><li class="ev c-sched">Even-schedule Wednesday</li></ul></td>
+              <td><span class="dn">22<span class="dw"> Thu</span></span>
+                <ul><li class="ev c-arts">Theater Historical Figure Day</li></ul></td>
+              <td><span class="dn">23<span class="dw"> Fri</span></span>
+                <ul><li class="ev c-games">7 pm Football vs. Wethersfield</li></ul></td>
+              <td><span class="dn">24<span class="dw"> Sat</span></span>
+                <ul><li class="ev c-senior">Last portrait session</li></ul></td>
+            </tr>
+            <tr>
+              <td class="quiet"><span class="dn">25<span class="dw"> Sun</span></span></td>
+              <td class="quiet"><span class="dn">26<span class="dw"> Mon</span></span></td>
+              <td class="quiet"><span class="dn">27<span class="dw"> Tue</span></span></td>
+              <td><span class="dn">28<span class="dw"> Wed</span></span>
+                <ul><li class="ev c-sched">Odd-schedule Wednesday</li><li class="ev c-sched">Picture day, 7:30–12:48</li><li class="ev c-arts">Choir Midfest</li></ul></td>
+              <td class="quiet"><span class="dn">29<span class="dw"> Thu</span></span></td>
+              <td class="quiet"><span class="dn">30<span class="dw"> Fri</span></span></td>
+              <td class="quiet"><span class="dn">31<span class="dw"> Sat</span></span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="cal-note">Ongoing: Hispanic/Latinx Heritage Month, 15 Sept – 15 Oct.</p>
+      </div>
+    </section>
+
+    <!-- ============ REPEATING / GROUPED ============ -->
+    <section class="series-sec" id="series" aria-labelledby="series-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="sec-k">Grouped, so you can plan once</p>
+          <h2 id="series-title">Series and repeats</h2>
+        </div>
+        <ul class="series">
+          <li class="ser c-games">
+            <p class="ser-n" aria-hidden="true">3</p>
+            <h3 class="ser-h"><span class="mk c-games" aria-hidden="true"></span>Home football<span class="ser-meta">3 games, Fridays, 7:00 pm</span></h3>
+            <ol class="ser-dates">
+              <li><b>2 Oct</b> vs. Enfield <span class="next">next</span></li>
+              <li><b>9 Oct</b> vs. Bristol Central</li>
+              <li><b>23 Oct</b> vs. Wethersfield</li>
+            </ol>
+            <a class="arrow" href="#">Add all 3 games</a>
+          </li>
+          <li class="ser c-senior">
+            <p class="ser-n" aria-hidden="true">8</p>
+            <h3 class="ser-h"><span class="mk c-senior" aria-hidden="true"></span>Senior portraits<span class="ser-meta">8 sessions</span></h3>
+            <ol class="ser-dates">
+              <li><b>1–24 Oct</b> 12:45–8:00 pm</li>
+              <li>Indoor only, rooms E131/E119</li>
+            </ol>
+            <a class="arrow" href="#">Book a session</a>
+          </li>
+          <li class="ser c-sched">
+            <p class="ser-n" aria-hidden="true">3</p>
+            <h3 class="ser-h"><span class="mk c-sched" aria-hidden="true"></span>Wednesday schedules<span class="ser-meta">3 Wednesdays</span></h3>
+            <ol class="ser-dates">
+              <li><b>7 Oct</b> Odd</li>
+              <li><b>21 Oct</b> Even</li>
+              <li><b>28 Oct</b> Odd</li>
+            </ol>
+          </li>
+          <li class="ser c-test">
+            <p class="ser-n" aria-hidden="true">3</p>
+            <h3 class="ser-h"><span class="mk c-test" aria-hidden="true"></span>Testing<span class="ser-meta">3 dates</span></h3>
+            <ol class="ser-dates">
+              <li><b>3 Oct</b> SAT</li>
+              <li><b>14 Oct</b> PSAT, grades 9–11</li>
+              <li><b>17 Oct</b> ACT, room E119</li>
+            </ol>
+          </li>
+          <li class="ser c-arts">
+            <p class="ser-n" aria-hidden="true">3</p>
+            <h3 class="ser-h"><span class="mk c-arts" aria-hidden="true"></span>Arts<span class="ser-meta">3 events</span></h3>
+            <ol class="ser-dates">
+              <li><b>17 Oct</b> Gifts of Music Gala</li>
+              <li><b>22 Oct</b> Theater Historical Figure Day</li>
+              <li><b>28 Oct</b> Choir Midfest</li>
+            </ol>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ NOTICES + QUICK LINKS ============ -->
+    <section class="notices" aria-labelledby="bulletin-title">
+      <div class="wrap notices-grid">
+        <div class="sec-head sec-head-side">
+          <p class="sec-k">Notices</p>
+          <h2 id="bulletin-title">Bulletin</h2>
+          <a class="arrow" href="https://hall.whps.org/announcements">All news</a>
+        </div>
+        <ul class="notes">
+          <li class="note">
+            <p class="note-meta"><time datetime="2026-10-14">14 Oct</time><span>Testing</span></p>
+            <div><h3><a href="#">PSAT for grades 9–11: what to bring</a></h3>
+            <p>Testing runs during the school day. See what to bring and where to report.</p></div>
+          </li>
+          <li class="note">
+            <p class="note-meta"><span>Open now</span><span>Seniors</span></p>
+            <div><h3><a href="#">Senior portrait sign-ups are open</a></h3>
+            <p>Eight indoor sessions, 1–24 Oct.</p></div>
+          </li>
+          <li class="note">
+            <p class="note-meta"><span>15 Sept – 15 Oct</span><span>Heritage month</span></p>
+            <div><h3><a href="https://hall.whps.org/announcements">Hispanic/Latinx Heritage Month</a></h3>
+            <p>We encourage students, staff, and families to explore, celebrate, and deepen their understanding of the people, histories, and traditions that continue to enrich our schools.</p></div>
+          </li>
+          <li class="note">
+            <p class="note-meta"><span>Annual forms</span><span>Families</span></p>
+            <div><h3><a href="#" target="_blank" rel="noopener">eCollect tutorial: complete forms online<span class="sr-only"> (opens in new tab)</span></a></h3></div>
+          </li>
+          <li class="note">
+            <p class="note-meta"><time datetime="2026-09-28">28 Sept</time><span>Newsletter</span></p>
+            <div><h3><a href="#">This week’s Hall newsletter</a></h3></div>
+          </li>
+        </ul>
+        <nav class="quick" aria-labelledby="quick-title">
+          <h2 class="quick-h" id="quick-title">Quick links</h2>
+          <ul>
+            <li><a href="https://hall.whps.org/attendance">Report an absence</a></li>
+            <li><a href="https://hall.whps.org/athletics">Athletics schedules</a></li>
+            <li><a href="https://hall.whps.org/clubs">Clubs and publications</a></li>
+            <li><a href="https://hall.whps.org/library">Library</a></li>
+            <li><a href="https://hall.whps.org/directory">Directory</a></li>
+            <li><a href="https://translate.google.com/translate?sl=en&amp;tl=es&amp;u=https://hall.whps.org" target="_blank" rel="noopener">Translate this site<span class="sr-only"> (opens in new tab)</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ PRIDE ============ -->
+    <section class="pride" aria-labelledby="pride-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="sec-k">About Hall</p>
+          <h2 id="pride-title">By the numbers</h2>
+        </div>
+        <ul class="figures">
+          <li><span class="fig-n">9</span><span class="fig-l">State titles in the last 10 years, plus 9 runner-up finishes</span></li>
+          <li><span class="fig-n">48</span><span class="fig-l">Central Connecticut Conference league championships</span></li>
+          <li><span class="fig-n">37</span><span class="fig-l">Languages spoken at home, most often Spanish, Mandarin, Portuguese, Vietnamese and Arabic</span></li>
+          <li><span class="fig-n">72%</span><span class="fig-l">AP participation, and #7 in UConn Early College Experience</span></li>
+          <li><span class="fig-n">Gold</span><span class="fig-l">Medal, US News &amp; World Report Best High Schools</span></li>
+        </ul>
+        <p class="mission">Hall High School prepares all students to be educated, responsible citizens who contribute collaboratively, independently, and innovatively to a dynamic global community.</p>
+      </div>
+    </section>
+
+    <!-- ============ HELP (calm) ============ -->
+    <section class="help" aria-labelledby="help-title">
+      <div class="wrap help-grid">
+        <div class="help-intro">
+          <h2 id="help-title">Need help? We’re here.</h2>
+          <p>Every student has adults at Hall to talk to. Reach out any time — you don’t need a reason.</p>
+        </div>
+        <ul class="help-list">
+          <li>
+            <h3><a href="https://hall.whps.org/school-counseling">School counseling</a></h3>
+            <p>We guide all students toward the best possible educational opportunities in a supportive environment.</p>
+          </li>
+          <li>
+            <h3><a href="https://hall.whps.org/support-services">Support services</a></h3>
+            <p>Learning, health and wellness support for students and families.</p>
+          </li>
+          <li>
+            <h3><a href="https://www.anonymousalerts.com" target="_blank" rel="noopener">Anonymous Alerts<span class="sr-only"> (opens in new tab)</span></a></h3>
+            <p>Report bullying or a safety concern privately through the app.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot">
+    <div class="wrap foot-grid">
+      <div class="foot-id">
+        <img src="../../shared/img/logo.png" alt="" width="751" height="900" data-a11y-keep>
+        <p><strong>Hall High School</strong><br>Home of the Warriors<br>West Hartford Public Schools</p>
+      </div>
+      <address class="foot-contact">
+        <h2 class="foot-h">Contact</h2>
+        975 North Main Street<br>West Hartford, CT 06117<br>
+        Phone <a href="tel:+18602324561">860-232-4561</a><br>
+        Fax 860-236-2486<br>
+        <a href="https://hall.whps.org/contact-us">Contact us</a>
+      </address>
+      <nav class="foot-links" aria-label="Footer">
+        <h2 class="foot-h">More</h2>
+        <ul>
+          <li><a href="https://hall.whps.org/about">About Hall</a></li>
+          <li><a href="https://www.whps.org" target="_blank" rel="noopener">West Hartford Public Schools<span class="sr-only"> (opens in new tab)</span></a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="https://hall.whps.org/staff">Staff</a></li>
+        </ul>
+      </nav>
+      <div class="foot-links">
+        <h2 class="foot-h">Follow</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram<span class="sr-only"> (opens in new tab)</span></a></li>
+          <li><a href="https://x.com/" target="_blank" rel="noopener">X (Twitter)<span class="sr-only"> (opens in new tab)</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap foot-bar">
+      <p class="foot-sample">Design concept v10, “On the Calendar.” Today’s schedule, lunch, notices and events are sample data for October 1, 2026. Invented for this concept: the Oct 9 early dismissal (11:30 AM), the Oct 24 date of the last senior portrait session, the session numbering (“1 of 8”), and the Add to calendar / Subscribe links, which are placeholders. Some sub-page and portal URLs are guesses or “#”.</p>
+      <p>© 2026 Hall High School, West Hartford, CT</p>
+    </div>
+  </footer>
 </body>
 </html>

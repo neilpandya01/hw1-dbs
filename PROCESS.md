@@ -102,6 +102,43 @@ After the first build I pushed back on these points:
 
 ---
 
-## Round 3 — Combine (v09–)
+## Round 3 — Vary the content priority (v09–v12)
 
-_Next: take a little of each of v01–v08 and combine them into updated versions._
+**Date:** Oct 1, 2026
+
+### What I decided
+
+I first tried a round on **navigation** (horizontal tabs, a vertical "transit line", navigating by time) and threw it out before committing. Changing how you move between sections didn't change what visitors actually see first. A more useful question is **which content leads the page**.
+
+So Round 3 varies **content priority**. Each version commits fully to one kind of content: it takes the first screen, gets the most space and the richest treatment, and the rest of the page follows in order of what that audience needs next. I listed the options (news, events, academics, athletics, student life, announcements, quick links) and picked four:
+
+| # | Variable | Concept | Who it serves best |
+|---|---|---|---|
+| v09 | Announcements first | The Bulletin | Families and students who need to know what changed or what to do (early dismissal, PSAT, forms, deadlines) |
+| v10 | Events first | On the Calendar | Families planning the week and month |
+| v11 | Athletics first | Game Day | Students and families who follow Warriors sports |
+| v12 | Student life first | Find Your People | Students looking for something to join, and new families asking what Hall is like |
+
+Left out for now: **news** (too close to announcements, since Hall's real news is mostly notices), **quick links** (v01 and v04's Today ribbon already lead with them), and **academics** (mostly static program pages with little that changes from day to day).
+
+The idea came from **v04**, which worked best for people who keep up with sports because it put their content up front. Today's essentials stay one tap away near the top on every version, even when they aren't the priority.
+
+The gallery groups them as **Four content priorities**.
+
+### How I used Claude
+
+- I chose content priority. Claude picked the four priorities to try, wrote one shared brief, and built the four pages in parallel.
+
+### My feedback and revisions
+
+- The first build gave all four v04's look. I want more different ideas overall, so each one now has its own style that fits its content: a **service-alert page** (v09), a **Swiss-grid wall calendar** (v10), a **retro game-day program** (v11) and a **playful sticker-and-bento** look (v12). Hall navy stays the theme color on all four.
+
+**Verdicts (keep / drop / steal, and why):**
+
+**What I learned:**
+
+---
+
+## Round 4 — Combine (v13–)
+
+_Next: narrow down and combine what works from v01–v12._

@@ -53,7 +53,8 @@ Repository layout:
 - Tiles are **grouped by round**, each with a centered heading. Each group names what it varies, and each tile's caption names that variable rather than the theme:
   - **Five layouts** (v01–v05), with captions like "Magazine layout" and "Search-bar focused"
   - **Three moods** (v06–v08): Calm, Loud & spirited, Warm & welcoming
-  - **Coming next** (v09–v25): combinations of v01–v08
+  - **Four content priorities** (v09–v12): Announcements, Events, Athletics, Student life first
+  - **Coming next** (v13–v25): to be decided
 - Clicking a tile navigates to that version's full page.
 - On smaller screens the grid collapses to fewer columns so tiles remain legible.
 
@@ -86,7 +87,11 @@ Today's schedule, lunch and some notices are **sample data** (fixed to Thu Oct 1
 | 06 | Mood: Calm | Quiet Hall | Calm in the *look*, not the message: soft navy and mist palette, generous space, a narrow single column, gentle type. The copy stays plain and informative, so dates and deadlines read clearly. | Built |
 | 07 | Mood: Loud & spirited | Pep Rally | Maximum school spirit: solid, loud navy/gold/red color blocks, chant headlines, a scrolling sports-score ticker, sample Spirit Week and Crosstown Classic, a cheer meter, then a deliberate drop in volume for help. | Built |
 | 08 | Mood: Warm & welcoming | Welcome Mat | For new families: "welcome" in many of the 37 languages spoken at Hall's homes, notes from students and staff, polaroid photos and invitations instead of events. | Built |
-| 09–25 | _TBD_ | | | Blank placeholder page |
+| 09 | Announcements first | The Bulletin | The most urgent notice is the headline (what to do, by when), then every notice sorted by urgency. Styled like a public service-alert page: color-coded severity bars, IBM Plex. | Built |
+| 10 | Events first | On the Calendar | The calendar is the first screen: this week by day, what's next, October with no-school days marked, repeated events grouped. Styled like a Swiss-grid wall calendar. | Built |
+| 11 | Athletics first | Game Day | The next game leads (a ticket stub with a countdown), then sample box scores, fall sports, the home schedule and a pennant trophy case. Styled like a retro printed game-day program. | Built |
+| 12 | Student life first | Find Your People | Arts, clubs, culture and sports lead, for students looking to join and new families asking what Hall is like. Playful sticker-and-bento look. | Built |
+| 13–25 | _TBD_ | | | Blank placeholder page |
 
 ## Tech Stack
 
@@ -114,7 +119,7 @@ then visit http://localhost:8000.
 
 - [x] Set up the repository structure and gallery page skeleton (blank gallery + 25 blank landing pages with back arrow)
 - [x] Gather the core content from hall.whps.org
-- [ ] Build the 25 versions (8 / 25 done)
+- [ ] Build the 25 versions (12 / 25 done)
 - [x] Add mini previews to the gallery grid
 - [ ] Make the gallery and every version responsive
 - [ ] Deploy to Vercel
