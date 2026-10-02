@@ -23,6 +23,8 @@ Redesign the landing page of **Hall High School** (West Hartford, CT), the high 
 
 - Hall's dark navy (#0b2a5b) is the theme color on every version, whatever the mood.
 - Mood lives in the look, not in telling students how to feel. Copy stays clear and informative, and deadlines are stated plainly.
+- Calm tone means informing, not directing: give dates and facts, and avoid "act on this", "action needed" or countdown urgency.
+- Today's essentials should stay compact. v01's today panel was too dominant.
 
 ## Gallery organization
 
@@ -30,7 +32,7 @@ Redesign the landing page of **Hall High School** (West Hartford, CT), the high 
 - Tile captions name that variable (e.g. "Magazine layout", "Calm", "Events first"), not the theme.
 - The content-priority idea came from v04 (good for sports fans), but each of v09–v12 has its own look, to widen the range of ideas.
 - Even when today's essentials aren't the priority, they stay one tap away near the top.
-- Next (v13+): still exploring, then narrow down by combining what works.
+- **Combining** (v13–v19): explore by combining ideas from v01–v12. **Converging** (v20–v25): narrow v13–v19 down to one final page.
 
 ## Working agreement
 

@@ -2,7 +2,7 @@
 
 A running log of how the 25 versions came together: what I asked for, what I decided, what I dropped and why. Newest round at the bottom.
 
-**The plan:** go wide (v01–v14), then narrow by combining what works (v15–v20), then converge one refinement at a time until v25 is the final choice.
+**The plan:** go wide (v01–v12), explore by combining what works (v13–v19), then converge one refinement at a time until v25 is the final choice (v20–v25).
 
 ---
 
@@ -139,6 +139,30 @@ The gallery groups them as **Four content priorities**.
 
 ---
 
-## Round 4 — Combine (v13–)
+## Round 4 — Combine (v13–v19)
 
-_Next: narrow down and combine what works from v01–v12._
+**Date:** Oct 2, 2026
+
+### What I decided
+
+I split the remaining versions into two groups. **Combining** (v13–v19) explores by putting together the ideas from v01–v12 that worked. **Converging** (v20–v25) narrows those combinations down to one final page. The gallery now has both groups, with v14–v25 left blank for now.
+
+| # | Combines | Main idea |
+|---|---|---|
+| v13 | v01 + v09 | v01's today information, compressed into one band, then v09's announcements first, in a calmer tone |
+
+**v13.** I like the today-centered information in v01, but its panel takes up too much space and dominates the page. v13 keeps the same facts (date, odd/even day, hours, a now/next line with a thin day bar, lunch, portals) in a single band, with the full bell schedule and lunch waves one tap away. After that, announcements lead, as in v09. v09 felt urgent ("Active alert", "Action needed", "What to do", "Dates to act on", countdowns), so v13 calms the tone. The calm comes from the copy and structure, not the color: each announcement states its date and the facts, with neutral categories and no urgency labels or instructions.
+
+### How I used Claude
+
+- I chose the v01 + v09 combination and the calmer tone. Claude built v13 and regrouped the gallery.
+
+**Verdicts (keep / drop / steal, and why):**
+
+**What I learned:**
+
+---
+
+## Round 5 — Converge (v20–v25)
+
+_Next: narrow v13–v19 down to one final page._

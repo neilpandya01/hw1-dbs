@@ -3,15 +3,331 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hall High Redesign — v13</title>
+  <title>Hall High School — v13 Today + Announcements</title>
+  <meta name="description" content="Hall High School, West Hartford, CT — Home of the Warriors. Today's schedule in one line, then announcements and dates for students and families.">
+  <meta name="theme-color" content="#0b2a5b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
   <link rel="stylesheet" href="../../shared/back.css">
+  <link rel="stylesheet" href="../../shared/a11y.css">
   <link rel="stylesheet" href="style.css">
+  <script src="../../shared/a11y.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="back-link" href="../../index.html" aria-label="Back to gallery">&larr; Gallery</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <main>
-    <!-- v13 landing page goes here -->
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./">
+        <img class="brand-logo" src="../../shared/img/logo.png" alt="" width="751" height="900" data-a11y-keep>
+        <span class="brand-text">
+          <span class="brand-name">Hall High School</span>
+          <span class="brand-sub">West Hartford, CT · Home of the Warriors</span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="#announcements">Announcements</a></li>
+          <li><a href="https://hall.whps.org/academics">Academics</a></li>
+          <li><a href="https://hall.whps.org/athletics">Athletics</a></li>
+          <li><a href="https://hall.whps.org/school-counseling">Counseling</a></li>
+          <li><a href="https://hall.whps.org/school-information">About</a></li>
+        </ul>
+      </nav>
+      <div class="header-tools">
+        <button type="button" class="hdr-btn" data-a11y-toggle>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="4" r="2.2" fill="currentColor"/><path d="M4 7.5l8 1.6 8-1.6M12 9.1v5.4m0 0l-3.6 7m3.6-7l3.6 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="hdr-label">Accessibility</span>
+        </button>
+        <details class="mobile-menu">
+          <summary class="hdr-btn" aria-label="Menu">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          </summary>
+          <nav class="mobile-panel" aria-label="Main (mobile)">
+            <a href="#announcements">Announcements</a>
+            <a href="https://hall.whps.org/academics">Academics</a>
+            <a href="https://hall.whps.org/athletics">Athletics</a>
+            <a href="https://hall.whps.org/school-counseling">Counseling</a>
+            <a href="https://hall.whps.org/school-information">About</a>
+          </nav>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <h1 class="sr-only">Hall High School — today and announcements</h1>
+
+    <!-- ============ TODAY (compact) ============ -->
+    <section class="today" aria-labelledby="today-h">
+      <div class="wrap today-row">
+        <div class="t-date">
+          <h2 id="today-h" class="t-day"><time datetime="2026-10-01">Thursday, October 1</time></h2>
+          <p class="t-meta">Even day · Regular schedule · 7:30 AM – 2:10 PM</p>
+        </div>
+
+        <div class="t-now">
+          <p class="t-now-text" id="now-text" aria-live="polite">Block 2 7:30 · Block 4 8:58 · Advisory 10:26 · Block 6 10:52 · Block 8 12:50</p>
+          <ol class="dayline" id="dayline" aria-hidden="true">
+            <li data-start="07:30" data-end="08:52" style="--min:82"><span>2</span></li>
+            <li data-start="08:58" data-end="10:20" style="--min:82"><span>4</span></li>
+            <li data-start="10:26" data-end="10:46" style="--min:20"><span>Adv</span></li>
+            <li data-start="10:52" data-end="12:44" style="--min:112"><span>6 · lunch</span></li>
+            <li data-start="12:50" data-end="14:10" style="--min:80"><span>8</span></li>
+          </ol>
+        </div>
+
+        <p class="t-lunch"><span class="t-label">Lunch</span> Chicken teriyaki rice bowl</p>
+
+        <div class="t-links">
+          <ul class="portals" aria-label="Portals">
+            <li><a href="https://whps.powerschool.com/public/" target="_blank" rel="noopener">PowerSchool<span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://whps.schoology.com/" target="_blank" rel="noopener">Schoology<span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://student.naviance.com/hallhs" target="_blank" rel="noopener">Naviance<span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://hall.whps.org/calendar">Calendar</a></li>
+          </ul>
+          <button type="button" class="more-btn" aria-expanded="false" aria-controls="today-more">
+            Bell schedule &amp; lunch
+            <svg class="chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="today-more" id="today-more">
+        <div class="wrap more-grid">
+          <div>
+            <h3 class="more-h">Even-day bell schedule</h3>
+            <table class="bell">
+              <caption class="sr-only">Even-day bell schedule for Thursday, October 1</caption>
+              <tbody>
+                <tr><th scope="row">Block 2</th><td>7:30–8:52</td></tr>
+                <tr><th scope="row">Block 4</th><td>8:58–10:20</td></tr>
+                <tr><th scope="row">Advisory</th><td>10:26–10:46</td></tr>
+                <tr><th scope="row">Block 6 <span class="sub">with lunch</span></th><td>10:52–12:44</td></tr>
+                <tr><th scope="row">Block 8</th><td>12:50–2:10</td></tr>
+              </tbody>
+            </table>
+            <a class="text-link" href="https://hall.whps.org/school-information/bell">All bell schedules</a>
+          </div>
+          <div>
+            <h3 class="more-h">Lunch waves · Block 6</h3>
+            <table class="bell">
+              <caption class="sr-only">Lunch waves during Block 6</caption>
+              <tbody>
+                <tr><th scope="row">Wave A</th><td>10:52–11:20</td></tr>
+                <tr><th scope="row">Wave B</th><td>11:24–11:52</td></tr>
+                <tr><th scope="row">Wave C</th><td>11:56–12:24</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h3 class="more-h">Lunch today</h3>
+            <ul class="menu">
+              <li>Chicken teriyaki rice bowl</li>
+              <li>Black bean burrito <span class="sub">vegetarian</span></li>
+              <li>Salad bar &amp; fruit</li>
+            </ul>
+            <a class="text-link" href="https://hall.whps.org/school-information/lunch">Lunch menu for October</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ANNOUNCEMENTS ============ -->
+    <section class="announcements" id="announcements" aria-labelledby="ann-h">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="ann-h">Announcements</h2>
+          <a class="text-link" href="https://hall.whps.org/announcements">Archive</a>
+        </div>
+
+        <article class="lead" aria-labelledby="lead-h">
+          <p class="datebox" aria-hidden="true"><span class="db-w">Fri</span><span class="db-d">9</span><span class="db-m">Oct</span></p>
+          <div class="lead-body">
+            <p class="cat">Schedule · <time datetime="2026-10-09">Friday, October 9</time></p>
+            <h3 id="lead-h">Early dismissal</h3>
+            <p class="lead-text">School ends early for all students. Buses leave at 11:30 AM. Home football vs. Bristol Central is at 7:00 PM as scheduled.</p>
+            <p class="lead-foot"><a class="text-link" href="https://hall.whps.org/announcements">Full announcement</a><span class="posted">Posted Sep 30</span></p>
+          </div>
+        </article>
+
+        <div class="ann-cols">
+          <div>
+            <h3 class="list-h">Dated</h3>
+            <ol class="alist">
+              <li>
+                <time class="a-date" datetime="2026-10-07">Wed, Oct 7</time>
+                <div>
+                  <p class="cat">Schedule</p>
+                  <h4><a href="https://hall.whps.org/school-information/bell">Wednesday schedules in October</a></h4>
+                  <p>Oct 7 and Oct 28 follow the odd schedule. Oct 21 follows the even schedule.</p>
+                </div>
+              </li>
+              <li>
+                <time class="a-date" datetime="2026-10-12">Mon, Oct 12</time>
+                <div>
+                  <p class="cat">Schedule</p>
+                  <h4><a href="https://hall.whps.org/calendar">No school: Indigenous Peoples’ Day</a></h4>
+                  <p>Classes resume Tuesday, Oct 13.</p>
+                </div>
+              </li>
+              <li>
+                <time class="a-date" datetime="2026-10-14">Wed, Oct 14</time>
+                <div>
+                  <p class="cat">Testing · Grades 9–11</p>
+                  <h4><a href="https://hall.whps.org/announcements">PSAT</a></h4>
+                  <p>Students bring a charged device with Bluebook installed, a photo ID and pencils. Homeroom starts at 7:25 AM.</p>
+                </div>
+              </li>
+              <li>
+                <time class="a-date" datetime="2026-10-24">Sat, Oct 24</time>
+                <div>
+                  <p class="cat">Seniors</p>
+                  <h4><a href="https://hall.whps.org/announcements">Senior portrait sign-ups close</a></h4>
+                  <p>Indoor sessions in E131 and E119, 12:45–8:00 PM, through Oct 24.</p>
+                </div>
+              </li>
+              <li>
+                <time class="a-date" datetime="2026-10-28">Wed, Oct 28</time>
+                <div>
+                  <p class="cat">Schedule</p>
+                  <h4><a href="https://hall.whps.org/announcements">School picture day</a></h4>
+                  <p>All students and staff, 7:30 AM–12:48 PM. An odd-schedule Wednesday.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div>
+            <h3 class="list-h">Ongoing</h3>
+            <ul class="alist alist--ongoing">
+              <li>
+                <span class="a-date">Open now</span>
+                <div>
+                  <p class="cat">Families</p>
+                  <h4><a href="https://whps.ecollectforms.com" target="_blank" rel="noopener">Annual forms on eCollect<span class="sr-only"> (opens in new tab)</span></a></h4>
+                  <p>This year’s required family forms are online, with a step-by-step tutorial.</p>
+                </div>
+              </li>
+              <li>
+                <span class="a-date">Through Oct 15</span>
+                <div>
+                  <p class="cat">Culture</p>
+                  <h4><a href="https://hall.whps.org/announcements">Hispanic/Latinx Heritage Month</a></h4>
+                  <p>Sep 15 – Oct 15, celebrating the people, histories and traditions that enrich our community.</p>
+                </div>
+              </li>
+              <li>
+                <span class="a-date">Sep 28 issue</span>
+                <div>
+                  <p class="cat">Newsletter</p>
+                  <h4><a href="https://hall.whps.org/announcements">Weekly Warrior Newsletter</a></h4>
+                  <p>The week’s announcements, club news and reminders.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EVENTS ============ -->
+    <section class="events" aria-labelledby="events-h">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="events-h">Events in October</h2>
+          <a class="text-link" href="https://hall.whps.org/calendar">Full calendar</a>
+        </div>
+        <div class="ev-grid">
+          <article class="ev">
+            <h3>Home football <span>3 games · 7:00 PM</span></h3>
+            <ul>
+              <li><time datetime="2026-10-02">Fri, Oct 2</time> vs. Enfield</li>
+              <li><time datetime="2026-10-09">Fri, Oct 9</time> vs. Bristol Central</li>
+              <li><time datetime="2026-10-23">Fri, Oct 23</time> vs. Wethersfield</li>
+            </ul>
+          </article>
+          <article class="ev">
+            <h3>Testing <span>3 dates</span></h3>
+            <ul>
+              <li><time datetime="2026-10-03">Sat, Oct 3</time> SAT</li>
+              <li><time datetime="2026-10-14">Wed, Oct 14</time> PSAT, grades 9–11</li>
+              <li><time datetime="2026-10-17">Sat, Oct 17</time> ACT, room E119</li>
+            </ul>
+          </article>
+          <article class="ev">
+            <h3>Arts <span>3 events</span></h3>
+            <ul>
+              <li><time datetime="2026-10-17">Sat, Oct 17</time> Gifts of Music Gala</li>
+              <li><time datetime="2026-10-22">Thu, Oct 22</time> Theater Historical Figure Day</li>
+              <li><time datetime="2026-10-28">Wed, Oct 28</time> Choir Midfest</li>
+            </ul>
+          </article>
+          <article class="ev">
+            <h3>Senior portraits <span>8 sessions</span></h3>
+            <ul>
+              <li><time datetime="2026-10-01">Oct 1</time>–<time datetime="2026-10-24">Oct 24</time></li>
+              <li>12:45–8:00 PM</li>
+              <li>Rooms E131 and E119</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT / PRIDE ============ -->
+    <section class="about" aria-labelledby="about-h">
+      <div class="wrap">
+        <h2 id="about-h" class="section-h-sm">About Hall</h2>
+        <dl class="facts">
+          <div><dt>State titles in the last 10 years</dt><dd>9</dd></div>
+          <div><dt>Languages spoken at home</dt><dd>37</dd></div>
+          <div><dt>AP participation</dt><dd>72%</dd></div>
+          <div><dt>US News &amp; World Report</dt><dd>Gold</dd></div>
+        </dl>
+        <p class="about-links"><a class="text-link" href="https://hall.whps.org/school-information">Visit &amp; enroll</a><a class="text-link" href="https://hall.whps.org/academics">Program of studies</a></p>
+      </div>
+    </section>
+
+    <!-- ============ HELP ============ -->
+    <section class="help" aria-labelledby="help-h">
+      <div class="wrap help-row">
+        <h2 id="help-h" class="section-h-sm">Support</h2>
+        <ul class="help-list">
+          <li><a href="https://hall.whps.org/school-counseling">School counseling</a><span>Academic planning, college and personal concerns</span></li>
+          <li><a href="https://hall.whps.org/support-services">Support services</a><span>Psychologists, social workers and nurses</span></li>
+          <li><a href="https://www.anonymousalerts.com/" target="_blank" rel="noopener">Anonymous Alerts<span class="sr-only"> (opens in new tab)</span></a><span>Report bullying or a safety concern privately</span></li>
+        </ul>
+      </div>
+    </section>
   </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-id">
+        <img src="../../shared/img/logo.png" alt="" width="751" height="900" data-a11y-keep>
+        <div>
+          <p class="footer-name">Hall High School</p>
+          <p>Home of the Warriors · <a href="https://www.whps.org" target="_blank" rel="noopener">West Hartford Public Schools<span class="sr-only"> (opens in new tab)</span></a></p>
+        </div>
+      </div>
+      <address class="footer-contact">
+        975 North Main Street, West Hartford, CT 06117<br>
+        Phone <a href="tel:+18602324561">860-232-4561</a>
+      </address>
+      <ul class="footer-links">
+        <li><a href="https://hall.whps.org/contact-us">Contact us</a></li>
+        <li><a href="https://hall.whps.org/attendance">Report an absence</a></li>
+        <li><a href="https://translate.google.com/translate?sl=en&amp;tl=es&amp;u=https://hall.whps.org" target="_blank" rel="noopener">Translate<span class="sr-only"> (opens in new tab)</span></a></li>
+        <li><a href="https://hall.whps.org/staff">Staff</a></li>
+      </ul>
+    </div>
+    <p class="wrap footer-sample">Design concept v13. Today’s schedule, lunch and announcements are sample data for Thursday, October 1, 2026; the Oct 9 early dismissal, PSAT details and posting dates are invented for illustration.</p>
+  </footer>
 </body>
 </html>
