@@ -2,7 +2,7 @@
 
 A running log of how the 25 versions came together: what I asked for, what I decided, what I dropped and why. Newest round at the bottom.
 
-**The plan:** go wide (v01–v14), then narrow by combining what works (v15–v20), then converge one refinement at a time until v25 is the final choice.
+**The plan:** go wide (v01–v14), then narrow by combining what works (v15–v20), then converge one refinement at a time until v25 is the final choice. *(Updated in Round 2: before going wide, I spent v06–v08 iterating on the three Round 1 ideas I liked most, so I could see whether they hold up.)*
 
 ---
 
@@ -62,12 +62,43 @@ Round 1 was intentionally **generic**. Before getting creative, I wanted a basel
 
 ---
 
-## Round 2 — Go wide (v06–v09)
+## Round 2 — Iterate on three favorites (v06–v08)
 
-_Next. Directions that only a Hall High page could have, built from objects of school life (departure board, corkboard, yearbook, planner, transit map of the building, etc.)._
+**Date:** Oct 1, 2026
 
-**Directions chosen:**
+### What I decided
+
+After looking at Round 1, I picked three ideas to push further instead of going wide right away. One new version per idea:
+
+| Round 1 idea I liked | Iteration | What I asked for |
+|---|---|---|
+| v01: the page is about **today** (informational) | **v06 Hour by Hour** | Be *more* informational about the current day and time, without pushing the quick links and other info aside. |
+| v04: **school spirit** around team sports | **v07 Warrior Season** | Keep tabs on teams and give sports more weight in the schedules, without crowding out other events and info. |
+| v03: a **smart search** to find things fast | **v08 Quick Access** | Search shouldn't be the whole page. Make quick-access links the priority and move search into a secondary help menu. |
+
+**New constraint for every version from here on:** a vertical, single-column layout made of stacked full-width bands. No bento grids. v01, v04 and v05 all leaned on card grids, which made them look like generic dashboards.
+
+I also allowed **made-up events** where they make the purpose of a design clear (after-school activities, game scores, team schedules). Each footer says which data is sample data.
+
+### What changed in each version
+
+- **v06 Hour by Hour (from v01).** The "now / next" panel becomes the hero. It shows a live clock, a progress bar for the school day ("X h Y min until dismissal"), minutes left in the current block, the lunch wave, and day counters (day 23 of 180, week 5, days until the next day off). The hero's tint shifts with the time of day. v01's horizontal bell bar becomes **one vertical timeline for the whole day**, from the building opening through classes and after school to the evening, with a "now" line. Below it is a day-by-day look at the rest of the week. *Without imposing:* the portals and quick links sit in a strip directly under the header, so they stay above the fold no matter how much time content there is.
+- **v07 Warrior Season (from v04).** It keeps v04's dark varsity identity, with the bento tiles and two-column split removed. New: a recent-scores strip, a "Tonight" game cell in the Today ribbon, and a single **"This week at Hall"** list. Games in that list get a team chip, a home/away badge and a rivalry flag, but they share the list with SAT day, portraits and schedule changes, and an All / Sports / School filter defaults to All. There are also **"Keep tabs on a team"** tabs for each fall sport (record, next game, last result, remaining schedule) and a Crosstown Classic (Hall vs. Conard) countdown band. The calm help panel stays.
+- **v08 Quick Access (from v03).** The order is flipped: the hero is now **quick-access links** (portals, bell schedule, lunch, calendar, absence, athletics), followed by link lists for each audience and an **A–Z index** of every page. v03's plain-language search (with synonyms, so "sick" finds "Report an absence") moves into a **"Help · Ask Hall" drawer**. You open it from the header, from a quiet "Can't find it?" line, or with `/` or `?`. The drawer also has common questions and the main office number.
+
+### How I used Claude
+
+- I chose the three directions and the constraints: what each iteration should improve, vertical layout with no bento, sample events allowed. Claude built the three pages in parallel from a brief for each one, reusing the real content from v01, v04 and v03.
+- Claude came up with the specific made-up events (after-school clubs, game scores, team records, Spirit Week).
+
+<!-- My verdicts on v06–v08: keep / drop / steal, and why -->
 
 **Verdicts (keep / drop / steal, and why):**
 
 **What I learned:**
+
+---
+
+## Round 3 — Go wide (next)
+
+_Planned: directions only a Hall High page could have, built from objects of school life (departure board, corkboard, yearbook, planner, transit map of the building, etc.)._

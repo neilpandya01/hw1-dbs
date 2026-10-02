@@ -55,7 +55,7 @@ Repository layout:
 
 ## The 25 Versions
 
-Each version is a self-contained static page (HTML + CSS, with minimal or no JavaScript) built around one **niche theme or design concept**. Every version covers the same core content from the original school site, for example:
+Each version is a self-contained static page (HTML + CSS, with minimal or no JavaScript) built around one **niche theme or design concept**. From v06 on, pages use a vertical, single-column layout (stacked full-width bands, no bento grids). Every version covers the same core content from the original school site, for example:
 
 - School name, logo, and hero section
 - Announcements / news
@@ -70,7 +70,7 @@ Every built version loads `shared/a11y.css` and `shared/a11y.js`, which add a la
 
 What changes between versions is the design language: layout, typography, color palette, imagery, and overall tone. Themes will be documented here as they are built.
 
-Today's schedule, lunch and some notices are **sample data** (fixed to Thu Oct 1, 2026); events, stats, mission and contact details come from hall.whps.org. Some sub-page and portal URLs are guesses or `#`.
+Today's schedule, lunch and some notices are **sample data** (fixed to Thu Oct 1, 2026); events, stats, mission and contact details come from hall.whps.org. From v06 on, some events are invented to show what a design is for (after-school activities in v06; scores, team schedules, Spirit Week and the Hall vs. Conard game in v07). Each page's footer says what is sample data. Some sub-page and portal URLs are guesses or `#`.
 
 | #  | Theme | Idea it tests | Status |
 |----|-------|---------------|--------|
@@ -79,7 +79,10 @@ Today's schedule, lunch and some notices are **sample data** (fixed to Thu Oct 1
 | 03 | Ask Hall | Search replaces the nav: plain-language search with synonyms ("sick" → report an absence), audience tabs, notices inbox with filters, Atkinson Hyperlegible throughout. | Built |
 | 04 | Warrior Varsity | Dark, bold school spirit: condensed caps, scoreboard-style Today ribbon and pride stats, grouped game-day board, deliberately calm help panel. | Built |
 | 05 | Portal Sidebar | App layout: fixed navy sidebar (no top bar), bento dashboard with live bell timeline, month calendar, light/dark theme toggle. | Built |
-| 06–25 | _TBD_ | | Blank placeholder page |
+| 06 | Hour by Hour | Iterates v01, more informational about *today*: live clock and day-progress bar, minutes left in the block, day/week counters and next day off, a time-of-day tint, one vertical timeline from 6:45 AM to evening (classes, after school, tonight), and the rest of the week day by day. Quick links sit in a strip right under the header so the time content never pushes them down. `?t=HH:MM` previews a time. | Built |
+| 07 | Warrior Season | Iterates v04, more school spirit: recent-scores strip, a "Tonight" game in the Today ribbon, one week schedule where games are emphasized (team chip, home/away, rivalry flag) but sit alongside tests, arts and schedule notes, with an All / Sports / School filter; "Keep tabs on a team" tabs per fall sport; Crosstown Classic countdown. | Built |
+| 08 | Quick Access | Iterates v03, links first: a quick-access hero, audience link lists and an A–Z index; v03's plain-language search becomes a secondary "Help · Ask Hall" drawer (also `/` or `?`) with common questions and the main office number. | Built |
+| 09–25 | _TBD_ | | Blank placeholder page |
 
 ## Tech Stack
 
@@ -107,7 +110,7 @@ then visit http://localhost:8000.
 
 - [x] Set up the repository structure and gallery page skeleton (blank gallery + 25 blank landing pages with back arrow)
 - [x] Gather the core content from hall.whps.org
-- [ ] Build the 25 versions (5 / 25 done)
+- [ ] Build the 25 versions (8 / 25 done)
 - [x] Add mini previews to the gallery grid
 - [ ] Make the gallery and every version responsive
 - [ ] Deploy to Vercel

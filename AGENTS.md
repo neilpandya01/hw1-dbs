@@ -19,6 +19,12 @@ Redesign the landing page of **Hall High School** (West Hartford, CT), the high 
 5. **Know where to go for help:** counseling, support services, and Anonymous Alerts, shown once and calmly.
 6. **Contact the school:** 975 North Main Street, West Hartford, CT 06117 · 860-232-4561.
 
+## Directions so far
+
+- **Favorites from Round 1:** today-centric info (v01 → v06), sports and school spirit (v04 → v07), and fast finding with quick links first and search as secondary help (v03 → v08).
+- **Layout rule from v06 on:** vertical, single-column stacked bands. No bento grids.
+- Invented sample events are fine if they show what a design is for. Each footer says what is sample data.
+
 ## Working agreement
 
 - The user directs the design decisions. Propose options; don't decide final directions alone.

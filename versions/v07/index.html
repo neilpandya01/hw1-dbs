@@ -3,15 +3,928 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hall High Redesign — v07</title>
+  <title>Hall High School — v07 Warrior Season</title>
+  <meta name="description" content="Hall High School, West Hartford, CT — Home of the Warriors. Today's schedule, this week's games and events, and every fall team in one place.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@500;600;700&display=swap">
   <link rel="stylesheet" href="../../shared/back.css">
+  <link rel="stylesheet" href="../../shared/a11y.css">
   <link rel="stylesheet" href="style.css">
+  <script src="../../shared/a11y.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="back-link" href="../../index.html" aria-label="Back to gallery">&larr; Gallery</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <main>
-    <!-- v07 landing page goes here -->
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <img src="../../shared/img/logo.png" alt="" width="751" height="900" data-a11y-keep>
+        <span class="brand-text">
+          <span class="brand-name">Hall High School</span>
+          <span class="brand-sub">Warriors</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main">
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <span class="menu-label">Menu</span>
+        </button>
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li><a href="https://hall.whps.org/academics">Academics</a></li>
+            <li><a href="https://hall.whps.org/athletics">Athletics</a></li>
+            <li><a href="https://hall.whps.org/arts">Arts</a></li>
+            <li><a href="https://hall.whps.org/school-counseling">Counseling</a></li>
+            <li><a href="https://hall.whps.org/about">About</a></li>
+          </ul>
+          <ul class="nav-portals" aria-label="Student portals">
+            <li><a href="https://westhartford.powerschool.com" target="_blank" rel="noopener">PowerSchool<span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://whps.schoology.com" target="_blank" rel="noopener">Schoology<span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://student.naviance.com/hallhs" target="_blank" rel="noopener">Naviance<span class="sr-only"> (opens in new tab)</span></a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="header-tools">
+        <button type="button" class="tool-btn a11y-btn" data-a11y-toggle>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="4" r="2.2" fill="currentColor"/><path d="M4 7.5l8 1.6 8-1.6M12 9.1v5.4m0 0l-3.6 7m3.6-7l3.6 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="tool-label">Accessibility</span>
+        </button>
+        <div class="portals">
+          <button type="button" class="tool-btn portals-btn" aria-expanded="false" aria-controls="portal-menu">
+            <span>Portals</span>
+            <svg class="chev" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="portal-menu" id="portal-menu">
+            <li><a href="https://westhartford.powerschool.com" target="_blank" rel="noopener"><strong>PowerSchool</strong><span>Grades &amp; attendance</span><span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://whps.schoology.com" target="_blank" rel="noopener"><strong>Schoology</strong><span>Classes &amp; assignments</span><span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://student.naviance.com/hallhs" target="_blank" rel="noopener"><strong>Naviance</strong><span>College &amp; career planning</span><span class="sr-only"> (opens in new tab)</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============ MASTHEAD + TODAY RIBBON ============ -->
+    <section class="today" id="top" aria-labelledby="site-title">
+      <div class="today-stripes" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="masthead">
+          <div>
+            <p class="kicker"><span>West Hartford, CT</span> <span aria-hidden="true">·</span> <span>Home of the Warriors</span></p>
+            <h1 id="site-title">Hall High School</h1>
+          </div>
+          <p class="season-tag"><span class="season-label">Fall 2026</span> <span class="season-week">Week 4 of the season</span></p>
+        </div>
+
+        <h2 class="sr-only" id="today-title">Today, Thursday, October 1</h2>
+        <div class="ribbon">
+          <p class="cell cell-date">
+            <span class="cell-label">Today</span>
+            <span class="cell-value">Thu, Oct 1</span>
+          </p>
+          <p class="cell cell-day">
+            <span class="cell-label">Schedule</span>
+            <span class="cell-value day-pill">Even day</span>
+          </p>
+          <p class="cell">
+            <span class="cell-label">Regular day</span>
+            <span class="cell-value"><time datetime="07:30">7:30</time>–<time datetime="14:10">2:10</time></span>
+          </p>
+          <p class="cell cell-lunch">
+            <span class="cell-label">Lunch</span>
+            <span class="cell-value cell-text">Chicken teriyaki rice bowl</span>
+          </p>
+          <p class="cell cell-tonight">
+            <span class="cell-label"><span class="live-dot" aria-hidden="true"></span>Tonight</span>
+            <a class="cell-value cell-text tonight-link" href="#week">Girls volleyball <span class="vs">vs.</span> Conard</a>
+            <span class="tonight-meta"><time datetime="2026-10-01T17:30">5:30 PM</time> · Main gym <span class="ha ha-home">Home</span></span>
+          </p>
+          <div class="cell cell-actions">
+            <button type="button" class="ribbon-btn" aria-expanded="false" aria-controls="today-detail" data-disclosure>
+              <span>Bell schedule &amp; menu</span>
+              <svg class="chev" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <ul class="cell cell-portals" aria-label="Portals">
+            <li><a href="https://westhartford.powerschool.com" target="_blank" rel="noopener">PowerSchool<span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://whps.schoology.com" target="_blank" rel="noopener">Schoology<span class="sr-only"> (opens in new tab)</span></a></li>
+            <li><a href="https://student.naviance.com/hallhs" target="_blank" rel="noopener">Naviance<span class="sr-only"> (opens in new tab)</span></a></li>
+          </ul>
+        </div>
+
+        <div class="today-detail" id="today-detail">
+          <div class="bell">
+            <h3>Even-day bell schedule</h3>
+            <table>
+              <caption class="sr-only">Even-day bell schedule for Thursday, October 1</caption>
+              <thead><tr><th scope="col">Block</th><th scope="col">Time</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Block 2</th><td>7:30–8:52</td></tr>
+                <tr><th scope="row">Block 4</th><td>8:58–10:20</td></tr>
+                <tr><th scope="row">Advisory</th><td>10:26–10:46</td></tr>
+                <tr><th scope="row">Block 6 <span class="sub">with lunch</span></th><td>10:52–12:44</td></tr>
+                <tr class="wave"><th scope="row">Lunch A</th><td>10:52–11:20</td></tr>
+                <tr class="wave"><th scope="row">Lunch B</th><td>11:24–11:52</td></tr>
+                <tr class="wave"><th scope="row">Lunch C</th><td>11:56–12:24</td></tr>
+                <tr><th scope="row">Block 8</th><td>12:50–2:10</td></tr>
+              </tbody>
+            </table>
+            <a class="text-link" href="https://hall.whps.org/school-information/bell">All bell schedules</a>
+          </div>
+          <div class="menu">
+            <h3>Lunch today</h3>
+            <ul>
+              <li>Chicken teriyaki rice bowl</li>
+              <li><span class="tag">Vegetarian</span> Black bean burrito</li>
+              <li>Salad bar &amp; fruit</li>
+            </ul>
+            <a class="text-link" href="https://hall.whps.org/lunch">Full lunch menu</a>
+          </div>
+        </div>
+
+        <nav class="quick-links" aria-label="Quick links">
+          <ul>
+            <li><a href="https://hall.whps.org/attendance">Report an absence</a></li>
+            <li><a href="https://hall.whps.org/calendar">Calendar</a></li>
+            <li><a href="https://hall.whps.org/school-counseling">Counseling</a></li>
+            <li><a href="https://hall.whps.org/library">Library</a></li>
+            <li><a href="https://hall.whps.org/directory">Directory</a></li>
+            <li><a href="https://translate.google.com/translate?sl=en&amp;tl=es&amp;u=https://hall.whps.org" target="_blank" rel="noopener">Translate<span class="sr-only"> (opens in new tab)</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ SCORES STRIP ============ -->
+    <section class="scores" aria-labelledby="scores-title">
+      <div class="wrap scores-inner">
+        <h2 class="scores-title" id="scores-title">Latest <span>finals</span></h2>
+        <div class="score-scroller" tabindex="0" role="region" aria-labelledby="scores-title">
+          <ul class="score-list">
+            <li class="score is-w">
+              <span class="badge"><span aria-hidden="true">W</span><span class="sr-only">Win</span></span>
+              <span class="score-body"><span class="score-team">Football</span><span class="score-line"><b>28–14</b> <span class="vs">vs.</span> Southington</span></span>
+              <time class="score-date" datetime="2026-09-25">Sep 25</time>
+            </li>
+            <li class="score is-w">
+              <span class="badge"><span aria-hidden="true">W</span><span class="sr-only">Win</span></span>
+              <span class="score-body"><span class="score-team">Field hockey</span><span class="score-line"><b>3–0</b> <span class="vs">vs.</span> Glastonbury</span></span>
+              <time class="score-date" datetime="2026-09-30">Sep 30</time>
+            </li>
+            <li class="score is-w">
+              <span class="badge"><span aria-hidden="true">W</span><span class="sr-only">Win</span></span>
+              <span class="score-body"><span class="score-team">Volleyball</span><span class="score-line"><b>3–1</b> <span class="vs">vs.</span> Newington</span></span>
+              <time class="score-date" datetime="2026-09-29">Sep 29</time>
+            </li>
+            <li class="score is-t">
+              <span class="badge"><span aria-hidden="true">T</span><span class="sr-only">Tie</span></span>
+              <span class="score-body"><span class="score-team">Boys soccer</span><span class="score-line"><b>1–1</b> <span class="vs">@</span> Simsbury</span></span>
+              <time class="score-date" datetime="2026-09-29">Sep 29</time>
+            </li>
+            <li class="score is-w">
+              <span class="badge"><span aria-hidden="true">W</span><span class="sr-only">Win</span></span>
+              <span class="score-body"><span class="score-team">Girls soccer</span><span class="score-line"><b>2–0</b> <span class="vs">vs.</span> Simsbury</span></span>
+              <time class="score-date" datetime="2026-09-29">Sep 29</time>
+            </li>
+            <li class="score is-l">
+              <span class="badge"><span aria-hidden="true">L</span><span class="sr-only">Loss</span></span>
+              <span class="score-body"><span class="score-team">Girls swim</span><span class="score-line"><b>88–94</b> <span class="vs">@</span> Farmington</span></span>
+              <time class="score-date" datetime="2026-09-28">Sep 28</time>
+            </li>
+            <li class="score is-p">
+              <span class="badge"><span aria-hidden="true">2</span><span class="sr-only">Second place</span></span>
+              <span class="score-body"><span class="score-team">Boys XC</span><span class="score-line"><b>2nd</b> at CCC West quad</span></span>
+              <time class="score-date" datetime="2026-09-26">Sep 26</time>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THIS WEEK ============ -->
+    <section class="week" id="week" aria-labelledby="week-title">
+      <div class="wrap">
+        <div class="section-head row">
+          <div>
+            <p class="eyebrow">Thu Oct 1 – Wed Oct 7</p>
+            <h2 id="week-title">This week at Hall</h2>
+          </div>
+          <div class="filter" role="group" aria-label="Show events this week" data-filter-for="week-list">
+            <button type="button" aria-pressed="true" data-show="all">All</button>
+            <button type="button" aria-pressed="false" data-show="sports">Sports</button>
+            <button type="button" aria-pressed="false" data-show="school">School &amp; arts</button>
+          </div>
+        </div>
+        <p class="filter-status sr-only" aria-live="polite" id="week-list-status"></p>
+
+        <ol class="days" id="week-list">
+          <li class="day is-today">
+            <h3 class="day-head"><time datetime="2026-10-01"><b>Thu</b> Oct 1</time><span class="day-flag">Today · Even day</span></h3>
+            <ul class="evs">
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">12:45 PM</span>
+                <div class="ev-body">
+                  <p class="ev-title">Senior portraits begin</p>
+                  <p class="ev-meta">Indoor only · Rooms E131/E119 · Sessions through Oct 24</p>
+                </div>
+                <span class="ev-tag">Seniors</span>
+              </li>
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">2:20 PM</span>
+                <div class="ev-body">
+                  <p class="ev-title">Model UN interest meeting</p>
+                  <p class="ev-meta">Room S210 · All grades welcome</p>
+                </div>
+                <span class="ev-tag">Clubs</span>
+              </li>
+              <li class="ev ev-sport" data-kind="sports">
+                <span class="ev-time">3:45 PM</span>
+                <div class="ev-body">
+                  <p class="ev-title"><span class="team">Field hockey</span> <span class="vs">@</span> Simsbury</p>
+                  <p class="ev-meta">Simsbury High School</p>
+                </div>
+                <span class="ha ha-away">Away</span>
+              </li>
+              <li class="ev ev-sport is-home is-rival" data-kind="sports">
+                <span class="ev-time">5:30 PM</span>
+                <div class="ev-body">
+                  <p class="ev-title"><span class="team">Girls volleyball</span> <span class="vs">vs.</span> Conard</p>
+                  <p class="ev-meta">Main gym <span class="rival">Crosstown rivalry</span></p>
+                </div>
+                <span class="ha ha-home">Home</span>
+              </li>
+            </ul>
+          </li>
+
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-02"><b>Fri</b> Oct 2</time></h3>
+            <ul class="evs">
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">All day</span>
+                <div class="ev-body">
+                  <p class="ev-title">PSAT reminder: check your testing room</p>
+                  <p class="ev-meta">Grades 9–11 test Wed, Oct 14 · Room lists in Schoology</p>
+                </div>
+                <span class="ev-tag">Testing</span>
+              </li>
+              <li class="ev ev-sport" data-kind="sports">
+                <span class="ev-time">3:45 PM</span>
+                <div class="ev-body">
+                  <p class="ev-title"><span class="team">Girls soccer</span> <span class="vs">@</span> Northwest Catholic</p>
+                  <p class="ev-meta">Northwest Catholic, West Hartford</p>
+                </div>
+                <span class="ha ha-away">Away</span>
+              </li>
+              <li class="ev ev-sport is-home is-feature" data-kind="sports">
+                <span class="ev-time">7:00 PM</span>
+                <div class="ev-body">
+                  <p class="ev-title"><span class="team">Football</span> <span class="vs">vs.</span> Enfield</p>
+                  <p class="ev-meta">Hall field · Friday night lights</p>
+                </div>
+                <span class="ha ha-home">Home</span>
+              </li>
+            </ul>
+          </li>
+
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-03"><b>Sat</b> Oct 3</time></h3>
+            <ul class="evs">
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">7:45 AM</span>
+                <div class="ev-body">
+                  <p class="ev-title">SAT weekend testing</p>
+                  <p class="ev-meta">Check-in 7:45 AM · Bring admission ticket and photo ID</p>
+                </div>
+                <span class="ev-tag">Testing</span>
+              </li>
+              <li class="ev ev-sport" data-kind="sports">
+                <span class="ev-time">9:00 AM</span>
+                <div class="ev-body">
+                  <p class="ev-title"><span class="team">Boys &amp; girls cross country</span> <span class="vs">@</span> Wickham Park Invitational</p>
+                  <p class="ev-meta">Wickham Park, Manchester</p>
+                </div>
+                <span class="ha ha-away">Away</span>
+              </li>
+              <li class="ev ev-sport" data-kind="sports">
+                <span class="ev-time">10:00 AM</span>
+                <div class="ev-body">
+                  <p class="ev-title"><span class="team">Girls swim &amp; dive</span> <span class="vs">@</span> Glastonbury</p>
+                  <p class="ev-meta">Glastonbury High School pool</p>
+                </div>
+                <span class="ha ha-away">Away</span>
+              </li>
+            </ul>
+          </li>
+
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-05"><b>Mon</b> Oct 5</time><span class="day-flag">Even day</span></h3>
+            <ul class="evs">
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">2:20 PM</span>
+                <div class="ev-body">
+                  <p class="ev-title">Fall play auditions: <cite>Into the Woods</cite></p>
+                  <p class="ev-meta">Auditorium · Sign up outside the drama room</p>
+                </div>
+                <span class="ev-tag">Arts</span>
+              </li>
+              <li class="ev ev-sport is-home" data-kind="sports">
+                <span class="ev-time">3:45 PM</span>
+                <div class="ev-body">
+                  <p class="ev-title"><span class="team">Field hockey</span> <span class="vs">vs.</span> Farmington</p>
+                  <p class="ev-meta">Hall turf field</p>
+                </div>
+                <span class="ha ha-home">Home</span>
+              </li>
+              <li class="ev ev-sport is-home" data-kind="sports">
+                <span class="ev-time">6:00 PM</span>
+                <div class="ev-body">
+                  <p class="ev-title"><span class="team">Boys soccer</span> <span class="vs">vs.</span> Avon</p>
+                  <p class="ev-meta">Hall turf field</p>
+                </div>
+                <span class="ha ha-home">Home</span>
+              </li>
+            </ul>
+          </li>
+
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-06"><b>Tue</b> Oct 6</time><span class="day-flag">Odd day</span></h3>
+            <ul class="evs">
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">Block 4</span>
+                <div class="ev-body">
+                  <p class="ev-title">College visit: UConn admissions</p>
+                  <p class="ev-meta">Counseling center · Sign up in Naviance</p>
+                </div>
+                <span class="ev-tag">Counseling</span>
+              </li>
+              <li class="ev ev-sport" data-kind="sports">
+                <span class="ev-time">5:30 PM</span>
+                <div class="ev-body">
+                  <p class="ev-title"><span class="team">Girls volleyball</span> <span class="vs">@</span> Southington</p>
+                  <p class="ev-meta">Southington High School</p>
+                </div>
+                <span class="ha ha-away">Away</span>
+              </li>
+              <li class="ev ev-sport is-home is-rival" data-kind="sports">
+                <span class="ev-time">7:00 PM</span>
+                <div class="ev-body">
+                  <p class="ev-title"><span class="team">Girls soccer</span> <span class="vs">vs.</span> Conard</p>
+                  <p class="ev-meta">Hall turf field <span class="rival">Crosstown rivalry</span></p>
+                </div>
+                <span class="ha ha-home">Home</span>
+              </li>
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">7:00 PM</span>
+                <div class="ev-body">
+                  <p class="ev-title">PTO meeting</p>
+                  <p class="ev-meta">Library · Families welcome</p>
+                </div>
+                <span class="ev-tag">Families</span>
+              </li>
+            </ul>
+          </li>
+
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-07"><b>Wed</b> Oct 7</time><span class="day-flag">Odd schedule</span></h3>
+            <ul class="evs">
+              <li class="ev ev-school ev-note" data-kind="school">
+                <span class="ev-time">All day</span>
+                <div class="ev-body">
+                  <p class="ev-title">Odd-schedule Wednesday</p>
+                  <p class="ev-meta">Follow the odd-day bell schedule · Again Wed, Oct 28</p>
+                </div>
+                <span class="ev-tag">Schedule</span>
+              </li>
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">2:20 PM</span>
+                <div class="ev-body">
+                  <p class="ev-title">Art club mural workshop</p>
+                  <p class="ev-meta">Room A104 · Supplies provided</p>
+                </div>
+                <span class="ev-tag">Arts</span>
+              </li>
+              <li class="ev ev-sport" data-kind="sports">
+                <span class="ev-time">3:45 PM</span>
+                <div class="ev-body">
+                  <p class="ev-title"><span class="team">Field hockey</span> <span class="vs">@</span> Southington</p>
+                  <p class="ev-meta">Southington High School</p>
+                </div>
+                <span class="ha ha-away">Away</span>
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <p class="list-foot"><a class="text-link" href="https://hall.whps.org/calendar">Full school calendar</a></p>
+      </div>
+    </section>
+
+    <!-- ============ KEEP TABS ON A TEAM ============ -->
+    <section class="teams" id="teams" aria-labelledby="teams-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Fall sports</p>
+          <h2 id="teams-title">Keep tabs on a team</h2>
+        </div>
+
+        <div class="team-tabs" role="tablist" aria-label="Fall teams">
+          <button type="button" role="tab" id="tab-football" aria-controls="team-football" aria-selected="true">Football</button>
+          <button type="button" role="tab" id="tab-boys-soccer" aria-controls="team-boys-soccer" aria-selected="false" tabindex="-1">Boys Soccer</button>
+          <button type="button" role="tab" id="tab-girls-soccer" aria-controls="team-girls-soccer" aria-selected="false" tabindex="-1">Girls Soccer</button>
+          <button type="button" role="tab" id="tab-field-hockey" aria-controls="team-field-hockey" aria-selected="false" tabindex="-1">Field Hockey</button>
+          <button type="button" role="tab" id="tab-volleyball" aria-controls="team-volleyball" aria-selected="false" tabindex="-1">Volleyball <span class="tab-live">Tonight</span></button>
+          <button type="button" role="tab" id="tab-xc" aria-controls="team-xc" aria-selected="false" tabindex="-1">Cross Country</button>
+          <button type="button" role="tab" id="tab-swim" aria-controls="team-swim" aria-selected="false" tabindex="-1">Swim &amp; Dive</button>
+        </div>
+
+        <div class="team-panels">
+          <!-- Football -->
+          <section class="team-panel" id="team-football" aria-labelledby="h-football">
+            <h3 class="team-name" id="h-football">Football</h3>
+            <dl class="team-stats">
+              <div><dt>Record</dt><dd class="big">3–1</dd></div>
+              <div><dt>CCC standing</dt><dd>2nd, CCC West</dd></div>
+              <div><dt>Next game</dt><dd>Fri Oct 2 <span class="vs">vs.</span> Enfield · 7:00 PM <span class="ha ha-home">Home</span></dd></div>
+              <div><dt>Last result</dt><dd><span class="mini-badge is-w">W</span> 28–14 <span class="vs">vs.</span> Southington</dd></div>
+            </dl>
+            <h4 class="sched-h">Remaining schedule</h4>
+            <table class="sched">
+              <caption class="sr-only">Football remaining schedule</caption>
+              <thead><tr><th scope="col">Date</th><th scope="col">Opponent</th><th scope="col">Home / Away</th><th scope="col">Time</th></tr></thead>
+              <tbody>
+                <tr><td>Fri Oct 2</td><td>vs. Enfield</td><td><abbr title="Home">H</abbr></td><td>7:00 PM</td></tr>
+                <tr><td>Fri Oct 9</td><td>vs. Bristol Central</td><td><abbr title="Home">H</abbr></td><td>7:00 PM</td></tr>
+                <tr class="is-rival"><td>Fri Oct 16</td><td>@ Conard <span class="rival">Crosstown Classic</span></td><td><abbr title="Away">A</abbr></td><td>7:00 PM</td></tr>
+                <tr><td>Fri Oct 23</td><td>vs. Wethersfield</td><td><abbr title="Home">H</abbr></td><td>7:00 PM</td></tr>
+                <tr><td>Fri Oct 30</td><td>@ Newington</td><td><abbr title="Away">A</abbr></td><td>7:00 PM</td></tr>
+              </tbody>
+            </table>
+            <a class="text-link" href="https://hall.whps.org/athletics">Full schedule &amp; roster</a>
+          </section>
+
+          <!-- Boys soccer -->
+          <section class="team-panel" id="team-boys-soccer" aria-labelledby="h-boys-soccer">
+            <h3 class="team-name" id="h-boys-soccer">Boys Soccer</h3>
+            <dl class="team-stats">
+              <div><dt>Record</dt><dd class="big">4–1–2</dd></div>
+              <div><dt>CCC standing</dt><dd>3rd, CCC West</dd></div>
+              <div><dt>Next game</dt><dd>Mon Oct 5 <span class="vs">vs.</span> Avon · 6:00 PM <span class="ha ha-home">Home</span></dd></div>
+              <div><dt>Last result</dt><dd><span class="mini-badge is-t">T</span> 1–1 <span class="vs">@</span> Simsbury</dd></div>
+            </dl>
+            <h4 class="sched-h">Remaining schedule</h4>
+            <table class="sched">
+              <caption class="sr-only">Boys soccer remaining schedule</caption>
+              <thead><tr><th scope="col">Date</th><th scope="col">Opponent</th><th scope="col">Home / Away</th><th scope="col">Time</th></tr></thead>
+              <tbody>
+                <tr><td>Mon Oct 5</td><td>vs. Avon</td><td><abbr title="Home">H</abbr></td><td>6:00 PM</td></tr>
+                <tr><td>Thu Oct 8</td><td>@ Farmington</td><td><abbr title="Away">A</abbr></td><td>3:45 PM</td></tr>
+                <tr class="is-rival"><td>Tue Oct 13</td><td>vs. Conard <span class="rival">Crosstown</span></td><td><abbr title="Home">H</abbr></td><td>7:00 PM</td></tr>
+                <tr><td>Tue Oct 20</td><td>@ Newington</td><td><abbr title="Away">A</abbr></td><td>3:45 PM</td></tr>
+              </tbody>
+            </table>
+            <a class="text-link" href="https://hall.whps.org/athletics">Full schedule &amp; roster</a>
+          </section>
+
+          <!-- Girls soccer -->
+          <section class="team-panel" id="team-girls-soccer" aria-labelledby="h-girls-soccer">
+            <h3 class="team-name" id="h-girls-soccer">Girls Soccer</h3>
+            <dl class="team-stats">
+              <div><dt>Record</dt><dd class="big">5–1</dd></div>
+              <div><dt>CCC standing</dt><dd>1st, CCC West</dd></div>
+              <div><dt>Next game</dt><dd>Fri Oct 2 <span class="vs">@</span> Northwest Catholic · 3:45 PM <span class="ha ha-away">Away</span></dd></div>
+              <div><dt>Last result</dt><dd><span class="mini-badge is-w">W</span> 2–0 <span class="vs">vs.</span> Simsbury</dd></div>
+            </dl>
+            <h4 class="sched-h">Remaining schedule</h4>
+            <table class="sched">
+              <caption class="sr-only">Girls soccer remaining schedule</caption>
+              <thead><tr><th scope="col">Date</th><th scope="col">Opponent</th><th scope="col">Home / Away</th><th scope="col">Time</th></tr></thead>
+              <tbody>
+                <tr><td>Fri Oct 2</td><td>@ Northwest Catholic</td><td><abbr title="Away">A</abbr></td><td>3:45 PM</td></tr>
+                <tr class="is-rival"><td>Tue Oct 6</td><td>vs. Conard <span class="rival">Crosstown</span></td><td><abbr title="Home">H</abbr></td><td>7:00 PM</td></tr>
+                <tr><td>Fri Oct 9</td><td>@ Avon</td><td><abbr title="Away">A</abbr></td><td>3:45 PM</td></tr>
+                <tr><td>Wed Oct 14</td><td>vs. Farmington</td><td><abbr title="Home">H</abbr></td><td>6:00 PM</td></tr>
+              </tbody>
+            </table>
+            <a class="text-link" href="https://hall.whps.org/athletics">Full schedule &amp; roster</a>
+          </section>
+
+          <!-- Field hockey -->
+          <section class="team-panel" id="team-field-hockey" aria-labelledby="h-field-hockey">
+            <h3 class="team-name" id="h-field-hockey">Field Hockey</h3>
+            <dl class="team-stats">
+              <div><dt>Record</dt><dd class="big">5–0</dd></div>
+              <div><dt>CCC standing</dt><dd>1st, CCC</dd></div>
+              <div><dt>Next game</dt><dd>Today, Oct 1 <span class="vs">@</span> Simsbury · 3:45 PM <span class="ha ha-away">Away</span></dd></div>
+              <div><dt>Last result</dt><dd><span class="mini-badge is-w">W</span> 3–0 <span class="vs">vs.</span> Glastonbury</dd></div>
+            </dl>
+            <h4 class="sched-h">Remaining schedule</h4>
+            <table class="sched">
+              <caption class="sr-only">Field hockey remaining schedule</caption>
+              <thead><tr><th scope="col">Date</th><th scope="col">Opponent</th><th scope="col">Home / Away</th><th scope="col">Time</th></tr></thead>
+              <tbody>
+                <tr><td>Thu Oct 1</td><td>@ Simsbury</td><td><abbr title="Away">A</abbr></td><td>3:45 PM</td></tr>
+                <tr><td>Mon Oct 5</td><td>vs. Farmington</td><td><abbr title="Home">H</abbr></td><td>3:45 PM</td></tr>
+                <tr><td>Wed Oct 7</td><td>@ Southington</td><td><abbr title="Away">A</abbr></td><td>3:45 PM</td></tr>
+                <tr class="is-rival"><td>Tue Oct 13</td><td>vs. Conard <span class="rival">Crosstown</span></td><td><abbr title="Home">H</abbr></td><td>3:45 PM</td></tr>
+              </tbody>
+            </table>
+            <a class="text-link" href="https://hall.whps.org/athletics">Full schedule &amp; roster</a>
+          </section>
+
+          <!-- Volleyball -->
+          <section class="team-panel" id="team-volleyball" aria-labelledby="h-volleyball">
+            <h3 class="team-name" id="h-volleyball">Girls Volleyball</h3>
+            <dl class="team-stats">
+              <div><dt>Record</dt><dd class="big">4–1</dd></div>
+              <div><dt>CCC standing</dt><dd>2nd, CCC West</dd></div>
+              <div><dt>Next game</dt><dd>Tonight <span class="vs">vs.</span> Conard · 5:30 PM <span class="ha ha-home">Home</span></dd></div>
+              <div><dt>Last result</dt><dd><span class="mini-badge is-w">W</span> 3–1 <span class="vs">vs.</span> Newington</dd></div>
+            </dl>
+            <h4 class="sched-h">Remaining schedule</h4>
+            <table class="sched">
+              <caption class="sr-only">Girls volleyball remaining schedule</caption>
+              <thead><tr><th scope="col">Date</th><th scope="col">Opponent</th><th scope="col">Home / Away</th><th scope="col">Time</th></tr></thead>
+              <tbody>
+                <tr class="is-rival"><td>Thu Oct 1</td><td>vs. Conard <span class="rival">Crosstown</span></td><td><abbr title="Home">H</abbr></td><td>5:30 PM</td></tr>
+                <tr><td>Tue Oct 6</td><td>@ Southington</td><td><abbr title="Away">A</abbr></td><td>5:30 PM</td></tr>
+                <tr><td>Thu Oct 8</td><td>vs. Enfield</td><td><abbr title="Home">H</abbr></td><td>5:30 PM</td></tr>
+                <tr><td>Tue Oct 13</td><td>@ Glastonbury</td><td><abbr title="Away">A</abbr></td><td>5:30 PM</td></tr>
+              </tbody>
+            </table>
+            <a class="text-link" href="https://hall.whps.org/athletics">Full schedule &amp; roster</a>
+          </section>
+
+          <!-- Cross country -->
+          <section class="team-panel" id="team-xc" aria-labelledby="h-xc">
+            <h3 class="team-name" id="h-xc">Boys &amp; Girls Cross Country</h3>
+            <dl class="team-stats">
+              <div><dt>Record</dt><dd class="big">6–2 <span class="split-rec">/ 7–1</span></dd><dd class="note-dd">Boys / girls dual meets</dd></div>
+              <div><dt>CCC standing</dt><dd>Boys 2nd, girls 1st at CCC West quad</dd></div>
+              <div><dt>Next meet</dt><dd>Sat Oct 3 · Wickham Park Invitational · 9:00 AM <span class="ha ha-away">Away</span></dd></div>
+              <div><dt>Last result</dt><dd><span class="mini-badge is-p">2nd</span> Boys at CCC West quad</dd></div>
+            </dl>
+            <h4 class="sched-h">Remaining schedule</h4>
+            <table class="sched">
+              <caption class="sr-only">Cross country remaining schedule</caption>
+              <thead><tr><th scope="col">Date</th><th scope="col">Meet</th><th scope="col">Home / Away</th><th scope="col">Time</th></tr></thead>
+              <tbody>
+                <tr><td>Sat Oct 3</td><td>Wickham Park Invitational</td><td><abbr title="Away">A</abbr></td><td>9:00 AM</td></tr>
+                <tr><td>Tue Oct 13</td><td>CCC West quad meet</td><td><abbr title="Home">H</abbr></td><td>3:45 PM</td></tr>
+                <tr><td>Sat Oct 24</td><td>CCC Championship</td><td><abbr title="Away">A</abbr></td><td>10:00 AM</td></tr>
+                <tr><td>Fri Oct 30</td><td>CIAC Class LL State Meet</td><td><abbr title="Away">A</abbr></td><td>TBA</td></tr>
+              </tbody>
+            </table>
+            <a class="text-link" href="https://hall.whps.org/athletics">Full schedule &amp; roster</a>
+          </section>
+
+          <!-- Swim & dive -->
+          <section class="team-panel" id="team-swim" aria-labelledby="h-swim">
+            <h3 class="team-name" id="h-swim">Girls Swim &amp; Dive</h3>
+            <dl class="team-stats">
+              <div><dt>Record</dt><dd class="big">3–2</dd></div>
+              <div><dt>CCC standing</dt><dd>4th, CCC West</dd></div>
+              <div><dt>Next meet</dt><dd>Sat Oct 3 <span class="vs">@</span> Glastonbury · 10:00 AM <span class="ha ha-away">Away</span></dd></div>
+              <div><dt>Last result</dt><dd><span class="mini-badge is-l">L</span> 88–94 <span class="vs">@</span> Farmington</dd></div>
+            </dl>
+            <h4 class="sched-h">Remaining schedule</h4>
+            <table class="sched">
+              <caption class="sr-only">Girls swim and dive remaining schedule</caption>
+              <thead><tr><th scope="col">Date</th><th scope="col">Opponent</th><th scope="col">Home / Away</th><th scope="col">Time</th></tr></thead>
+              <tbody>
+                <tr><td>Sat Oct 3</td><td>@ Glastonbury</td><td><abbr title="Away">A</abbr></td><td>10:00 AM</td></tr>
+                <tr class="is-rival"><td>Fri Oct 9</td><td>vs. Conard <span class="rival">Crosstown</span></td><td><abbr title="Home">H</abbr></td><td>4:00 PM</td></tr>
+                <tr><td>Thu Oct 15</td><td>vs. Southington</td><td><abbr title="Home">H</abbr></td><td>4:00 PM</td></tr>
+                <tr><td>Tue Oct 20</td><td>@ Simsbury</td><td><abbr title="Away">A</abbr></td><td>4:00 PM</td></tr>
+              </tbody>
+            </table>
+            <a class="text-link" href="https://hall.whps.org/athletics">Full schedule &amp; roster</a>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BIG GAME ============ -->
+    <section class="biggame" aria-labelledby="biggame-title" data-a11y-bgimg>
+      <span class="biggame-scrim" data-a11y-scrim aria-hidden="true"></span>
+      <div class="wrap biggame-inner">
+        <div class="biggame-copy">
+          <p class="eyebrow">Circle the date · Crosstown Classic</p>
+          <h2 id="biggame-title">Hall <span class="vs">vs.</span> Conard</h2>
+          <p class="biggame-when"><time datetime="2026-10-16T19:00">Fri, Oct 16 · 7:00 PM</time> · at Conard High School</p>
+          <p class="biggame-spirit"><strong>Wear blue</strong> — Spirit Week, Oct 12–16</p>
+          <ul class="spirit-days" aria-label="Spirit Week themes">
+            <li><b>Tue</b> Pajama day</li>
+            <li><b>Wed</b> Decades day</li>
+            <li><b>Thu</b> Jersey day</li>
+            <li><b>Fri</b> Blue-out</li>
+          </ul>
+        </div>
+        <p class="countdown" data-countdown="2026-10-16">
+          <span class="cd-num" data-cd-num>15</span>
+          <span class="cd-label" data-cd-label>days to kickoff</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ LATER IN OCTOBER ============ -->
+    <section class="later" id="later" aria-labelledby="later-title">
+      <div class="wrap">
+        <div class="section-head row">
+          <div>
+            <p class="eyebrow">Oct 8 – Oct 31</p>
+            <h2 id="later-title">Later in October</h2>
+          </div>
+          <div class="filter" role="group" aria-label="Show events later in October" data-filter-for="later-list">
+            <button type="button" aria-pressed="true" data-show="all">All</button>
+            <button type="button" aria-pressed="false" data-show="sports">Sports</button>
+            <button type="button" aria-pressed="false" data-show="school">School &amp; arts</button>
+          </div>
+        </div>
+        <p class="filter-status sr-only" aria-live="polite" id="later-list-status"></p>
+
+        <ol class="days days-compact" id="later-list">
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-09"><b>Fri</b> Oct 9</time></h3>
+            <ul class="evs">
+              <li class="ev ev-sport is-home is-feature" data-kind="sports">
+                <span class="ev-time">7:00 PM</span>
+                <div class="ev-body"><p class="ev-title"><span class="team">Football</span> <span class="vs">vs.</span> Bristol Central</p><p class="ev-meta">Hall field · Home football again Oct 23</p></div>
+                <span class="ha ha-home">Home</span>
+              </li>
+            </ul>
+          </li>
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-12"><b>Mon</b> Oct 12</time></h3>
+            <ul class="evs">
+              <li class="ev ev-school ev-off" data-kind="school">
+                <span class="ev-time">All day</span>
+                <div class="ev-body"><p class="ev-title">No school</p><p class="ev-meta">Indigenous Peoples’ Day</p></div>
+                <span class="ev-tag">Schedule</span>
+              </li>
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">Oct 12–16</span>
+                <div class="ev-body"><p class="ev-title">Spirit Week</p><p class="ev-meta">Daily dress-up themes leading to the Crosstown Classic</p></div>
+                <span class="ev-tag">Spirit</span>
+              </li>
+            </ul>
+          </li>
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-13"><b>Tue</b> Oct 13</time></h3>
+            <ul class="evs">
+              <li class="ev ev-sport is-home is-rival" data-kind="sports">
+                <span class="ev-time">7:00 PM</span>
+                <div class="ev-body"><p class="ev-title"><span class="team">Boys soccer</span> <span class="vs">vs.</span> Conard</p><p class="ev-meta">Hall turf field <span class="rival">Crosstown rivalry</span></p></div>
+                <span class="ha ha-home">Home</span>
+              </li>
+            </ul>
+          </li>
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-14"><b>Wed</b> Oct 14</time></h3>
+            <ul class="evs">
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">School day</span>
+                <div class="ev-body"><p class="ev-title">PSAT testing day</p><p class="ev-meta">Grades 9–11</p></div>
+                <span class="ev-tag">Testing</span>
+              </li>
+            </ul>
+          </li>
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-16"><b>Fri</b> Oct 16</time></h3>
+            <ul class="evs">
+              <li class="ev ev-sport is-rival is-feature" data-kind="sports">
+                <span class="ev-time">7:00 PM</span>
+                <div class="ev-body"><p class="ev-title"><span class="team">Football</span> <span class="vs">@</span> Conard</p><p class="ev-meta">Conard High School <span class="rival">Crosstown Classic</span></p></div>
+                <span class="ha ha-away">Away</span>
+              </li>
+            </ul>
+          </li>
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-17"><b>Sat</b> Oct 17</time></h3>
+            <ul class="evs">
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">Morning</span>
+                <div class="ev-body"><p class="ev-title">ACT weekend testing</p><p class="ev-meta">Room E119</p></div>
+                <span class="ev-tag">Testing</span>
+              </li>
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">Evening</span>
+                <div class="ev-body"><p class="ev-title">Gifts of Music Gala</p><p class="ev-meta">Music &amp; Fine Arts Dept.</p></div>
+                <span class="ev-tag">Arts</span>
+              </li>
+            </ul>
+          </li>
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-21"><b>Wed</b> Oct 21</time></h3>
+            <ul class="evs">
+              <li class="ev ev-school ev-note" data-kind="school">
+                <span class="ev-time">All day</span>
+                <div class="ev-body"><p class="ev-title">Even-schedule Wednesday</p><p class="ev-meta">Follow the even-day bell schedule</p></div>
+                <span class="ev-tag">Schedule</span>
+              </li>
+            </ul>
+          </li>
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-22"><b>Thu</b> Oct 22</time></h3>
+            <ul class="evs">
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">School day</span>
+                <div class="ev-body"><p class="ev-title">Theater Historical Figure Day</p><p class="ev-meta">Schoolwide</p></div>
+                <span class="ev-tag">Arts</span>
+              </li>
+            </ul>
+          </li>
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-23"><b>Fri</b> Oct 23</time></h3>
+            <ul class="evs">
+              <li class="ev ev-sport is-home is-feature" data-kind="sports">
+                <span class="ev-time">7:00 PM</span>
+                <div class="ev-body"><p class="ev-title"><span class="team">Football</span> <span class="vs">vs.</span> Wethersfield</p><p class="ev-meta">Hall field · Senior night</p></div>
+                <span class="ha ha-home">Home</span>
+              </li>
+            </ul>
+          </li>
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-24"><b>Sat</b> Oct 24</time></h3>
+            <ul class="evs">
+              <li class="ev ev-sport" data-kind="sports">
+                <span class="ev-time">10:00 AM</span>
+                <div class="ev-body"><p class="ev-title"><span class="team">Cross country</span> CCC Championship</p><p class="ev-meta">Boys &amp; girls varsity</p></div>
+                <span class="ha ha-away">Away</span>
+              </li>
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">Last day</span>
+                <div class="ev-body"><p class="ev-title">Senior portraits end</p><p class="ev-meta">Sessions Oct 1–24, 12:45–8:00 PM · Rooms E131/E119 · <a href="#">Book a session</a></p></div>
+                <span class="ev-tag">Seniors</span>
+              </li>
+            </ul>
+          </li>
+          <li class="day">
+            <h3 class="day-head"><time datetime="2026-10-28"><b>Wed</b> Oct 28</time></h3>
+            <ul class="evs">
+              <li class="ev ev-school ev-note" data-kind="school">
+                <span class="ev-time">All day</span>
+                <div class="ev-body"><p class="ev-title">Odd-schedule Wednesday</p><p class="ev-meta">Also Wed, Oct 7</p></div>
+                <span class="ev-tag">Schedule</span>
+              </li>
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">7:30 AM</span>
+                <div class="ev-body"><p class="ev-title">School picture day</p><p class="ev-meta">All students &amp; staff, 7:30 AM–12:48 PM</p></div>
+                <span class="ev-tag">Schoolwide</span>
+              </li>
+              <li class="ev ev-school" data-kind="school">
+                <span class="ev-time">Evening</span>
+                <div class="ev-body"><p class="ev-title">Choir Midfest</p><p class="ev-meta">Schoolwide</p></div>
+                <span class="ev-tag">Arts</span>
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <p class="list-foot"><a class="text-link" href="https://hall.whps.org/calendar">Full school calendar</a></p>
+      </div>
+    </section>
+
+    <!-- ============ BULLETIN ============ -->
+    <section class="bulletin" aria-labelledby="bulletin-title">
+      <div class="wrap">
+        <div class="section-head row">
+          <div>
+            <p class="eyebrow">Notices</p>
+            <h2 id="bulletin-title">Bulletin</h2>
+          </div>
+          <a class="text-link" href="https://hall.whps.org/announcements">All news</a>
+        </div>
+        <ul class="notes">
+          <li class="note note-culture">
+            <p class="note-meta"><span class="note-type">Heritage month</span><span>Sept 15 – Oct 15</span></p>
+            <h3><a href="https://hall.whps.org/announcements">Hispanic/Latinx Heritage Month</a></h3>
+            <p>We encourage students, staff, and families to explore, celebrate, and deepen their understanding of the people, histories, and traditions that continue to enrich our schools.</p>
+          </li>
+          <li class="note note-test">
+            <p class="note-meta"><span class="note-type">Testing</span><time datetime="2026-10-14">Oct 14</time></p>
+            <h3><a href="#">PSAT for grades 9–11: what to bring</a></h3>
+            <p>Testing runs during the school day. See what to bring and where to report.</p>
+          </li>
+          <li class="note note-senior">
+            <p class="note-meta"><span class="note-type">Seniors</span><span>Open now</span></p>
+            <h3><a href="#">Senior portrait sign-ups are open</a></h3>
+          </li>
+          <li class="note note-family">
+            <p class="note-meta"><span class="note-type">Families</span><span>Annual forms</span></p>
+            <h3><a href="#" target="_blank" rel="noopener">eCollect tutorial: complete forms online<span class="sr-only"> (opens in new tab)</span></a></h3>
+          </li>
+          <li class="note note-news">
+            <p class="note-meta"><span class="note-type">Newsletter</span><time datetime="2026-09-28">Sept 28</time></p>
+            <h3><a href="#">This week’s Hall newsletter</a></h3>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PRIDE SCOREBOARD ============ -->
+    <section class="pride" aria-labelledby="pride-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Warrior pride</p>
+          <h2 id="pride-title">The scoreboard</h2>
+        </div>
+        <ul class="board">
+          <li class="led">
+            <span class="led-num">9</span>
+            <span class="led-label">State titles</span>
+            <span class="led-note">In the last 10 years, plus 9 runner-up finishes</span>
+          </li>
+          <li class="led">
+            <span class="led-num">48</span>
+            <span class="led-label">CCC titles</span>
+            <span class="led-note">Central Connecticut Conference championships</span>
+          </li>
+          <li class="led">
+            <span class="led-num">37</span>
+            <span class="led-label">Languages</span>
+            <span class="led-note">Spoken at home, most often Spanish, Mandarin, Portuguese, Vietnamese and Arabic</span>
+          </li>
+          <li class="led">
+            <span class="led-num">72<small>%</small></span>
+            <span class="led-label">AP participation</span>
+            <span class="led-note">And #7 in UConn Early College Experience</span>
+          </li>
+          <li class="led led-gold">
+            <span class="led-num">Gold</span>
+            <span class="led-label">US News medal</span>
+            <span class="led-note">US News &amp; World Report Best High Schools</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ HELP (calm) ============ -->
+    <section class="help" aria-labelledby="help-title">
+      <div class="wrap">
+        <div class="help-panel">
+          <div class="help-intro">
+            <h2 id="help-title">Need help? We’re here.</h2>
+            <p>Every student has adults at Hall to talk to. Reach out any time — you don’t need a reason.</p>
+          </div>
+          <ul class="help-list">
+            <li>
+              <h3><a href="https://hall.whps.org/school-counseling">School counseling</a></h3>
+              <p>We guide all students toward the best possible educational opportunities in a supportive environment.</p>
+            </li>
+            <li>
+              <h3><a href="https://hall.whps.org/support-services">Support services</a></h3>
+              <p>Learning, health and wellness support for students and families.</p>
+            </li>
+            <li>
+              <h3><a href="https://www.anonymousalerts.com" target="_blank" rel="noopener">Anonymous Alerts<span class="sr-only"> (opens in new tab)</span></a></h3>
+              <p>Report bullying or a safety concern privately through the app.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-id">
+        <img src="../../shared/img/logo.png" alt="" width="751" height="900" data-a11y-keep>
+        <div>
+          <p class="footer-name">Hall High School</p>
+          <p class="footer-sub">Home of the Warriors · West Hartford Public Schools</p>
+        </div>
+      </div>
+      <address class="footer-contact">
+        <h2 class="footer-h">Contact</h2>
+        975 North Main Street<br>West Hartford, CT 06117<br>
+        Phone <a href="tel:+18602324561">860-232-4561</a><br>
+        Fax 860-236-2486<br>
+        <a href="https://hall.whps.org/contact-us">Contact us</a>
+      </address>
+      <nav class="footer-links" aria-label="Footer">
+        <h2 class="footer-h">More</h2>
+        <ul>
+          <li><a href="https://hall.whps.org/athletics">Athletics</a></li>
+          <li><a href="https://hall.whps.org/directory">Directory</a></li>
+          <li><a href="https://www.whps.org" target="_blank" rel="noopener">West Hartford Public Schools<span class="sr-only"> (opens in new tab)</span></a></li>
+          <li><a href="#">Accessibility statement</a></li>
+          <li><a href="https://hall.whps.org/staff">Staff</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bar">
+      <div class="wrap">
+        <p>© 2026 Hall High School · West Hartford, CT</p>
+        <p class="sample-note">Scores, team schedules and some events are sample data.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

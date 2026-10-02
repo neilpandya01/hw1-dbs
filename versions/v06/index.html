@@ -3,15 +3,456 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hall High Redesign — v06</title>
+  <title>Hall High School — v06 Hour by Hour</title>
+  <meta name="description" content="Hall High School, West Hartford, CT — today, hour by hour: what's happening now, what's next, and the rest of the week.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
   <link rel="stylesheet" href="../../shared/back.css">
+  <link rel="stylesheet" href="../../shared/a11y.css">
   <link rel="stylesheet" href="style.css">
+  <script src="../../shared/a11y.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="back-link" href="../../index.html" aria-label="Back to gallery">&larr; Gallery</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <main>
-    <!-- v06 landing page goes here -->
+  <div class="top">
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="./">
+          <img class="brand__logo" src="../../shared/img/logo.png" alt="" width="751" height="900" data-a11y-keep>
+          <span class="brand__text">
+            <span class="brand__name">Hall High School</span>
+            <span class="brand__sub">West Hartford, CT · Home of the Warriors</span>
+          </span>
+        </a>
+        <nav class="main-nav" aria-label="Main">
+          <ul>
+            <li><a href="https://hall.whps.org/school-information">About</a></li>
+            <li><a href="https://hall.whps.org/academics">Academics</a></li>
+            <li><a href="https://hall.whps.org/athletics">Athletics</a></li>
+            <li><a href="https://hall.whps.org/school-counseling">Counseling</a></li>
+            <li><a href="https://hall.whps.org/contact-us">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="utility">
+          <button type="button" class="util-btn" data-a11y-toggle>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="4" r="2.2" fill="currentColor"/><path d="M4 7.5l8 1.6 8-1.6M12 9.1v5.4m0 0l-3.6 7m3.6-7l3.6 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="util-btn__label">Accessibility</span>
+          </button>
+          <a class="util-btn" href="https://translate.google.com/translate?sl=en&amp;tl=es&amp;u=https://hall.whps.org" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.6 2.8 3.8 5.8 3.8 9s-1.2 6.2-3.8 9c-2.6-2.8-3.8-5.8-3.8-9S9.4 5.8 12 3Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            <span class="util-btn__label">Translate</span><span class="visually-hidden"> (opens in new tab)</span>
+          </a>
+          <details class="mobile-menu">
+            <summary class="util-btn" aria-label="Menu">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            </summary>
+            <nav class="mobile-menu__panel" aria-label="Main (mobile)">
+              <a href="https://hall.whps.org/school-information">About</a>
+              <a href="https://hall.whps.org/academics">Academics</a>
+              <a href="https://hall.whps.org/athletics">Athletics</a>
+              <a href="https://hall.whps.org/school-counseling">Counseling</a>
+              <a href="https://hall.whps.org/contact-us">Contact</a>
+            </nav>
+          </details>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ QUICK ACCESS (always first, never pushed down) ============ -->
+    <nav class="quick" aria-label="Quick access">
+      <div class="wrap quick__inner">
+        <span class="quick__h" aria-hidden="true">Quick access</span>
+        <ul class="quick__list">
+          <li><a class="chip" href="https://whps.powerschool.com/public/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V13M10 20V9M16 20V5M21 20H3"/></svg>PowerSchool<span class="visually-hidden"> (opens in new tab)</span></a></li>
+          <li><a class="chip" href="https://whps.schoology.com/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h6.5A2.5 2.5 0 0 1 12 7.5V20a2 2 0 0 0-2-2H3V5Zm18 0h-6.5A2.5 2.5 0 0 0 12 7.5V20a2 2 0 0 1 2-2h7V5Z"/></svg>Schoology<span class="visually-hidden"> (opens in new tab)</span></a></li>
+          <li><a class="chip" href="https://student.naviance.com/hallhs" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8 4.8-2.2Z"/></svg>Naviance<span class="visually-hidden"> (opens in new tab)</span></a></li>
+          <li><a class="chip" href="https://hall.whps.org/school-information/bell">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2.5h6"/></svg>Bell schedule</a></li>
+          <li><a class="chip" href="https://hall.whps.org/school-information/lunch">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 21V3c-2 1.5-3 4-3 7v3h3"/></svg>Lunch menu</a></li>
+          <li><a class="chip" href="https://hall.whps.org/calendar">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Calendar</a></li>
+          <li><a class="chip" href="https://hall.whps.org/attendance">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c.6-3.6 3.2-5.5 6.5-5.5 1.4 0 2.6.3 3.6.9M15.5 18l2 2 4-4"/></svg>Report an absence</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <main id="main" tabindex="-1">
+    <h1 class="visually-hidden">Hall High School — today, hour by hour</h1>
+
+    <!-- ============ NOW ============ -->
+    <section class="now-band tod-day" id="now-band" aria-labelledby="now-h">
+      <div class="wrap">
+        <div class="now__top">
+          <div class="clock js-only" aria-hidden="true">
+            <span class="clock__hm" id="clock">--:--</span><span class="clock__ap" id="clock-ap"></span>
+          </div>
+          <div class="now__date">
+            <h2 id="now-h" class="now__eyebrow"><span id="greet">Today</span> <span class="preview-note" id="preview-note" hidden></span></h2>
+            <p class="now__day"><time datetime="2026-10-01">Thursday, October 1, 2026</time></p>
+            <p class="now__sched"><span class="day-pill"><span class="day-pill__dot" aria-hidden="true"></span>Even Day</span> Regular schedule · 7:30 AM – 2:10 PM</p>
+          </div>
+        </div>
+
+        <div class="status js-only">
+          <p class="status__label">Right now</p>
+          <p class="status__main"><span id="now-state">—</span> <span class="status__left" id="now-left"></span></p>
+          <ul class="status__more">
+            <li><span class="status__k">Next up</span> <span id="now-next">—</span></li>
+            <li><span class="status__k">Lunch</span> <span id="now-lunch">Waves A 10:52 · B 11:24 · C 11:56</span></li>
+          </ul>
+          <p class="visually-hidden" id="now-live" aria-live="polite"></p>
+        </div>
+
+        <noscript>
+          <p class="status__nojs">Even day: Block 2 · Block 4 · Advisory · Block 6 (lunch waves A, B, C) · Block 8. The full hour-by-hour list is below.</p>
+        </noscript>
+
+        <div class="progress js-only">
+          <div class="progress__head">
+            <p><strong id="prog-pct">0%</strong> of the school day done</p>
+            <p id="prog-left" class="progress__left"></p>
+          </div>
+          <div class="progress__bar" id="prog" role="progressbar" aria-label="School day progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span class="seg" style="--a:0;--b:20.5"></span>
+            <span class="seg" style="--a:22;--b:42.5"></span>
+            <span class="seg seg--adv" style="--a:44;--b:49"></span>
+            <span class="seg" style="--a:50.5;--b:78.5"></span>
+            <span class="seg" style="--a:80;--b:100"></span>
+            <span class="progress__fill" id="prog-fill"></span>
+          </div>
+          <div class="progress__labels" aria-hidden="true">
+            <span style="--a:0">7:30 · B2</span>
+            <span style="--a:22">B4</span>
+            <span style="--a:44">Adv</span>
+            <span style="--a:50.5">B6 + lunch</span>
+            <span style="--a:80">B8</span>
+            <span style="--a:100" class="end">2:10</span>
+          </div>
+        </div>
+
+        <ul class="facts" aria-label="About today">
+          <li>School day <span class="mono">23</span> of 180</li>
+          <li>Week <span class="mono">5</span></li>
+          <li><span class="mono">11</span> days to next day off <span class="facts__sub">Mon Oct 12, Indigenous Peoples' Day</span></li>
+          <li>Sunset <span class="mono">6:36 PM</span><span class="facts__sub" id="sunset-in"></span></li>
+          <li class="facts__warn">Early dismissal Fri Oct 9 <span class="facts__sub">buses 11:30 AM</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ THE WHOLE DAY ============ -->
+    <section class="band day-band" aria-labelledby="day-h">
+      <div class="wrap">
+        <div class="band__head">
+          <h2 id="day-h" class="band__h">The whole day</h2>
+          <p class="band__sub">Thursday, Oct 1 · from doors open to lights out</p>
+        </div>
+
+        <div class="day" id="day">
+          <span class="nowline" id="nowline" aria-hidden="true" hidden><span class="nowline__tag" id="nowline-tag">Now</span></span>
+
+          <h3 class="group__h">Before school <span class="group__t">6:45–7:30 AM</span></h3>
+          <ol class="slots">
+            <li class="slot" data-start="06:45" data-name="Building opens">
+              <span class="slot__time">6:45</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Building opens</span><span class="slot__m">Main entrance on North Main St.</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot" data-start="07:00" data-end="07:25" data-name="Breakfast &amp; library">
+              <span class="slot__time">7:00–7:25</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Breakfast in the cafeteria · Library open</span><span class="slot__m">Grab-and-go until the warning bell</span></span>
+              <span class="slot__when"></span></li>
+          </ol>
+
+          <h3 class="group__h">Classes <span class="group__t">Even Day · 7:30 AM–2:10 PM</span></h3>
+          <ol class="slots">
+            <li class="slot slot--class" data-start="07:30" data-end="08:52" data-name="Block 2" data-kind="class">
+              <span class="slot__time">7:30–8:52</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Block 2</span><span class="slot__m">82 min</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot slot--class" data-start="08:58" data-end="10:20" data-name="Block 4" data-kind="class">
+              <span class="slot__time">8:58–10:20</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Block 4</span><span class="slot__m">82 min</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot slot--class" data-start="10:26" data-end="10:46" data-name="Advisory" data-kind="class">
+              <span class="slot__time">10:26–10:46</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Advisory</span><span class="slot__m">20 min</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot slot--class" data-start="10:52" data-end="12:44" data-name="Block 6" data-kind="class">
+              <span class="slot__time">10:52–12:44</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Block 6 <span class="slot__tag">+ lunch</span></span><span class="slot__m">112 min, including one lunch wave</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot slot--sub" data-start="10:52" data-end="11:20" data-name="Lunch wave A" data-kind="lunch" data-wave="A">
+              <span class="slot__time">10:52–11:20</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Lunch wave A</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot slot--sub" data-start="11:24" data-end="11:52" data-name="Lunch wave B" data-kind="lunch" data-wave="B">
+              <span class="slot__time">11:24–11:52</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Lunch wave B</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot slot--sub" data-start="11:56" data-end="12:24" data-name="Lunch wave C" data-kind="lunch" data-wave="C">
+              <span class="slot__time">11:56–12:24</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Lunch wave C</span><span class="slot__m">On the menu: chicken teriyaki rice bowl · Vegetarian: black bean burrito · Salad bar &amp; fruit</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot slot--class" data-start="12:50" data-end="14:10" data-name="Block 8" data-kind="class">
+              <span class="slot__time">12:50–2:10</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Block 8</span><span class="slot__m">80 min</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot slot--mark" data-start="14:10" data-name="Dismissal">
+              <span class="slot__time">2:10</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Dismissal</span><span class="slot__m">Buses load at the North Main St. loop</span></span>
+              <span class="slot__when"></span></li>
+          </ol>
+
+          <h3 class="group__h">After school <span class="group__t">2:10–5:30 PM</span></h3>
+          <ol class="slots">
+            <li class="slot" data-start="14:10" data-end="15:30" data-name="Library open">
+              <span class="slot__time">2:10–3:30</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Library open until 3:30</span><span class="slot__m">Quiet study &amp; printing</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot" data-start="14:15" data-end="14:45" data-name="Extra help">
+              <span class="slot__time">2:15–2:45</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Extra help</span><span class="slot__m">In teachers' classrooms</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot" data-start="14:20" data-end="15:30" data-name="Clubs">
+              <span class="slot__time">2:20</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Clubs: Robotics · Model UN</span><span class="slot__m">Robotics in E214 · Model UN in the Library</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot" data-start="15:00" data-end="17:30" data-name="Fall play rehearsal">
+              <span class="slot__time">3:00–5:30</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Fall play rehearsal</span><span class="slot__m">Auditorium</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot" data-start="15:30" data-name="Late bus">
+              <span class="slot__time">3:30</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Late bus</span><span class="slot__m">Leaves from the front loop</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot" data-start="15:45" data-end="17:30" data-name="Girls soccer">
+              <span class="slot__time">3:45</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Girls soccer @ Northwest Catholic <span class="slot__tag">Away</span></span><span class="slot__m">Team bus 2:45</span></span>
+              <span class="slot__when"></span></li>
+          </ol>
+
+          <h3 class="group__h">Tonight <span class="group__t">5:30–9:00 PM</span></h3>
+          <ol class="slots">
+            <li class="slot" data-start="17:30" data-end="19:30" data-name="Girls volleyball">
+              <span class="slot__time">5:30</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Girls volleyball vs. Conard <span class="slot__tag slot__tag--home">Home</span></span><span class="slot__m">Main gym</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot" data-start="18:30" data-end="20:00" data-name="College night">
+              <span class="slot__time">6:30–8:00</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">College night for juniors &amp; families</span><span class="slot__m">Auditorium · bring your Naviance login</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot slot--quiet" data-start="18:36" data-name="Sunset">
+              <span class="slot__time">6:36</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Sunset</span></span>
+              <span class="slot__when"></span></li>
+            <li class="slot slot--quiet" data-start="21:00" data-name="Building closes">
+              <span class="slot__time">9:00</span><span class="slot__dot" aria-hidden="true"></span>
+              <span class="slot__body"><span class="slot__t">Building closes</span></span>
+              <span class="slot__when"></span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WEEK ============ -->
+    <section class="band week-band" aria-labelledby="week-h">
+      <div class="wrap">
+        <div class="band__head">
+          <h2 id="week-h" class="band__h">Tomorrow &amp; the week ahead</h2>
+          <a class="text-link" href="https://hall.whps.org/calendar">Full calendar <span aria-hidden="true">→</span></a>
+        </div>
+        <ol class="week">
+          <li class="wk wk--tomorrow">
+            <p class="wk__date"><span class="wk__rel">Tomorrow</span> <span class="wk__d">Fri Oct 2</span></p>
+            <p class="wk__type"><span class="type type--odd">Odd Day</span></p>
+            <p class="wk__hours mono">7:30–2:10</p>
+            <p class="wk__hl">Blocks 1 · 3 · 5 (+ lunch) · 7 · Home football vs. Enfield, <span class="mono">7:00 PM</span></p>
+          </li>
+          <li class="wk wk--off">
+            <p class="wk__date"><span class="wk__d">Sat Oct 3</span></p>
+            <p class="wk__type"><span class="type type--off">No school</span></p>
+            <p class="wk__hours mono">—</p>
+            <p class="wk__hl">SAT weekend testing</p>
+          </li>
+          <li class="wk wk--off">
+            <p class="wk__date"><span class="wk__d">Sun Oct 4</span></p>
+            <p class="wk__type"><span class="type type--off">No school</span></p>
+            <p class="wk__hours mono">—</p>
+            <p class="wk__hl">—</p>
+          </li>
+          <li class="wk">
+            <p class="wk__date"><span class="wk__d">Mon Oct 5</span></p>
+            <p class="wk__type"><span class="type type--even">Even Day</span></p>
+            <p class="wk__hours mono">7:30–2:10</p>
+            <p class="wk__hl">Senior portraits, E131/E119, from 12:45</p>
+          </li>
+          <li class="wk">
+            <p class="wk__date"><span class="wk__d">Tue Oct 6</span></p>
+            <p class="wk__type"><span class="type type--odd">Odd Day</span></p>
+            <p class="wk__hours mono">7:30–2:10</p>
+            <p class="wk__hl">Regular schedule</p>
+          </li>
+          <li class="wk">
+            <p class="wk__date"><span class="wk__d">Wed Oct 7</span></p>
+            <p class="wk__type"><span class="type type--odd">Odd Day</span></p>
+            <p class="wk__hours mono">7:30–2:10</p>
+            <p class="wk__hl">Odd-schedule Wednesday</p>
+          </li>
+          <li class="wk">
+            <p class="wk__date"><span class="wk__d">Thu Oct 8</span></p>
+            <p class="wk__type"><span class="type type--even">Even Day</span></p>
+            <p class="wk__hours mono">7:30–2:10</p>
+            <p class="wk__hl">Regular schedule</p>
+          </li>
+          <li class="wk wk--early">
+            <p class="wk__date"><span class="wk__d">Fri Oct 9</span></p>
+            <p class="wk__type"><span class="type type--odd">Odd Day</span></p>
+            <p class="wk__hours mono">7:30–11:30</p>
+            <p class="wk__hl"><strong>Early dismissal</strong>, buses 11:30 AM · Home football vs. Bristol Central, <span class="mono">7:00 PM</span></p>
+          </li>
+          <li class="wk wk--off">
+            <p class="wk__date"><span class="wk__d">Mon Oct 12</span></p>
+            <p class="wk__type"><span class="type type--off">No school</span></p>
+            <p class="wk__hours mono">—</p>
+            <p class="wk__hl">Indigenous Peoples' Day</p>
+          </li>
+        </ol>
+
+        <h3 class="later__h">Later in October</h3>
+        <ul class="later">
+          <li><span class="later__d mono">Oct 14</span><span class="later__t">PSAT testing day <span class="later__m">Grades 9–11</span></span></li>
+          <li><span class="later__d mono">Oct 17</span><span class="later__t">Gifts of Music Gala · ACT testing <span class="later__m">Music/Fine Arts Dept · ACT in E119</span></span></li>
+          <li><span class="later__d mono">Oct 21</span><span class="later__t">Even-schedule Wednesday</span></li>
+          <li><span class="later__d mono">Oct 22</span><span class="later__t">Theater Historical Figure Day <span class="later__m">Schoolwide</span></span></li>
+          <li><span class="later__d mono">Oct 28</span><span class="later__t">School Picture Day · Choir Midfest <span class="later__m">Odd-schedule Wednesday · pictures 7:30 AM–12:48 PM</span></span></li>
+          <li class="later--group"><span class="later__d mono">Oct 1–24</span><span class="later__t">Senior portraits (indoor only) <span class="count">8 sessions</span> <span class="later__m">12:45–8:00 PM · E131/E119</span></span></li>
+          <li class="later--group"><span class="later__d mono">Oct 2–23</span><span class="later__t">Home football, 7:00 PM <span class="count">3 games</span> <span class="later__m">Enfield (Oct 2), Bristol Central (Oct 9), Wethersfield (Oct 23)</span></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ NOTICES ============ -->
+    <section class="band notices-band" aria-labelledby="notices-h">
+      <div class="wrap">
+        <div class="band__head">
+          <h2 id="notices-h" class="band__h">Notices</h2>
+          <a class="text-link" href="https://hall.whps.org/announcements">All news <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="notices">
+          <li class="notice">
+            <p class="notice__date mono"><time datetime="2026-09-30">Sep 30</time></p>
+            <div>
+              <p class="notice__tags"><span class="tag">Testing</span><span class="badge badge--pin">Pinned</span></p>
+              <h3 class="notice__title"><a href="#">PSAT on Oct 14 for grades 9–11 — what to bring</a></h3>
+              <p class="notice__sum">Charged device with Bluebook installed, photo ID, pencils. Report to homeroom by 7:25.</p>
+            </div>
+          </li>
+          <li class="notice">
+            <p class="notice__date mono"><time datetime="2026-09-29">Sep 29</time></p>
+            <div>
+              <p class="notice__tags"><span class="tag">Form</span><span class="badge badge--new">New</span></p>
+              <h3 class="notice__title"><a href="https://whps.ecollectforms.com" target="_blank" rel="noopener">eCollect tutorial: annual forms online<span class="visually-hidden"> (opens in new tab)</span></a></h3>
+              <p class="notice__sum">A step-by-step guide for families completing this year's required forms.</p>
+            </div>
+          </li>
+          <li class="notice">
+            <p class="notice__date mono"><time datetime="2026-09-28">Sep 28</time></p>
+            <div>
+              <p class="notice__tags"><span class="tag">Event</span><span class="badge badge--new">New</span></p>
+              <h3 class="notice__title"><a href="#">Senior portrait sign-ups are open</a></h3>
+              <p class="notice__sum">Indoor sessions in E131/E119 through Oct 24. Book a slot online.</p>
+            </div>
+          </li>
+          <li class="notice">
+            <p class="notice__date mono"><time datetime="2026-09-25">Sep 25</time></p>
+            <div>
+              <p class="notice__tags"><span class="tag">Newsletter</span></p>
+              <h3 class="notice__title"><a href="#">Weekly Warrior Newsletter</a></h3>
+              <p class="notice__sum">This week's announcements, club news and reminders in one place.</p>
+            </div>
+          </li>
+          <li class="notice">
+            <p class="notice__date mono"><time datetime="2026-09-15">Sep 15</time></p>
+            <div>
+              <p class="notice__tags"><span class="tag">Celebration</span></p>
+              <h3 class="notice__title"><a href="#">Hispanic/Latinx Heritage Month, Sep 15 – Oct 15</a></h3>
+              <p class="notice__sum">Explore, celebrate and deepen our understanding of the people, histories and traditions that enrich our community.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ NEW TO HALL + PRIDE ============ -->
+    <section class="band welcome-band" aria-labelledby="welcome-h">
+      <div class="wrap">
+        <div class="welcome">
+          <div class="welcome__text">
+            <p class="eyebrow">For prospective &amp; incoming families</p>
+            <h2 id="welcome-h" class="welcome__h">New to Hall?</h2>
+            <p class="welcome__mission">“Hall High School prepares all students to be educated, responsible citizens who contribute collaboratively, independently, and innovatively to a dynamic global community.”</p>
+          </div>
+          <div class="welcome__actions">
+            <a class="btn btn--primary" href="https://hall.whps.org/school-information">Visit &amp; enroll</a>
+            <a class="btn btn--ghost" href="https://hall.whps.org/academics">Program of studies</a>
+          </div>
+        </div>
+        <h3 class="visually-hidden">Warrior pride</h3>
+        <ul class="stats">
+          <li><span class="stat__n mono">9</span><span class="stat__l">state titles in 10 years</span></li>
+          <li><span class="stat__n mono">37</span><span class="stat__l">languages spoken at home</span></li>
+          <li><span class="stat__n mono">72%</span><span class="stat__l">AP participation</span></li>
+          <li><span class="stat__n mono">Gold</span><span class="stat__l">US News &amp; World Report medal</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ HELP ============ -->
+    <section class="band help-band" aria-labelledby="help-h">
+      <div class="wrap">
+        <h2 id="help-h" class="band__h">Need help?</h2>
+        <p class="band__sub">Any day, any hour — you can reach out.</p>
+        <ul class="help">
+          <li><a href="https://hall.whps.org/school-counseling"><span class="help__t">School Counseling</span><span class="help__d">Guiding every student toward the best possible opportunities, in a supportive environment.</span></a></li>
+          <li><a href="https://hall.whps.org/support-services"><span class="help__t">Support Services</span><span class="help__d">Psychologists, social workers and nurses — reach out any time.</span></a></li>
+          <li><a href="https://www.anonymousalerts.com/" target="_blank" rel="noopener"><span class="help__t">Anonymous Alerts<span class="visually-hidden"> (opens in new tab)</span></span><span class="help__d">Report bullying or a safety concern privately, from any phone.</span></a></li>
+        </ul>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer__grid">
+      <div class="footer__id">
+        <img class="footer__logo" src="../../shared/img/logo.png" alt="" width="751" height="900" data-a11y-keep>
+        <div>
+          <p class="footer__name">Hall High School</p>
+          <p>Part of <a href="https://www.whps.org" target="_blank" rel="noopener">West Hartford Public Schools<span class="visually-hidden"> (opens in new tab)</span></a></p>
+        </div>
+      </div>
+      <address class="footer__contact">
+        975 North Main Street, West Hartford, CT 06117<br>
+        Phone <a href="tel:+18602324561">860-232-4561</a> · Fax 860-236-2486
+      </address>
+      <ul class="footer__links">
+        <li><a href="https://hall.whps.org/contact-us">Contact us</a></li>
+        <li><a href="https://hall.whps.org/accessibility">Accessibility statement</a></li>
+        <li><a href="https://translate.google.com/translate?sl=en&amp;tl=es&amp;u=https://hall.whps.org" target="_blank" rel="noopener">Translate<span class="visually-hidden"> (opens in new tab)</span></a></li>
+        <li><a href="https://hall.whps.org/staff">Staff</a></li>
+      </ul>
+    </div>
+    <p class="wrap footer__note">Schedule, lunch, after-school items, sunset time, day counts and some notices are sample data for this redesign. Preview any time with <code>?t=HH:MM</code>.</p>
+  </footer>
 </body>
 </html>
