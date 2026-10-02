@@ -1,147 +1,158 @@
-/* v07 Warrior Season: menu, portals, today disclosure, schedule filters,
-   team tablist (remembered), big-game countdown. */
+/* v07 — Pep Rally
+ * 1) "Right now" cell + block highlight from the even-day schedule (visitor's clock;
+ *    preview any time with ?t=HH:MM, e.g. ?t=11:30).
+ * 2) Ticker pause button.
+ * 3) MAKE SOME NOISE: cheer meter + confetti burst (confetti skipped under reduced motion).
+ * 4) Countdown to the next home football game.
+ * Without JS the page shows the full static schedule, game time and no noise button.
+ */
 (function () {
-  document.documentElement.classList.add('js');
+  var reduce = function () {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      document.documentElement.classList.contains('a11y-motion');
+  };
+  function toMin(s) { var p = s.split(':'); return +p[0] * 60 + +p[1]; }
+  function fmt(m) { var h = Math.floor(m / 60), mm = m % 60; return (((h + 11) % 12) + 1) + ':' + (mm < 10 ? '0' : '') + mm; }
 
-  /* ---------- disclosures (from v04) ---------- */
-  function disclosure(btn, panel, opts) {
-    opts = opts || {};
-    function set(open) {
-      btn.setAttribute('aria-expanded', String(open));
-      panel.classList.toggle('is-open', open);
-    }
-    btn.addEventListener('click', function () {
-      set(btn.getAttribute('aria-expanded') !== 'true');
-    });
-    if (opts.dismiss) {
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { set(false); btn.focus(); }
-      });
-      document.addEventListener('click', function (e) {
-        if (!btn.contains(e.target) && !panel.contains(e.target)) set(false);
-      });
-    }
-    return set;
-  }
-
-  var menuBtn = document.querySelector('.menu-toggle');
-  var menu = document.getElementById('nav-menu');
-  if (menuBtn && menu) {
-    var setMenu = disclosure(menuBtn, menu, { dismiss: true });
-    var mq = window.matchMedia('(min-width: 61.0625em)');
-    if (mq.addEventListener) mq.addEventListener('change', function () { setMenu(false); });
-  }
-
-  var pBtn = document.querySelector('.portals-btn');
-  var pMenu = document.getElementById('portal-menu');
-  if (pBtn && pMenu) disclosure(pBtn, pMenu, { dismiss: true });
-
-  document.querySelectorAll('[data-disclosure]').forEach(function (b) {
-    var panel = document.getElementById(b.getAttribute('aria-controls'));
-    if (panel) disclosure(b, panel);
+  /* ---------- 1) Right now ---------- */
+  var names = { B2: 'Block 2', B4: 'Block 4', ADV: 'Advisory', B6: 'Block 6', B8: 'Block 8' };
+  var blks = Array.prototype.slice.call(document.querySelectorAll('#blocks .blk')).map(function (el) {
+    var code = el.querySelector('.blk__n').firstChild.textContent.trim();
+    return { el: el, name: names[code] || code, start: toMin(el.dataset.start), end: toMin(el.dataset.end) };
   });
-
-  /* ---------- schedule filters: All / Sports / School & arts ---------- */
-  var LABELS = { all: 'all events', sports: 'sports only', school: 'school and arts only' };
-  document.querySelectorAll('[data-filter-for]').forEach(function (group) {
-    var listId = group.getAttribute('data-filter-for');
-    var list = document.getElementById(listId);
-    var status = document.getElementById(listId + '-status');
-    if (!list) return;
-    var buttons = group.querySelectorAll('button[data-show]');
-    buttons.forEach(function (b) { b.setAttribute('aria-controls', listId); });
-
-    function apply(show) {
-      var count = 0;
-      buttons.forEach(function (b) {
-        b.setAttribute('aria-pressed', String(b.getAttribute('data-show') === show));
-      });
-      list.querySelectorAll('.day').forEach(function (day) {
-        var visible = 0;
-        day.querySelectorAll('.ev').forEach(function (ev) {
-          var on = show === 'all' || ev.getAttribute('data-kind') === show;
-          ev.hidden = !on;
-          if (on) visible++;
-        });
-        day.hidden = visible === 0;
-        count += visible;
-      });
-      if (status) status.textContent = 'Showing ' + LABELS[show] + ': ' + count + (count === 1 ? ' event.' : ' events.');
-    }
-    buttons.forEach(function (b) {
-      b.addEventListener('click', function () { apply(b.getAttribute('data-show')); });
-    });
+  var waves = [['A', '10:52', '11:20'], ['B', '11:24', '11:52'], ['C', '11:56', '12:24']].map(function (w) {
+    return { n: w[0], s: toMin(w[1]), e: toMin(w[2]) };
   });
+  var override = null;
+  var q = /[?&]t=(\d{1,2}):?(\d{2})/.exec(location.search);
+  if (q) override = +q[1] * 60 + +q[2];
+  var nowMain = document.getElementById('now-main');
+  var nowNext = document.getElementById('now-next');
 
-  /* ---------- team tablist ---------- */
-  var KEY = 'v07-team-tab';
-  var tablist = document.querySelector('.team-tabs[role="tablist"]');
-  if (tablist) {
-    var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
-    var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
-
-    panels.forEach(function (p, i) {
-      if (!p) return;
-      p.setAttribute('role', 'tabpanel');
-      p.setAttribute('aria-labelledby', tabs[i].id);
-      p.setAttribute('tabindex', '0');
+  function updateNow() {
+    if (!nowMain || !blks.length) return;
+    var d = new Date();
+    var t = override !== null ? override : d.getHours() * 60 + d.getMinutes();
+    var main, next, cur = null;
+    blks.forEach(function (b) {
+      b.el.classList.toggle('is-now', t >= b.start && t < b.end);
+      b.el.classList.toggle('is-past', t >= b.end);
+      if (t >= b.start && t < b.end) cur = b;
     });
-
-    function select(i, focus) {
-      tabs.forEach(function (t, j) {
-        var on = i === j;
-        t.setAttribute('aria-selected', String(on));
-        t.tabIndex = on ? 0 : -1;
-        if (panels[j]) panels[j].hidden = !on;
-      });
-      if (focus) {
-        tabs[i].focus();
-        if (tabs[i].scrollIntoView) tabs[i].scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    if (t < blks[0].start) {
+      main = 'Pre-game';
+      next = 'Block 2 tips off at 7:30';
+    } else if (t >= blks[blks.length - 1].end) {
+      main = "School's out";
+      next = 'Go Warriors! See you tomorrow';
+    } else if (cur) {
+      main = cur.name;
+      next = 'Until ' + fmt(cur.end);
+      if (cur.name === 'Block 6') {
+        var w = waves.filter(function (x) { return t >= x.s && t < x.e; })[0];
+        var nw = waves.filter(function (x) { return t < x.s; })[0];
+        next = w ? 'Lunch wave ' + w.n + ' eating now' : nw ? 'Next: lunch wave ' + nw.n + ' at ' + fmt(nw.s) : next;
       }
-      try { localStorage.setItem(KEY, tabs[i].id); } catch (e) {}
+    } else {
+      var up = blks.filter(function (b) { return t < b.start; })[0];
+      main = 'Passing time';
+      next = up ? up.name + ' at ' + fmt(up.start) : '';
     }
+    nowMain.textContent = main;
+    nowNext.textContent = next;
+  }
+  updateNow();
+  setInterval(updateNow, 30000);
 
-    var start = 0;
-    try {
-      var saved = localStorage.getItem(KEY);
-      tabs.forEach(function (t, i) { if (t.id === saved) start = i; });
-    } catch (e) {}
-    select(start, false);
-
-    tabs.forEach(function (t, i) {
-      t.addEventListener('click', function () { select(i, false); });
-    });
-    tablist.addEventListener('keydown', function (e) {
-      var i = tabs.indexOf(document.activeElement);
-      if (i < 0) return;
-      var n = tabs.length, next = null;
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (i + 1) % n;
-      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = (i - 1 + n) % n;
-      else if (e.key === 'Home') next = 0;
-      else if (e.key === 'End') next = n - 1;
-      if (next === null) return;
-      e.preventDefault();
-      select(next, true);
+  /* ---------- 2) Ticker pause ---------- */
+  var ticker = document.querySelector('.ticker');
+  var pauseBtn = document.getElementById('ticker-pause');
+  if (pauseBtn && ticker) {
+    pauseBtn.addEventListener('click', function () {
+      var paused = ticker.classList.toggle('is-paused');
+      pauseBtn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+      pauseBtn.querySelector('.ticker__pause-label').textContent = paused ? 'Play' : 'Pause';
     });
   }
 
-  /* ---------- countdown to the big game ---------- */
-  function parseDay(s) {
-    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || '');
-    return m ? Date.UTC(+m[1], +m[2] - 1, +m[3]) : null;
+  /* ---------- 3) Make some noise ---------- */
+  var ctrl = document.getElementById('noise-ctrl');
+  var nojs = document.getElementById('noise-nojs');
+  var btn = document.getElementById('noise-btn');
+  var meter = document.getElementById('meter');
+  var fill = document.getElementById('meter-fill');
+  var level = document.getElementById('meter-level');
+  var confetti = document.getElementById('confetti');
+  var val = 0, lastLabel = '';
+  var levels = [
+    [0, 'Warming up…'], [15, 'We can hear you!'], [35, 'Louder!'],
+    [60, 'The gym is shaking!'], [85, 'MAXIMUM WARRIOR!']
+  ];
+  function labelFor(v) { var l = levels[0][1]; levels.forEach(function (x) { if (v >= x[0]) l = x[1]; }); return l; }
+  function render() {
+    fill.style.width = val + '%';
+    var l = labelFor(val);
+    meter.setAttribute('aria-valuenow', Math.round(val));
+    meter.setAttribute('aria-valuetext', Math.round(val) + ' percent — ' + l);
+    if (l !== lastLabel) { level.textContent = l; lastLabel = l; }
   }
-  var cd = document.querySelector('[data-countdown]');
-  if (cd) {
-    var param = null;
-    try { param = new URLSearchParams(window.location.search).get('d'); } catch (e) {}
-    var today = parseDay(param) || parseDay('2026-10-01'); // sample date
-    var game = parseDay(cd.getAttribute('data-countdown'));
-    var days = Math.round((game - today) / 86400000);
-    var num = cd.querySelector('[data-cd-num]');
-    var label = cd.querySelector('[data-cd-label]');
-    if (days > 1) { num.textContent = days; label.textContent = 'days to kickoff'; }
-    else if (days === 1) { num.textContent = '1'; label.textContent = 'day to kickoff'; }
-    else if (days === 0) { num.textContent = 'Tonight'; label.textContent = 'Kickoff 7:00 PM'; }
-    else { num.textContent = 'Final'; label.textContent = 'See results on Athletics'; }
+  var colors = ['var(--brand)', 'var(--surface)', 'var(--accent)', 'var(--brand-2)', 'var(--bg)'];
+  function burst() {
+    if (reduce() || !confetti) return;
+    var r = btn.getBoundingClientRect(), c = confetti.getBoundingClientRect();
+    var ox = r.left - c.left + r.width / 2, oy = r.top - c.top + r.height / 2;
+    for (var i = 0; i < 26; i++) {
+      var p = document.createElement('i');
+      var ang = Math.random() * Math.PI * 2, dist = 80 + Math.random() * 160;
+      p.style.setProperty('--x', ox + 'px');
+      p.style.setProperty('--y', oy + 'px');
+      p.style.setProperty('--dx', Math.cos(ang) * dist + 'px');
+      p.style.setProperty('--dy', Math.sin(ang) * dist - 40 + 'px');
+      p.style.setProperty('--r', (Math.random() * 720 - 360) + 'deg');
+      p.style.setProperty('--c', colors[i % colors.length]);
+      confetti.appendChild(p);
+      setTimeout(function (el) { return function () { el.remove(); }; }(p), 1000);
+    }
   }
+  if (ctrl && btn) {
+    ctrl.hidden = false;
+    if (nojs) nojs.hidden = true;
+    render();
+    btn.addEventListener('click', function () {
+      val = Math.min(100, val + 14);
+      render();
+      burst();
+      btn.classList.add('is-hit');
+      setTimeout(function () { btn.classList.remove('is-hit'); }, 120);
+    });
+    setInterval(function () { if (val > 0) { val = Math.max(0, val - 3); render(); } }, 700);
+  }
+
+  /* ---------- 4) Countdown ---------- */
+  var games = [
+    { t: new Date(2026, 9, 2, 19, 0), title: 'Football vs. Enfield', when: 'Fri, Oct 2 · 7:00 PM · Home field' },
+    { t: new Date(2026, 9, 9, 19, 0), title: 'Football vs. Bristol Central', when: 'Fri, Oct 9 · 7:00 PM · Home field' },
+    { t: new Date(2026, 9, 16, 19, 0), title: 'Crosstown Classic vs. Conard', when: 'Fri, Oct 16 · 7:00 PM · Home field' },
+    { t: new Date(2026, 9, 23, 19, 0), title: 'Football vs. Wethersfield', when: 'Fri, Oct 23 · 7:00 PM · Home field' }
+  ];
+  var clock = document.getElementById('cd-clock');
+  var el = {
+    d: document.getElementById('cd-d'), h: document.getElementById('cd-h2'),
+    m: document.getElementById('cd-m'), s: document.getElementById('cd-s'),
+    title: document.getElementById('cd-title'), when: document.getElementById('cd-when')
+  };
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function tick() {
+    var now = Date.now();
+    var g = games.filter(function (x) { return x.t.getTime() > now; })[0];
+    if (!g) { clock.hidden = true; return; }
+    if (el.title.textContent !== g.title) { el.title.textContent = g.title; el.when.textContent = g.when; }
+    var s = Math.floor((g.t.getTime() - now) / 1000);
+    el.d.textContent = Math.floor(s / 86400);
+    el.h.textContent = pad(Math.floor(s / 3600) % 24);
+    el.m.textContent = pad(Math.floor(s / 60) % 60);
+    el.s.textContent = pad(s % 60);
+    clock.hidden = false;
+  }
+  if (clock) { tick(); setInterval(tick, 1000); }
 })();

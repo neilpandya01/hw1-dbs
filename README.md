@@ -50,12 +50,16 @@ Repository layout:
 - Each tile shows a **miniature preview** of its version — either a scaled-down `<iframe>` of the real page (CSS `transform: scale(...)`, with pointer events disabled) or a static screenshot thumbnail if iframes prove too heavy.
 - Each tile has a short label (version number + theme name).
 - Built versions show a live, scaled `<iframe>` preview (rendered at 1280×800, scaled by `gallery.js`); versions not yet started show a quiet numbered placeholder.
+- Tiles are **grouped by round**, each with a centered heading. Each group names what it varies, and each tile's caption names that variable rather than the theme:
+  - **Five layouts** (v01–v05), with captions like "Magazine layout" and "Search-bar focused"
+  - **Three moods** (v06–v08): Calm, Loud & spirited, Warm & welcoming
+  - **Coming next** (v09–v25): combinations of v01–v08
 - Clicking a tile navigates to that version's full page.
 - On smaller screens the grid collapses to fewer columns so tiles remain legible.
 
 ## The 25 Versions
 
-Each version is a self-contained static page (HTML + CSS, with minimal or no JavaScript) built around one **niche theme or design concept**. From v06 on, pages use a vertical, single-column layout (stacked full-width bands, no bento grids). Every version covers the same core content from the original school site, for example:
+Each version is a self-contained static page (HTML + CSS, with minimal or no JavaScript) built around one **niche theme or design concept**. Every version covers the same core content from the original school site, for example:
 
 - School name, logo, and hero section
 - Announcements / news
@@ -68,21 +72,21 @@ Every version page includes a fixed **"← Gallery"** back link (bottom-left, so
 
 Every built version loads `shared/a11y.css` and `shared/a11y.js`, which add a large, labelled **Accessibility** button (bottom-right; also `Alt+A`, or any `[data-a11y-toggle]` element) that opens a panel with: text size, high contrast, readable font (Atkinson Hyperlegible), line spacing, underline links, stop motion, and translate. Choices persist per browser. For high contrast to work, versions put every color through the tokens `--bg --surface --surface-2 --text --muted --brand --brand-2 --accent --line --on-brand`, and mark photo backgrounds with `data-a11y-bgimg` and scrims with `data-a11y-scrim`. Inside the gallery's previews, the button and back link are hidden.
 
-What changes between versions is the design language: layout, typography, color palette, imagery, and overall tone. Themes will be documented here as they are built.
+What changes between versions is the design language: layout, typography, color palette, imagery, and overall tone. Each version is documented below by its layout (the gallery caption) and its theme.
 
-Today's schedule, lunch and some notices are **sample data** (fixed to Thu Oct 1, 2026); events, stats, mission and contact details come from hall.whps.org. From v06 on, some events are invented to show what a design is for (after-school activities in v06; scores, team schedules, Spirit Week and the Hall vs. Conard game in v07). Each page's footer says what is sample data. Some sub-page and portal URLs are guesses or `#`.
+Today's schedule, lunch and some notices are **sample data** (fixed to Thu Oct 1, 2026); events, stats, mission and contact details come from hall.whps.org. v06–v08 add some invented items to sell their mood (e.g. Spirit Week, shout-outs, welcome notes); each footer says what is sample data. Some sub-page and portal URLs are guesses or `#`.
 
-| #  | Theme | Idea it tests | Status |
-|----|-------|---------------|--------|
-| 01 | Today Dashboard | No hero photo: a live "now / next" bell-schedule panel, six one-tap portal tiles, notices list, dismissible alert banner. Add `?t=HH:MM` to preview a time. | Built |
-| 02 | Editorial Split | Magazine tone for prospective families: split navy/photo hero (name never over the photo), one-row "Today at Hall" strip, serif "by the numbers", newsroom lead story. | Built |
-| 03 | Ask Hall | Search replaces the nav: plain-language search with synonyms ("sick" → report an absence), audience tabs, notices inbox with filters, Atkinson Hyperlegible throughout. | Built |
-| 04 | Warrior Varsity | Dark, bold school spirit: condensed caps, scoreboard-style Today ribbon and pride stats, grouped game-day board, deliberately calm help panel. | Built |
-| 05 | Portal Sidebar | App layout: fixed navy sidebar (no top bar), bento dashboard with live bell timeline, month calendar, light/dark theme toggle. | Built |
-| 06 | Hour by Hour | Iterates v01, more informational about *today*: live clock and day-progress bar, minutes left in the block, day/week counters and next day off, a time-of-day tint, one vertical timeline from 6:45 AM to evening (classes, after school, tonight), and the rest of the week day by day. Quick links sit in a strip right under the header so the time content never pushes them down. `?t=HH:MM` previews a time. | Built |
-| 07 | Warrior Season | Iterates v04, more school spirit: recent-scores strip, a "Tonight" game in the Today ribbon, one week schedule where games are emphasized (team chip, home/away, rivalry flag) but sit alongside tests, arts and schedule notes, with an All / Sports / School filter; "Keep tabs on a team" tabs per fall sport; Crosstown Classic countdown. | Built |
-| 08 | Quick Access | Iterates v03, links first: a quick-access hero, audience link lists and an A–Z index; v03's plain-language search becomes a secondary "Help · Ask Hall" drawer (also `/` or `?`) with common questions and the main office number. | Built |
-| 09–25 | _TBD_ | | Blank placeholder page |
+| #  | Layout (gallery caption) | Theme | Idea it tests | Status |
+|----|--------------------------|-------|---------------|--------|
+| 01 | Today-first dashboard | Today Dashboard | Day-by-day progress first. No hero photo: a live "now / next" bell-schedule panel, six one-tap portal tiles, notices list, dismissible alert banner. Add `?t=HH:MM` to preview a time. | Built |
+| 02 | Magazine layout | Editorial Split | Magazine tone for prospective families: split navy/photo hero (name never over the photo), one-row "Today at Hall" strip, serif "by the numbers", newsroom lead story. | Built |
+| 03 | Search-bar focused | Ask Hall | Search replaces the nav: plain-language search with synonyms ("sick" → report an absence), audience tabs, notices inbox with filters, Atkinson Hyperlegible throughout. | Built |
+| 04 | Big banner + scoreboard | Warrior Varsity | Dark, bold school spirit: condensed caps, scoreboard-style Today ribbon and pride stats, grouped game-day board, deliberately calm help panel. | Built |
+| 05 | Sidebar app | Portal Sidebar | App layout: fixed navy sidebar (no top bar), bento dashboard with live bell timeline, month calendar, light/dark theme toggle. | Built |
+| 06 | Mood: Calm | Quiet Hall | Calm in the *look*, not the message: soft navy and mist palette, generous space, a narrow single column, gentle type. The copy stays plain and informative, so dates and deadlines read clearly. | Built |
+| 07 | Mood: Loud & spirited | Pep Rally | Maximum school spirit: solid, loud navy/gold/red color blocks, chant headlines, a scrolling sports-score ticker, sample Spirit Week and Crosstown Classic, a cheer meter, then a deliberate drop in volume for help. | Built |
+| 08 | Mood: Warm & welcoming | Welcome Mat | For new families: "welcome" in many of the 37 languages spoken at Hall's homes, notes from students and staff, polaroid photos and invitations instead of events. | Built |
+| 09–25 | _TBD_ | | | Blank placeholder page |
 
 ## Tech Stack
 

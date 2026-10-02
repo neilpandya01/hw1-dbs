@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="gallery.css">
+  <link rel="stylesheet" href="gallery.css?v=4">
   <script src="gallery.js" defer></script>
 </head>
 <body>
@@ -28,7 +28,13 @@
     </div>
   </header>
 
-  <main id="grid" class="grid" aria-label="Versions">
+  <main id="grid">
+  <section class="group" aria-labelledby="g1-h">
+    <header class="group-head">
+      <h2 id="g1-h">Five layouts</h2>
+      <p class="group-lede">The first five versions vary the layout: the same school content, arranged five different ways.</p>
+    </header>
+    <div class="grid">
     <!-- Built versions: live previews (iframe is decorative; the link carries the name) -->
     <a class="tile is-built" href="versions/v01/index.html">
       <div class="frame" aria-hidden="true">
@@ -37,8 +43,8 @@
       </div>
       <div class="meta">
         <span class="num">01</span>
-        <span class="name">Today Dashboard</span>
-        <span class="desc">Live “now / next” bell schedule and one-tap portals first.</span>
+        <span class="name">Today-first dashboard</span>
+        <span class="desc">Day by day: the live bell schedule and the day’s progress lead the page.</span>
       </div>
     </a>
     <a class="tile is-built" href="versions/v02/index.html">
@@ -48,8 +54,8 @@
       </div>
       <div class="meta">
         <span class="num">02</span>
-        <span class="name">Editorial Split</span>
-        <span class="desc">Magazine-style story of Hall with a split, text-safe hero.</span>
+        <span class="name">Magazine layout</span>
+        <span class="desc">Split hero, then editorial sections and a lead story, like a magazine spread.</span>
       </div>
     </a>
     <a class="tile is-built" href="versions/v03/index.html">
@@ -59,8 +65,8 @@
       </div>
       <div class="meta">
         <span class="num">03</span>
-        <span class="name">Ask Hall</span>
-        <span class="desc">Search-first and task-based, set in a low-vision typeface.</span>
+        <span class="name">Search-bar focused</span>
+        <span class="desc">One big plain-language search box replaces the menu.</span>
       </div>
     </a>
     <a class="tile is-built" href="versions/v04/index.html">
@@ -70,8 +76,8 @@
       </div>
       <div class="meta">
         <span class="num">04</span>
-        <span class="name">Warrior Varsity</span>
-        <span class="desc">Bold, dark, school-spirit scoreboard of pride and game days.</span>
+        <span class="name">Big banner + scoreboard</span>
+        <span class="desc">Bold hero, then a scoreboard-style ribbon for today and school spirit.</span>
       </div>
     </a>
     <a class="tile is-built" href="versions/v05/index.html">
@@ -81,11 +87,20 @@
       </div>
       <div class="meta">
         <span class="num">05</span>
-        <span class="name">Portal Sidebar</span>
-        <span class="desc">App-like sidebar and bento dashboard, with light and dark themes.</span>
+        <span class="name">Sidebar app</span>
+        <span class="desc">Fixed side menu and a bento dashboard, like a web app.</span>
       </div>
     </a>
 
+    </div>
+  </section>
+
+  <section class="group" aria-labelledby="g2-h">
+    <header class="group-head">
+      <h2 id="g2-h">Three moods</h2>
+      <p class="group-lede">v06–v08 vary the mood: the same content made calm, loud, and warm, in the words as much as the look.</p>
+    </header>
+    <div class="grid grid-3">
     <a class="tile is-built" href="versions/v06/index.html">
       <div class="frame" aria-hidden="true">
         <div class="chrome"><i></i><i></i><i></i><span>hall.whps.org</span></div>
@@ -93,8 +108,8 @@
       </div>
       <div class="meta">
         <span class="num">06</span>
-        <span class="name">Hour by Hour</span>
-        <span class="desc">Iterates v01: a live clock, day progress and the whole day, hour by hour.</span>
+        <span class="name">Calm</span>
+        <span class="desc">Quiet Hall: relaxing to look at, with soft navy, lots of space and plain, clear words.</span>
       </div>
     </a>
     <a class="tile is-built" href="versions/v07/index.html">
@@ -104,8 +119,8 @@
       </div>
       <div class="meta">
         <span class="num">07</span>
-        <span class="name">Warrior Season</span>
-        <span class="desc">Iterates v04: scores, team tabs and sports woven into the week’s schedule.</span>
+        <span class="name">Loud & spirited</span>
+        <span class="desc">Pep Rally: solid loud color, chants, a live score ticker and a cheer meter.</span>
       </div>
     </a>
     <a class="tile is-built" href="versions/v08/index.html">
@@ -115,11 +130,19 @@
       </div>
       <div class="meta">
         <span class="num">08</span>
-        <span class="name">Quick Access</span>
-        <span class="desc">Iterates v03: links first; Ask Hall search moves into a help drawer.</span>
+        <span class="name">Warm & welcoming</span>
+        <span class="desc">Welcome Mat: “welcome” in Hall’s many languages and notes from real people.</span>
       </div>
     </a>
+    </div>
+  </section>
 
+  <section class="group" aria-labelledby="g4-h">
+    <header class="group-head">
+      <h2 id="g4-h">Coming next</h2>
+      <p class="group-lede">v09–v25 combine a little of each of v01–v08 into updated versions.</p>
+    </header>
+    <div class="grid">
     <!-- Not started yet -->
     <a class="tile is-empty" href="versions/v09/index.html"><div class="frame" aria-hidden="true"><span class="ghost">09</span></div><div class="meta"><span class="num">09</span><span class="name">Not started</span></div></a>
     <a class="tile is-empty" href="versions/v10/index.html"><div class="frame" aria-hidden="true"><span class="ghost">10</span></div><div class="meta"><span class="num">10</span><span class="name">Not started</span></div></a>
@@ -138,6 +161,8 @@
     <a class="tile is-empty" href="versions/v23/index.html"><div class="frame" aria-hidden="true"><span class="ghost">23</span></div><div class="meta"><span class="num">23</span><span class="name">Not started</span></div></a>
     <a class="tile is-empty" href="versions/v24/index.html"><div class="frame" aria-hidden="true"><span class="ghost">24</span></div><div class="meta"><span class="num">24</span><span class="name">Not started</span></div></a>
     <a class="tile is-empty" href="versions/v25/index.html"><div class="frame" aria-hidden="true"><span class="ghost">25</span></div><div class="meta"><span class="num">25</span><span class="name">Not started</span></div></a>
+    </div>
+  </section>
   </main>
 
   <footer class="foot">
