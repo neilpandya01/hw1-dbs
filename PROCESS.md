@@ -189,4 +189,22 @@ I split the remaining versions into two groups. **Combining** (v13–v19) explor
 
 ## Round 5 — Converge (v20–v25)
 
-_Next: narrow v13–v19 down to one final page._
+**Date:** Oct 4, 2026
+
+### What I decided
+
+From here each version refines the one before, one round of adjustments at a time, until v25 is the final page. v19 is the starting point.
+
+| # | Builds on | Refinement |
+|---|---|---|
+| v20 | v19 | The today band, remade: a wider, taller day bar captioned "Block" with every label readable, lunch names only, portals 2 × 2 |
+
+**v20.** v20 only changes the today band under the nav. Lunch was taking extra room for food tags, so the rotating lunch now shows names only, on one line, ending in "…" if a name is ever too long. Tags like *Vegetarian* stay in the expanded menu. The day bar was hard to read and cut Advisory down to "A…", so it gets more of the band. The *Bell schedule, lunch & events* toggle moves under the date and the four portals sit 2 × 2, which frees width for the bar (about 425px at desktop, up from about 365px). The bar is also taller, with larger labels. Every segment is wide enough for its label, so "Adv" always shows, and a "Block" caption beside the numbers says what they are. Lunch's dots move up next to its label to keep the band short. On tablets lunch and the portals share a second row; on phones everything stacks.
+
+### How I used Claude
+
+- For v20 I asked to drop the food tags from the rotating lunch (keeping them in the expanded menu), add "…" for long names, make sure "Adv" shows, widen the day bar so it's easier to read, label the numbers as blocks, and rebalance the band around all of that. Claude chose the layout (the toggle under the date, the portals 2 × 2) and built it.
+
+**Verdicts (keep / drop / steal, and why):**
+
+**What I learned:**
