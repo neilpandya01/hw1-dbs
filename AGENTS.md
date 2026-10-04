@@ -28,6 +28,7 @@ Redesign the landing page of **Hall High School** (West Hartford, CT), the high 
 - Type: Fraunces (regular, not "wonky") + Source Sans 3, as in v14 onward. No handwriting fonts.
 - Translate: a Language menu labelled in several scripts (plus a browser-language offer), not "welcome" in many languages.
 - v17 tests switching audiences: prospective families first, current students in a one-line strip at the top.
+- Search (v03) can stay as a small helper in the nav, not the focus of the page (v18).
 
 ## Gallery organization
 

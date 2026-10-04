@@ -154,6 +154,7 @@ I split the remaining versions into two groups. **Combining** (v13–v19) explor
 | v15 | v14 + v04 | v14's today info at the top left beside a smaller v04 banner, then v04's game day & events (by category, next dates first) and bulletin |
 | v16 | v15, refined | Dropdown nav on hover; banner left and today right; today's events plus the next two days in the today column; the two nearest dates per category |
 | v17 | v08 + v16 | Audiences switched: prospective families first, v08's warmth in v16's type, a language menu and browser-language offer instead of welcome words |
+| v18 | v16 + v13 + v03 + v17 | v16 with v13's expanding today band under the nav, the banner laid out horizontally, v03's search kept small in the nav, and v17's language menu |
 
 **v13.** I like the today-centered information in v01, but its panel takes up too much space and dominates the page. v13 keeps the same facts (date, odd/even day, hours, a now/next line with a thin day bar, lunch, portals) in a single band, with the full bell schedule and lunch waves one tap away. After that, announcements lead, as in v09. v09 felt urgent ("Active alert", "Action needed", "What to do", "Dates to act on", countdowns), so v13 calms the tone. The calm comes from the copy and structure, not the color: each announcement states its date and the facts, with neutral categories and no urgency labels or instructions.
 
@@ -165,6 +166,8 @@ I split the remaining versions into two groups. **Combining** (v13–v19) explor
 
 **v17.** Every version so far put current students first. v17 tries the opposite, with prospective and incoming families as the primary audience. It keeps v08's warmth (warm paper, terracotta, copy written to "you") but drops the "welcome" words in many languages, which took the top of the page without telling families anything. It also drops v08's fonts and uses v14–v16's Fraunces and Source Sans 3. Translation becomes a **Language** menu in the utility bar, labelled in several scripts, plus a one-line offer that appears only when the browser's language is Spanish, Mandarin, Portuguese, Vietnamese or Arabic. The page answers a family's questions in order: what Hall is (hero with *Plan a visit* and *Enrolling? Start here*), what a day looks like (an even-day timeline), academics, student life (with home games and shows open to families), belonging and support (37 languages, English learner support, counseling), and how to join (three steps and an FAQ). Current students keep a one-line strip under the nav with the day type, bell schedule, lunch and portals, and a short bulletin near the end.
 
+**v18.** v18 goes back to v16 and current students first, and brings in a few ideas from other versions. v13's today band sits right under the nav: the date, odd/even day, a now/next line with the thin day bar, today's lunch and the portals, in one line. *Bell schedule, lunch & events* expands it to the full bell schedule (current block highlighted), the lunch list and v16's today-and-next-two-days events, which replaces v16's Today column. With that column gone, v16's banner (photo, logo, name, mission and the *Game day & events* and *New to Hall?* links) runs horizontally across the page, so the photo shows in its own shape instead of being cropped. v03's plain-language search comes back, but small: a box at the right of the nav (an icon on narrower screens) that understands everyday words ("sick" → report an absence, "bus", "lunch") and can jump to sections of this page. It's there when you can't find something, not the focus of the page. v17's Language menu and browser-language offer replace the plain Translate link. Everything below the banner is v16.
+
 ### How I used Claude
 
 - I chose the v01 + v09 combination and the calmer tone. Claude built v13 and regrouped the gallery.
@@ -172,6 +175,7 @@ I split the remaining versions into two groups. **Combining** (v13–v19) explor
 - For v15 I chose v04's category calendar and bulletin, with the nearest dates first and the full month behind a button, today's info at the top left and a smaller v04 banner. Claude built it.
 - For v16 I asked for a dropdown nav, a vertical lunch list, today's events in the today column, two dates per category without counts or a month toggle, senior portraits in the bulletin, and the banner and today swapped. Claude built it.
 - For v17 I asked to switch the primary and secondary audiences, keep v08's warmth without its welcome words or fonts, and find a better place for Translate. Claude proposed the structure and the language menu; I chose the editorial fonts. Claude built it.
+- For v18 I asked to build on v16 with ideas from v17: v03's search kept small in the nav, v13's expanding today band under the nav, and v16's banner laid out horizontally so the photo fits, with everything below unchanged. Claude built it and brought in v17's language menu.
 
 **Verdicts (keep / drop / steal, and why):**
 
