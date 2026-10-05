@@ -199,15 +199,19 @@ From here each version refines the one before, one round of adjustments at a tim
 |---|---|---|
 | v20 | v19 | The today band, remade: a wider, taller day bar captioned "Block" with every label readable, lunch names only, portals 2 × 2 |
 | v21 | v20 | hall.whps.org's banner video replaces the photo, with a clip bar modeled on the day bar |
+| v22 | v21 | A wider page and larger video; clip dots instead of the clip bar; the day bar centered in the today band; "Quick links" labelled |
 
 **v20.** v20 only changes the today band under the nav. Lunch was taking extra room for food tags, so the rotating lunch now shows names only, on one line, ending in "…" if a name is ever too long. Tags like *Vegetarian* stay in the expanded menu. The day bar was hard to read and cut Advisory down to "A…", so it gets more of the band. The *Bell schedule, lunch & events* toggle moves under the date and the four portals sit 2 × 2, which frees width for the bar (about 425px at desktop, up from about 365px). The bar is also taller, with larger labels. Every segment is wide enough for its label, so "Adv" always shows, and a "Block" caption beside the numbers says what they are. Lunch's dots move up next to its label to keep the band short. On tablets lunch and the portals share a second row; on phones everything stacks.
 
 **v21.** The real homepage opens with a 73-second looping video, and v21 puts it in the banner where the photo was. Claude found it was a direct MP4 on Finalsite's CDN (26 MB at 1080p; the smaller versions weren't available), so the repo keeps a 720p copy re-encoded to 7.3 MB, plus a poster frame. The video is 22 short clips of different students and places, from a science lab and the library to orchestra, the cafeteria, ceramics and the gym. Claude found the cuts with ffmpeg's scene detection. Over the video's bottom edge, a clip bar works like the day bar: one segment per clip, sized to its length, filling as it plays. Beside it are a pause button and the clip's name and number ("Orchestra · 9 of 22"). Clicking a segment, or using the arrow keys, jumps to that clip. The video doesn't start on its own with reduced motion, the kit's "Stop motion", Data Saver, or in the gallery's previews; it then shows the poster and a play button. Without JS it has the browser's own controls.
 
+**v22.** The page gets wider (the content area goes from 75rem to 88rem) and the video takes more of the banner, so at a 1440px screen it grows from about 634 × 356 to 826 × 464. The clip bar becomes simpler: no caption, just one small circle per clip, the current one filled, moving from circle to circle as the video plays. Each circle jumps to its clip (hovering shows the clip's name), and the pause button is now a square. In the today band, the day bar's line sits at the band's exact vertical middle, the now line is centered over it, lunch moves further right from the bar (48px instead of 28px), and the four portals are labelled "Quick links".
+
 ### How I used Claude
 
 - For v20 I asked to drop the food tags from the rotating lunch (keeping them in the expanded menu), add "…" for long names, make sure "Adv" shows, widen the day bar so it's easier to read, label the numbers as blocks, and rebalance the band around all of that. Claude chose the layout (the toggle under the date, the portals 2 × 2) and built it.
 - For v21 I asked whether the real site's video could be used, had Claude check first, then asked to put it in the banner with a progress bar like the day bar, noting the different clips. Claude found the cuts, chose the 720p copy and named each clip, and built it.
+- For v22 I asked to center the day bar vertically in the band with the now line centered above it, move lunch further right, label the quick links, widen the page so the video is larger, and replace the clip bar's caption and segments with clickable circles and a square pause button. Claude built it.
 
 **Verdicts (keep / drop / steal, and why):**
 
