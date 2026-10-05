@@ -11,7 +11,7 @@
 | Initial Five Layouts | v01 Today-first dashboard · v02 Magazine layout · v03 Search-bar focused · v04 Big banner + scoreboard · v05 Sidebar app |
 | Three Moods | v06 Calm · v07 Loud & spirited · v08 Warm & welcoming |
 | Four Content Priorities | v09 Announcements first · v10 Events first · v11 Athletics first · v12 Student life first |
-| Combining | v13 Today + announcements · v14 Today \| announcements · v15 Today + game day · v16 Today feed · v17 Families first · v18 Today band + search · v19–v22 not started |
+| Combining | v13 Today + announcements · v14 Today \| announcements · v15 Today + game day · v16 Today feed · v17 Families first · v18 Today band + search · v19 Game week · v20–v22 not started |
 | Converging | v23 Today band, refined · v24 Banner video · v25 Final |
 
 ## Design Choices

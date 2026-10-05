@@ -30,6 +30,7 @@ Redesign the landing page of **Hall High School** (West Hartford, CT), the high 
 - Titles, links, buttons and menu items use Title Case (short articles, conjunctions and prepositions lowercase); sentences stay sentence case (v25).
 - Translate: a Language menu labelled in several scripts (plus a browser-language offer), not "welcome" in many languages.
 - v17 tests switching audiences: prospective families first, current students in a one-line strip at the top.
+- Athletics can be slightly emphasized (v19: one compact matchup card beside the week), never dominant like v11. No tilted stickers, tickers or heavy display fonts (v07).
 - Search (v03) can stay as a small helper in the nav, not the focus of the page (v18).
 - "Hall High School" stands alone in the nav, banner and footer, with no "West Hartford, CT" or "Home of the Warriors" lines; the footer address carries the place (v23).
 
@@ -39,7 +40,7 @@ Redesign the landing page of **Hall High School** (West Hartford, CT), the high 
 - Tile captions name that variable (e.g. "Magazine layout", "Calm", "Events first"), not the theme.
 - The content-priority idea came from v04 (good for sports fans), but each of v09–v12 has its own look, to widen the range of ideas.
 - Even when today's essentials aren't the priority, they stay one tap away near the top.
-- **Combining** (v13–v22): explore by combining ideas from v01–v12; v19–v22 are blank, still to be built as new combinations. **Converging** (v23–v25): refine v18, which works for both current and prospective students and families, in three steps into one final page.
+- **Combining** (v13–v22): explore by combining ideas from v01–v12; v20–v22 are blank, still to be built as new combinations. **Converging** (v23–v25): refine v18, which works for both current and prospective students and families, in three steps into one final page.
 - **v25 is the final page.**
 
 ## Working agreement
