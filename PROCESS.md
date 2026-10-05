@@ -200,6 +200,7 @@ From here each version refines the one before, one round of adjustments at a tim
 | v20 | v19 | The today band, remade: a wider, taller day bar captioned "Block" with every label readable, lunch names only, portals 2 × 2 |
 | v21 | v20 | hall.whps.org's banner video replaces the photo, with a clip bar modeled on the day bar |
 | v22 | v21 | A wider page and larger video; clip dots instead of the clip bar; the day bar centered in the today band; "Quick links" labelled |
+| v23 | v22 | Light blue replaces the warm paper; clip dots centered, fainter when not playing, no names on hover; banner links centered; jumping fixed on simple servers |
 
 **v20.** v20 only changes the today band under the nav. Lunch was taking extra room for food tags, so the rotating lunch now shows names only, on one line, ending in "…" if a name is ever too long. Tags like *Vegetarian* stay in the expanded menu. The day bar was hard to read and cut Advisory down to "A…", so it gets more of the band. The *Bell schedule, lunch & events* toggle moves under the date and the four portals sit 2 × 2, which frees width for the bar (about 425px at desktop, up from about 365px). The bar is also taller, with larger labels. Every segment is wide enough for its label, so "Adv" always shows, and a "Block" caption beside the numbers says what they are. Lunch's dots move up next to its label to keep the band short. On tablets lunch and the portals share a second row; on phones everything stacks.
 
@@ -207,11 +208,16 @@ From here each version refines the one before, one round of adjustments at a tim
 
 **v22.** The page gets wider (the content area goes from 75rem to 88rem) and the video takes more of the banner, so at a 1440px screen it grows from about 634 × 356 to 826 × 464. The clip bar becomes simpler: no caption, just one small circle per clip, the current one filled, moving from circle to circle as the video plays. Each circle jumps to its clip (hovering shows the clip's name), and the pause button is now a square. In the today band, the day bar's line sits at the band's exact vertical middle, the now line is centered over it, lunch moves further right from the bar (48px instead of 28px), and the four portals are labelled "Quick links".
 
+**v23.** Light blue (#eef4fb) replaces the warm paper (#f6f2ea) as the second background, behind game day and the bulletin, the support strip, the expanded today panel and the search box. The lines are cooled to match, and the beige highlight on "now", "today" and "next" rows becomes a deeper light blue. Hall navy is still the theme color. On the video, the clip dots are centered along its bottom edge, the dots that aren't playing are fainter, and hovering a dot no longer names the clip. The banner's *Game day & events* and *New to Hall?* links are centered under the mission.
+
+I asked Claude to verify that the dots jump to the right clip. Its test found they didn't on a simple local server like `python -m http.server`: jumping in a video needs a server that can send part of a file, and without that every jump went back to 0:00. GitHub Pages can, so it worked there. v23 detects the simple case and loads the whole video once so jumping works anywhere. Claude tested both kinds of server: dots 9, 20, 14 and 1 each landed on their clip (27.8s, 67.3s, 50.6s, 0.05s) with the right dot highlighted.
+
 ### How I used Claude
 
 - For v20 I asked to drop the food tags from the rotating lunch (keeping them in the expanded menu), add "…" for long names, make sure "Adv" shows, widen the day bar so it's easier to read, label the numbers as blocks, and rebalance the band around all of that. Claude chose the layout (the toggle under the date, the portals 2 × 2) and built it.
 - For v21 I asked whether the real site's video could be used, had Claude check first, then asked to put it in the banner with a progress bar like the day bar, noting the different clips. Claude found the cuts, chose the 720p copy and named each clip, and built it.
 - For v22 I asked to center the day bar vertically in the band with the now line centered above it, move lunch further right, label the quick links, widen the page so the video is larger, and replace the clip bar's caption and segments with clickable circles and a square pause button. Claude built it.
+- For v23 I asked Claude to verify the dots jump to their clips, center them, make the inactive ones fainter, stop naming clips on hover, center the banner links, and replace the warm paper color with light blue. Claude found and fixed the jumping bug and built it.
 
 **Verdicts (keep / drop / steal, and why):**
 

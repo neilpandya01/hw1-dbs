@@ -22,6 +22,7 @@ Redesign the landing page of **Hall High School** (West Hartford, CT), the high 
 ## Design rules learned so far
 
 - Hall's dark navy (#0b2a5b) is the theme color on every version, whatever the mood.
+- From v23, light blue (#eef4fb) is the second background instead of warm paper.
 - Mood lives in the look, not in telling students how to feel. Copy stays clear and informative, and deadlines are stated plainly.
 - Calm tone means informing, not directing: give dates and facts, and avoid "act on this", "action needed" or countdown urgency.
 - Today's essentials should stay compact. v01's today panel was too dominant.
