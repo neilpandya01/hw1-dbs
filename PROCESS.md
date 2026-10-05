@@ -201,6 +201,7 @@ From here each version refines the one before, one round of adjustments at a tim
 | v21 | v20 | hall.whps.org's banner video replaces the photo, with a clip bar modeled on the day bar |
 | v22 | v21 | A wider page and larger video; clip dots instead of the clip bar; the day bar centered in the today band; "Quick links" labelled |
 | v23 | v22 | Light blue replaces the warm paper; clip dots centered, fainter when not playing, no names on hover; banner links centered; jumping fixed on simple servers |
+| v24 | v23 | Literata replaces Fraunces for every serif; student life under game day & events; the bulletin without repeats; a larger top bar |
 
 **v20.** v20 only changes the today band under the nav. Lunch was taking extra room for food tags, so the rotating lunch now shows names only, on one line, ending in "…" if a name is ever too long. Tags like *Vegetarian* stay in the expanded menu. The day bar was hard to read and cut Advisory down to "A…", so it gets more of the band. The *Bell schedule, lunch & events* toggle moves under the date and the four portals sit 2 × 2, which frees width for the bar (about 425px at desktop, up from about 365px). The bar is also taller, with larger labels. Every segment is wide enough for its label, so "Adv" always shows, and a "Block" caption beside the numbers says what they are. Lunch's dots move up next to its label to keep the band short. On tablets lunch and the portals share a second row; on phones everything stacks.
 
@@ -212,12 +213,18 @@ From here each version refines the one before, one round of adjustments at a tim
 
 I asked Claude to verify that the dots jump to the right clip. Its test found they didn't on a simple local server like `python -m http.server`: jumping in a video needs a server that can send part of a file, and without that every jump went back to 0:00. GitHub Pages can, so it worked there. v23 detects the simple case and loads the whole video once so jumping works anywhere. Claude tested both kinds of server: dots 9, 20, 14 and 1 each landed on their clip (27.8s, 67.3s, 50.6s, 0.05s) with the right dot highlighted.
 
+**v24.** I didn't like Fraunces' ampersand in the big headings: at large sizes it curls around itself ("Game day & events"). v24 replaces Fraunces with Literata everywhere the serif was used (headings, the date, the bell schedule, the banner name and mission, the numbers). Claude rendered six warm, solid serifs side by side (Literata, Merriweather, Source Serif 4, Lora, Newsreader, Crimson Pro), all with a plain ampersand, and chose Literata: a sturdy book serif with true italics. Merriweather was more solid but too wide for the today band. Literata is wider than Fraunces, so the banner name is a little smaller to stay on one line, and on tablets the banner's navy panel gets a bit more room and the banner stacks a little sooner.
+
+Also in v24: the space under game day & events now holds **student life**, a brief version of v12's "Find your people" in this page's style: Athletics, Clubs & publications, Music & theater and Visual arts, each with a way to join, plus a pointer to counselors. The **bulletin** drops what game day & events already shows (the Oct 9 early dismissal and the PSAT), so senior portraits leads, followed by picture day and Indigenous Peoples' Day (both from v12), Heritage Month, eCollect forms, two invented notices (lost & found, tech help) and the newsletter; the two columns now end at about the same height. The **top bar** is a little taller with larger text.
+
 ### How I used Claude
 
 - For v20 I asked to drop the food tags from the rotating lunch (keeping them in the expanded menu), add "…" for long names, make sure "Adv" shows, widen the day bar so it's easier to read, label the numbers as blocks, and rebalance the band around all of that. Claude chose the layout (the toggle under the date, the portals 2 × 2) and built it.
 - For v21 I asked whether the real site's video could be used, had Claude check first, then asked to put it in the banner with a progress bar like the day bar, noting the different clips. Claude found the cuts, chose the 720p copy and named each clip, and built it.
 - For v22 I asked to center the day bar vertically in the band with the now line centered above it, move lunch further right, label the quick links, widen the page so the video is larger, and replace the clip bar's caption and segments with clickable circles and a square pause button. Claude built it.
 - For v23 I asked Claude to verify the dots jump to their clips, center them, make the inactive ones fainter, stop naming clips on hover, center the banner links, and replace the warm paper color with light blue. Claude found and fixed the jumping bug and built it.
+- For v24 I asked for a more solid, warm font without Fraunces' curled ampersand, used everywhere Fraunces was. Claude compared six fonts, chose Literata, and built it.
+- Also for v24 I asked for student life in the empty space under game day & events (a brief v12 in this style, encouraging students to join), a bulletin without anything game day & events already covers (with invented notices to fill it as needed), and a larger top bar. Claude built it and balanced the two columns.
 
 **Verdicts (keep / drop / steal, and why):**
 

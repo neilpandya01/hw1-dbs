@@ -26,7 +26,7 @@ Redesign the landing page of **Hall High School** (West Hartford, CT), the high 
 - Mood lives in the look, not in telling students how to feel. Copy stays clear and informative, and deadlines are stated plainly.
 - Calm tone means informing, not directing: give dates and facts, and avoid "act on this", "action needed" or countdown urgency.
 - Today's essentials should stay compact. v01's today panel was too dominant.
-- Type: Fraunces (regular, not "wonky") + Source Sans 3, as in v14 onward. No handwriting fonts.
+- Type: Literata + Source Sans 3 from v24 (Fraunces before that; its curled ampersand was dropped). No handwriting fonts.
 - Translate: a Language menu labelled in several scripts (plus a browser-language offer), not "welcome" in many languages.
 - v17 tests switching audiences: prospective families first, current students in a one-line strip at the top.
 - Search (v03) can stay as a small helper in the nav, not the focus of the page (v18).
