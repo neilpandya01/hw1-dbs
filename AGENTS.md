@@ -27,6 +27,7 @@ Redesign the landing page of **Hall High School** (West Hartford, CT), the high 
 - Calm tone means informing, not directing: give dates and facts, and avoid "act on this", "action needed" or countdown urgency.
 - Today's essentials should stay compact. v01's today panel was too dominant.
 - Type: Literata + Source Sans 3 from v24 (Fraunces before that; its curled ampersand was dropped). No handwriting fonts.
+- Titles, links, buttons and menu items use Title Case (short articles, conjunctions and prepositions lowercase); sentences stay sentence case (v25).
 - Translate: a Language menu labelled in several scripts (plus a browser-language offer), not "welcome" in many languages.
 - v17 tests switching audiences: prospective families first, current students in a one-line strip at the top.
 - Search (v03) can stay as a small helper in the nav, not the focus of the page (v18).
@@ -39,6 +40,7 @@ Redesign the landing page of **Hall High School** (West Hartford, CT), the high 
 - The content-priority idea came from v04 (good for sports fans), but each of v09–v12 has its own look, to widen the range of ideas.
 - Even when today's essentials aren't the priority, they stay one tap away near the top.
 - **Combining** (v13–v19): explore by combining ideas from v01–v12. **Converging** (v20–v25): narrow v13–v19 down to one final page.
+- **v25 is the final page.**
 
 ## Working agreement
 
