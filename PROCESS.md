@@ -2,7 +2,7 @@
 
 A running log of how the 25 versions came together: what I asked for, what I decided, what I dropped and why. Newest round at the bottom.
 
-**The plan:** go wide (v01–v12), explore by combining what works (v13–v19), then converge one refinement at a time until v25 is the final choice (v20–v25).
+**The plan:** go wide (v01–v12), explore by combining what works (v13–v18), then converge one refinement at a time until v25 is the final choice (v19–v25).
 
 ---
 
@@ -139,13 +139,13 @@ The gallery groups them as **Four content priorities**.
 
 ---
 
-## Round 4 — Combine (v13–v19)
+## Round 4 — Combine (v13–v18)
 
 **Date:** Oct 2, 2026
 
 ### What I decided
 
-I split the remaining versions into two groups. **Combining** (v13–v19) explores by putting together the ideas from v01–v12 that worked. **Converging** (v20–v25) narrows those combinations down to one final page. The gallery now has both groups.
+I split the remaining versions into two groups. **Combining** (v13–v18) explores by putting together the ideas from v01–v12 that worked. **Converging** (v19–v25) refines the strongest combination, v18, into one final page. The gallery now has both groups. (At first Combining ran to v19; I later moved v19 into Converging, since it was the first refinement of v18.)
 
 | # | Combines | Main idea |
 |---|---|---|
@@ -155,7 +155,6 @@ I split the remaining versions into two groups. **Combining** (v13–v19) explor
 | v16 | v15, refined | Dropdown nav on hover; banner left and today right; today's events plus the next two days in the today column; the two nearest dates per category |
 | v17 | v08 + v16 | Audiences switched: prospective families first, v08's warmth in v16's type, a language menu and browser-language offer instead of welcome words |
 | v18 | v16 + v13 + v03 + v17 | v16 with v13's expanding today band under the nav, the banner laid out horizontally, v03's search kept small in the nav, and v17's language menu |
-| v19 | v18, refined | The name stands alone (no place or mascot lines), lunch cycles through the whole menu, and the search hint fits its box |
 
 **v13.** I like the today-centered information in v01, but its panel takes up too much space and dominates the page. v13 keeps the same facts (date, odd/even day, hours, a now/next line with a thin day bar, lunch, portals) in a single band, with the full bell schedule and lunch waves one tap away. After that, announcements lead, as in v09. v09 felt urgent ("Active alert", "Action needed", "What to do", "Dates to act on", countdowns), so v13 calms the tone. The calm comes from the copy and structure, not the color: each announcement states its date and the facts, with neutral categories and no urgency labels or instructions.
 
@@ -169,8 +168,6 @@ I split the remaining versions into two groups. **Combining** (v13–v19) explor
 
 **v18.** v18 goes back to v16 and current students first, and brings in a few ideas from other versions. v13's today band sits right under the nav: the date, odd/even day, a now/next line with the thin day bar, today's lunch and the portals, in one line. *Bell schedule, lunch & events* expands it to the full bell schedule (current block highlighted), the lunch list and v16's today-and-next-two-days events, which replaces v16's Today column. With that column gone, v16's banner (photo, logo, name, mission and the *Game day & events* and *New to Hall?* links) runs horizontally across the page, so the photo shows in its own shape instead of being cropped. v03's plain-language search comes back, but small: a box at the right of the nav (an icon on narrower screens) that understands everyday words ("sick" → report an absence, "bus", "lunch") and can jump to sections of this page. It's there when you can't find something, not the focus of the page. v17's Language menu and browser-language offer replace the plain Translate link. Everything below the banner is v16.
 
-**v19.** v19 refines v18. "West Hartford, CT" and "Home of the Warriors" come out of the nav, the banner and the footer, so "Hall High School" stands on its own; the footer keeps the street address. In the today band, lunch used to show only the first item. It now cycles through the whole menu every few seconds, with small dots to pick an item (which stops the cycle). It pauses on hover or keyboard focus, and doesn't move on its own with reduced motion or the accessibility kit's "Stop motion". On tablets and phones lunch now stays in the band instead of disappearing. The search hint is shorter ("Search: lunch, bus, absent", no trailing ellipsis), and the box has a fixed width that fits it. Below about 1150px wide, where the box and the nav no longer fit side by side, search folds into the icon.
-
 ### How I used Claude
 
 - I chose the v01 + v09 combination and the calmer tone. Claude built v13 and regrouped the gallery.
@@ -179,7 +176,6 @@ I split the remaining versions into two groups. **Combining** (v13–v19) explor
 - For v16 I asked for a dropdown nav, a vertical lunch list, today's events in the today column, two dates per category without counts or a month toggle, senior portraits in the bulletin, and the banner and today swapped. Claude built it.
 - For v17 I asked to switch the primary and secondary audiences, keep v08's warmth without its welcome words or fonts, and find a better place for Translate. Claude proposed the structure and the language menu; I chose the editorial fonts. Claude built it.
 - For v18 I asked to build on v16 with ideas from v17: v03's search kept small in the nav, v13's expanding today band under the nav, and v16's banner laid out horizontally so the photo fits, with everything below unchanged. Claude built it and brought in v17's language menu.
-- For v19 I asked to remove "West Hartford, CT" and "Home of the Warriors" from the nav, banner and footer (keeping the address), to cycle lunch so every item can be seen, and to make the search hint fit its box. Claude built it.
 
 **Verdicts (keep / drop / steal, and why):**
 
@@ -187,22 +183,25 @@ I split the remaining versions into two groups. **Combining** (v13–v19) explor
 
 ---
 
-## Round 5 — Converge (v20–v25)
+## Round 5 — Converge (v19–v25)
 
 **Date:** Oct 4, 2026
 
 ### What I decided
 
-From here each version refines the one before, one round of adjustments at a time, until v25 is the final page. v19 is the starting point.
+From here each version refines the one before, one round of adjustments at a time, until v25 is the final page. v18 is the starting point: it works well for both current and prospective students and families.
 
 | # | Builds on | Refinement |
 |---|---|---|
+| v19 | v18 | The name stands alone (no place or mascot lines), lunch cycles through the whole menu, and the search hint fits its box |
 | v20 | v19 | The today band, remade: a wider, taller day bar captioned "Block" with every label readable, lunch names only, portals 2 × 2 |
 | v21 | v20 | hall.whps.org's banner video replaces the photo, with a clip bar modeled on the day bar |
 | v22 | v21 | A wider page and larger video; clip dots instead of the clip bar; the day bar centered in the today band; "Quick links" labelled |
 | v23 | v22 | Light blue replaces the warm paper; clip dots centered, fainter when not playing, no names on hover; banner links centered; jumping fixed on simple servers |
 | v24 | v23 | Literata replaces Fraunces for every serif; student life under game day & events; the bulletin without repeats; a larger top bar |
 | v25 | v24 | **Final.** "Quick links" centered over its links; a low-profile bulletin of upcoming notices only; every student link from the real site in the nav |
+
+**v19.** v19 refines v18. "West Hartford, CT" and "Home of the Warriors" come out of the nav, the banner and the footer, so "Hall High School" stands on its own; the footer keeps the street address. In the today band, lunch used to show only the first item. It now cycles through the whole menu every few seconds, with small dots to pick an item (which stops the cycle). It pauses on hover or keyboard focus, and doesn't move on its own with reduced motion or the accessibility kit's "Stop motion". On tablets and phones lunch now stays in the band instead of disappearing. The search hint is shorter ("Search: lunch, bus, absent", no trailing ellipsis), and the box has a fixed width that fits it. Below about 1150px wide, where the box and the nav no longer fit side by side, search folds into the icon.
 
 **v20.** v20 only changes the today band under the nav. Lunch was taking extra room for food tags, so the rotating lunch now shows names only, on one line, ending in "…" if a name is ever too long. Tags like *Vegetarian* stay in the expanded menu. The day bar was hard to read and cut Advisory down to "A…", so it gets more of the band. The *Bell schedule, lunch & events* toggle moves under the date and the four portals sit 2 × 2, which frees width for the bar (about 425px at desktop, up from about 365px). The bar is also taller, with larger labels. Every segment is wide enough for its label, so "Adv" always shows, and a "Block" caption beside the numbers says what they are. Lunch's dots move up next to its label to keep the band short. On tablets lunch and the portals share a second row; on phones everything stacks.
 
@@ -224,6 +223,7 @@ Last, I checked v25 against the real site's list of student links. Nine were alr
 
 ### How I used Claude
 
+- For v19 I asked to remove "West Hartford, CT" and "Home of the Warriors" from the nav, banner and footer (keeping the address), to cycle lunch so every item can be seen, and to make the search hint fit its box. Claude built it.
 - For v20 I asked to drop the food tags from the rotating lunch (keeping them in the expanded menu), add "…" for long names, make sure "Adv" shows, widen the day bar so it's easier to read, label the numbers as blocks, and rebalance the band around all of that. Claude chose the layout (the toggle under the date, the portals 2 × 2) and built it.
 - For v21 I asked whether the real site's video could be used, had Claude check first, then asked to put it in the banner with a progress bar like the day bar, noting the different clips. Claude found the cuts, chose the 720p copy and named each clip, and built it.
 - For v22 I asked to center the day bar vertically in the band with the now line centered above it, move lunch further right, label the quick links, widen the page so the video is larger, and replace the clip bar's caption and segments with clickable circles and a square pause button. Claude built it.
