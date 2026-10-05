@@ -40,7 +40,7 @@ Redesign the landing page of **Hall High School** (West Hartford, CT), the high 
 - Tile captions name that variable (e.g. "Magazine layout", "Calm", "Events first"), not the theme.
 - The content-priority idea came from v04 (good for sports fans), but each of v09–v12 has its own look, to widen the range of ideas.
 - Even when today's essentials aren't the priority, they stay one tap away near the top.
-- **Combining** (v13–v22): explore by combining ideas from v01–v12; v22 is blank, still to be built as new combinations. **Converging** (v23–v25): refine v18, which works for both current and prospective students and families, in three steps into one final page.
+- **Combining** (v13–v22): explore by combining ideas from v01–v12. **Converging** (v23–v25): refine v18, which works for both current and prospective students and families, in three steps into one final page.
 - **v25 is the final page.**
 
 ## Working agreement
