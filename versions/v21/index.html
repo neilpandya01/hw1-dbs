@@ -3,15 +3,249 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hall High Redesign — v21</title>
+  <title>Hall High School — v21 Hall Stories</title>
+  <meta name="description" content="Hall High School, West Hartford, CT. Student life at Hall as a magazine issue: arts, athletics, clubs, culture, senior year and what's new for incoming families.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&display=swap">
   <link rel="stylesheet" href="../../shared/back.css">
+  <link rel="stylesheet" href="../../shared/a11y.css">
   <link rel="stylesheet" href="style.css">
+  <script src="../../shared/a11y.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="back-link" href="../../index.html" aria-label="Back to gallery">&larr; Gallery</a>
+  <a class="skip-link" href="#main">Skip to Main Content</a>
 
-  <main>
-    <!-- v21 landing page goes here -->
+  <!-- ============ TODAY LINE: essentials stay one tap away (v02's today strip) ============ -->
+  <section class="today" aria-label="Today at Hall">
+    <div class="wrap today__inner">
+      <p class="today__day">
+        <time datetime="2026-10-01">Thu, Oct 1</time>
+        <span class="today__pill">Even Day</span>
+        <span class="today__hours">7:30 AM – 2:10 PM</span>
+        <span class="today__now" id="today-now" aria-live="polite"></span>
+      </p>
+      <ul class="today__links" aria-label="Quick links">
+        <li><a href="https://hall.whps.org/school-information/bell">Bell Schedule</a></li>
+        <li><a href="https://hall.whps.org/school-information/lunch">Lunch</a></li>
+        <li><a href="https://hall.whps.org/calendar">Calendar</a></li>
+        <li><a href="https://whps.powerschool.com/public/" target="_blank" rel="noopener">PowerSchool<span class="visually-hidden"> (opens in new tab)</span></a></li>
+        <li><a href="https://whps.schoology.com/" target="_blank" rel="noopener">Schoology<span class="visually-hidden"> (opens in new tab)</span></a></li>
+        <li><a href="https://student.naviance.com/hallhs" target="_blank" rel="noopener">Naviance<span class="visually-hidden"> (opens in new tab)</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ NAMEPLATE: a magazine masthead ============ -->
+  <header class="nameplate">
+    <div class="wrap">
+      <div class="nameplate__top">
+        <p class="nameplate__issue">Fall 2026 · The Student Life Issue</p>
+        <div class="tools">
+          <a class="tool" href="https://translate.google.com/translate?sl=en&amp;tl=es&amp;u=https://hall.whps.org" target="_blank" rel="noopener">Translate<span class="visually-hidden"> (opens in new tab)</span></a>
+          <button type="button" class="tool" data-a11y-toggle>Accessibility</button>
+        </div>
+      </div>
+      <a class="nameplate__name" href="./">
+        <img src="../../shared/img/logo.png" alt="" width="751" height="900" data-a11y-keep>
+        <span>Hall High School</span>
+      </a>
+      <nav class="sections" aria-label="Main">
+        <ul>
+          <li><a href="https://hall.whps.org/school-information">About</a></li>
+          <li><a href="https://hall.whps.org/academics">Academics</a></li>
+          <li><a href="https://hall.whps.org/athletics">Athletics</a></li>
+          <li><a href="https://hall.whps.org/clubs">Arts &amp; Clubs</a></li>
+          <li><a href="https://hall.whps.org/school-counseling">Counseling</a></li>
+          <li><a href="#new">Visit Hall</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============ COVER + IN THIS ISSUE (v02's split hero, as a magazine cover; v12's headline) ============ -->
+    <section class="cover" aria-labelledby="cover-h">
+      <div class="cover__photo" data-a11y-bgimg role="img" aria-label="Hall graduates in blue caps and gowns at commencement"></div>
+      <div class="cover__scrim" data-a11y-scrim></div>
+      <div class="wrap cover__grid">
+        <div class="cover__story">
+          <p class="cover__kicker">Life at Hall</p>
+          <h1 id="cover-h" class="cover__h">Find Your <em>People</em></h1>
+          <p class="cover__dek">Arts, teams, clubs and cultural groups: what Warriors do outside of class, and how to join in. A guide for students and for families getting to know Hall.</p>
+        </div>
+        <nav class="toc" aria-labelledby="toc-h">
+          <h2 id="toc-h" class="toc__h">In This Issue</h2>
+          <ol class="toc__list">
+            <li><a href="#arts"><span class="toc__n">01</span><span class="toc__t">The Arts<small>A gala, a choir festival, a costume day</small></span></a></li>
+            <li><a href="#athletics"><span class="toc__n">02</span><span class="toc__t">Athletics<small>Nine state titles in ten years</small></span></a></li>
+            <li><a href="#clubs"><span class="toc__n">03</span><span class="toc__t">Clubs &amp; Publications<small>Robotics, the newspaper, student government</small></span></a></li>
+            <li><a href="#culture"><span class="toc__n">04</span><span class="toc__t">Culture<small>37 languages spoken at home</small></span></a></li>
+            <li><a href="#seniors"><span class="toc__n">05</span><span class="toc__t">Senior Year<small>Portraits, picture day, applications</small></span></a></li>
+            <li><a href="#new"><span class="toc__n">06</span><span class="toc__t">New to Hall<small>Tours, enrollment and the program of studies</small></span></a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ 01 THE ARTS: lead story with a drop cap and pull quote (v02's lead story) ============ -->
+    <article class="story story--lead" id="arts" aria-labelledby="arts-h">
+      <div class="wrap story__grid">
+        <header class="story__head">
+          <p class="story__num">01 · The Arts</p>
+          <h2 id="arts-h" class="story__h">A Gala, a Choir Festival and a Day in Costume</h2>
+        </header>
+        <div class="story__body">
+          <p class="dropcap">October is the busiest month of the fall for Hall’s musicians and actors. The Music &amp; Fine Arts Department’s Gifts of Music Gala opens the season on Saturday, October 17. Five days later the Hall Players turn the whole school into a stage for Historical Figure Day, and the choirs close the month at Midfest.</p>
+          <p>Every ensemble is open to new members at the start of a semester, and the theater program welcomes students to join backstage crews at any point in the year.</p>
+          <p class="story__more"><a href="https://hall.whps.org/clubs">Music, Theater &amp; Visual Arts</a></p>
+        </div>
+        <aside class="story__side">
+          <blockquote class="pull">“The whole school becomes a stage for a day.”</blockquote>
+          <h3 class="dates__h">Dates</h3>
+          <ul class="dates">
+            <li><time datetime="2026-10-17">Sat, Oct 17</time><span>Gifts of Music Gala</span></li>
+            <li><time datetime="2026-10-22">Thu, Oct 22</time><span>Historical Figure Day, schoolwide</span></li>
+            <li><time datetime="2026-10-28">Wed, Oct 28</time><span>Choir Midfest</span></li>
+          </ul>
+        </aside>
+      </div>
+    </article>
+
+    <!-- ============ 02 ATHLETICS: photo spread (v12's sports card, given room) ============ -->
+    <article class="story story--spread" id="athletics" aria-labelledby="ath-h">
+      <div class="wrap spread">
+        <figure class="spread__photo">
+          <img src="../../shared/img/gym.jpg" alt="Hall's gym, with navy CCC championship banners along the walls" width="1200" height="682" loading="lazy">
+          <figcaption>The banners in Hall’s gym: 48 CCC titles and counting.</figcaption>
+        </figure>
+        <div class="spread__text">
+          <p class="story__num">02 · Athletics</p>
+          <h2 id="ath-h" class="story__h">Nine State Titles in Ten Years</h2>
+          <p>Hall fields teams in every season, from football and field hockey in the fall to swimming, track and lacrosse later in the year. Unified Sports teams play alongside them.</p>
+          <div class="next">
+            <p class="next__label">Next Home Game</p>
+            <p class="next__game">Football <em>vs.</em> Enfield</p>
+            <p class="next__when"><time datetime="2026-10-02T19:00">Friday, Oct 2 · 7:00 PM</time> · Hall Field</p>
+          </div>
+          <p class="story__more"><a href="https://hall.whps.org/athletics">Teams, Schedules &amp; Tryouts</a></p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ 03 CLUBS + 04 CULTURE: two columns (v12's interest cards as features) ============ -->
+    <div class="pair">
+      <div class="wrap pair__grid">
+        <article class="story story--col" id="clubs" aria-labelledby="clubs-h">
+          <figure class="col__photo">
+            <img src="../../shared/img/hero-library.jpg" alt="Four students laughing as they work together on a lab experiment" width="1600" height="899" loading="lazy">
+          </figure>
+          <p class="story__num">03 · Clubs &amp; Publications</p>
+          <h2 id="clubs-h" class="story__h story__h--sm">Dozens of Clubs, Run by Students</h2>
+          <p>Robotics, Model UN, the student newspaper, student government, Best Buddies and many more. Most clubs meet after school once a week, and new members can join at any point.</p>
+          <p class="story__more"><a href="https://hall.whps.org/clubs">Find a Club</a></p>
+        </article>
+
+        <article class="story story--col story--culture" id="culture" aria-labelledby="culture-h">
+          <p class="big-num" aria-hidden="true">37</p>
+          <p class="story__num">04 · Culture</p>
+          <h2 id="culture-h" class="story__h story__h--sm">37 Languages Spoken at Home</h2>
+          <p>Hall families speak Spanish, Mandarin, Portuguese, Vietnamese, Arabic and many more languages. Cultural clubs share food, music and traditions throughout the year.</p>
+          <ul class="dates">
+            <li><time datetime="2026-10-15">Through Oct 15</time><span>Hispanic/Latinx Heritage Month</span></li>
+            <li><time datetime="2026-10-12">Mon, Oct 12</time><span>Indigenous Peoples’ Day, no school</span></li>
+          </ul>
+          <p class="story__more"><a href="https://hall.whps.org/clubs">Cultural Clubs</a></p>
+        </article>
+      </div>
+    </div>
+
+    <!-- ============ 05 SENIOR YEAR ============ -->
+    <article class="story story--spread story--flip" id="seniors" aria-labelledby="sen-h">
+      <div class="wrap spread">
+        <figure class="spread__photo">
+          <img src="../../shared/img/campus2.jpg" alt="A stack of SAT, ACT and college application guides" width="1200" height="800" loading="lazy">
+        </figure>
+        <div class="spread__text">
+          <p class="story__num">05 · Senior Year</p>
+          <h2 id="sen-h" class="story__h">Portraits, Picture Day and Applications</h2>
+          <p>Senior portrait sessions run indoors in E131 and E119 through October 24. School counselors meet with every senior about college and career plans, and Naviance keeps applications and recommendations in one place.</p>
+          <ul class="dates">
+            <li><time datetime="2026-10-24">Through Oct 24</time><span>Senior portraits, 12:45–8:00 PM</span></li>
+            <li><time datetime="2026-10-28">Wed, Oct 28</time><span>Picture day for all students</span></li>
+          </ul>
+          <p class="story__more"><a href="https://student.naviance.com/hallhs" target="_blank" rel="noopener">Naviance<span class="visually-hidden"> (opens in new tab)</span></a> <a href="https://hall.whps.org/school-counseling">School Counseling</a></p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ 06 NEW TO HALL (v02's visit band) ============ -->
+    <article class="story story--new" id="new" aria-labelledby="new-h">
+      <div class="new__photo" data-a11y-bgimg role="img" aria-label="The stone sculpture at the front of Hall's campus"></div>
+      <div class="wrap new__inner">
+        <div class="new__card">
+          <p class="story__num">06 · New to Hall</p>
+          <h2 id="new-h" class="story__h">What Hall Stands For</h2>
+          <blockquote class="new__quote">“Hall High School prepares all students to be educated, responsible citizens who contribute collaboratively, independently, and innovatively to a dynamic global community.”</blockquote>
+          <dl class="new__stats">
+            <div><dt>72%</dt><dd>take an AP course</dd></div>
+            <div><dt>Gold</dt><dd>US News medal</dd></div>
+            <div><dt>9</dt><dd>state titles in 10 years</dd></div>
+          </dl>
+          <p class="new__actions">
+            <a class="btn btn--navy" href="https://hall.whps.org/school-information">Schedule a Tour</a>
+            <a class="btn btn--line" href="https://hall.whps.org/academics">Program of Studies</a>
+            <a class="btn btn--line" href="https://www.whps.org" target="_blank" rel="noopener">Register With WHPS<span class="visually-hidden"> (opens in new tab)</span></a>
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ BRIEFS: the bulletin, magazine style (v12's bulletin) ============ -->
+    <section class="briefs" aria-labelledby="briefs-h">
+      <div class="wrap">
+        <div class="briefs__head">
+          <h2 id="briefs-h" class="briefs__h">Briefs</h2>
+          <a href="https://hall.whps.org/announcements">All Announcements <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="briefs__list">
+          <li><p class="briefs__date"><time datetime="2026-10-09">Fri, Oct 9</time></p><h3>Early Dismissal</h3><p>School ends at 11:30 AM for all students.</p></li>
+          <li><p class="briefs__date"><time datetime="2026-10-14">Wed, Oct 14</time></p><h3>PSAT for Grades 9–11</h3><p>Bring a charged device with Bluebook and a photo ID.</p></li>
+          <li><p class="briefs__date">Open Now</p><h3><a href="https://whps.ecollectforms.com" target="_blank" rel="noopener">Annual Forms in eCollect<span class="visually-hidden"> (opens in new tab)</span></a></h3><p>A step-by-step tutorial helps families finish them.</p></li>
+          <li><p class="briefs__date">Weekly</p><h3><a href="https://hall.whps.org/announcements">Warrior Newsletter</a></h3><p>Announcements, club news and reminders.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ HELP (shown once, calmly) ============ -->
+    <section class="help" aria-labelledby="help-h">
+      <div class="wrap help__inner">
+        <h2 id="help-h" class="help__h">If You Need Someone to Talk To</h2>
+        <ul class="help__list">
+          <li><a href="https://hall.whps.org/school-counseling">School Counseling</a> <span>Classes, plans, stress, or just talking it through.</span></li>
+          <li><a href="https://hall.whps.org/support-services">Support Services</a> <span>Psychologists, social workers and nurses.</span></li>
+          <li><a href="https://www.anonymousalerts.com/" target="_blank" rel="noopener">Anonymous Alerts<span class="visually-hidden"> (opens in new tab)</span></a> <span>Report bullying or a safety concern privately.</span></li>
+        </ul>
+      </div>
+    </section>
   </main>
+
+  <!-- ============ FOOTER: a colophon ============ -->
+  <footer class="colophon">
+    <div class="wrap colophon__grid">
+      <p class="colophon__name">Hall High School</p>
+      <address>975 North Main Street, West Hartford, CT 06117 · <a href="tel:+18602324561" class="nowrap">860-232-4561</a></address>
+      <ul class="colophon__links">
+        <li><a href="https://hall.whps.org/contact-us">Contact Us</a></li>
+        <li><a href="https://hall.whps.org/accessibility">Accessibility</a></li>
+        <li><a href="https://www.whps.org" target="_blank" rel="noopener">West Hartford Public Schools<span class="visually-hidden"> (opens in new tab)</span></a></li>
+        <li><a href="https://hall.whps.org/staff">Staff</a></li>
+      </ul>
+      <p class="colophon__fine">Design concept v21. Sample data for Thursday, October 1, 2026; the pull quote, club list and story copy are written for this concept. Preview a time of day with ?t=10:00.</p>
+    </div>
+  </footer>
 </body>
 </html>
