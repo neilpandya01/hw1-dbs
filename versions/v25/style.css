@@ -1,7 +1,13 @@
 /* v25 — Final
-   v24 refined into the final page: "Quick links" is centered over its links, and the
-   bulletin is low profile, upcoming notices only, soonest first, one line each and dated
-   like the game day rows. */
+   v24 refined into the final page. Light blue replaces the warm paper as the second
+   background (lines cooled to match). Literata replaces Fraunces for every serif: a
+   solid, warm book serif with a plain ampersand; Source Sans 3 stays for everything
+   else. The clip dots are centered along the foot of the video, the ones not playing
+   fainter, and the banner's two links are centered under the mission. Student life
+   (v12's "Find your people", briefly) sits under game day & events; "Quick links" is
+   centered over its links; the top bar is a little larger; and the bulletin is low
+   profile, upcoming notices only, soonest first, one line each and dated like the game
+   day rows. */
 
 :root {
   --bg: #ffffff;

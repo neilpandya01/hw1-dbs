@@ -1,4 +1,4 @@
-/* v23 — Light Blue, Centered Dots
+/* v23 — Today Band, Refined
  * 1) Mobile menu toggle and nav dropdowns (v16; open on hover/focus in CSS, Escape closes).
  * 2) Language menu and browser-language offer (v17). Preview the offer with ?lang=es
  *    (or zh, pt, vi, ar). "No thanks" is remembered.
@@ -8,14 +8,9 @@
  * 4) Lunch in the band cycles through today's menu. It pauses on hover or focus, and
  *    doesn't move on its own with reduced motion or "Stop motion"; a dot picks an item
  *    and stops the cycle.
- * 5) Banner video and its clip dots: one dot per clip, the current one filled, beside a
- *    pause button. A dot jumps to its clip (arrow keys move between them). If the server
- *    can't serve part of a file (python -m http.server can't), the video is fetched whole
- *    once so jumping still works. It doesn't start on its own with reduced motion, "Stop motion", Data Saver,
- *    or inside the gallery's previews; it then shows the poster and a play button.
- * 6) Search (v03): suggestions from everyday words; some jump to this page's sections.
- * Without JS the video has the browser's own controls, the band's details are shown,
- * lunch lists every item, and the search box searches hall.whps.org.
+ * 5) Search (v03): suggestions from everyday words; some jump to this page's sections.
+ * Without JS the band's details are shown, lunch lists every item, and the search box
+ * searches hall.whps.org.
  */
 (function () {
   document.documentElement.classList.add('js');
@@ -116,114 +111,6 @@
     box.addEventListener('mouseleave', function () { paused = false; });
     box.addEventListener('focusin', function () { paused = true; });
     box.addEventListener('focusout', function (e) { if (!box.contains(e.relatedTarget)) paused = false; });
-  })();
-
-  /* ---------- Banner video: clip dots ---------- */
-  (function () {
-    var video = document.getElementById('reel-video');
-    var reel = document.querySelector('.reel');
-    var bar = document.getElementById('reel-bar');
-    if (!video || !reel || !bar) return;
-
-    // Where each clip starts (seconds, from the cuts in the video) and what it shows.
-    var CLIPS = [
-      [0, 'Science lab'], [3.10, 'Library'], [7.87, 'Classroom'], [10.74, 'Library'],
-      [14.78, 'Classroom'], [17.92, 'Hallway'], [19.39, 'Aquarium'], [25.13, 'Cooking class'],
-      [27.73, 'Orchestra'], [30.60, 'Hallway art wall'], [36.64, 'Library'], [41.34, 'Library'],
-      [44.61, 'Computer lab'], [50.52, 'Cafeteria'], [53.72, 'Cafeteria'], [56.66, 'Ceramics'],
-      [59.06, 'Art studio'], [61.09, 'Computer lab'], [64.20, 'Classroom'], [67.20, 'Gym'],
-      [70.04, 'Gym'], [71.91, 'Gym']
-    ];
-    var play = reel.querySelector('.reel__play');
-    var cur = -1;
-
-    video.removeAttribute('controls');
-    reel.hidden = false;
-
-    var segs = CLIPS.map(function (c, i) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'reel__seg';
-      b.tabIndex = i === 0 ? 0 : -1;
-      b.setAttribute('aria-label', 'Clip ' + (i + 1) + ' of ' + CLIPS.length + ': ' + c[1]);
-      b.addEventListener('click', function () { jump(i); });
-      b.addEventListener('keydown', function (e) {
-        var n = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: CLIPS.length - 1 }[e.key];
-        if (n === undefined) return;
-        e.preventDefault();
-        n = (n + CLIPS.length) % CLIPS.length;
-        jump(n);
-        segs[n].focus();
-      });
-      bar.appendChild(b);
-      return b;
-    });
-
-    // Jumping needs a server that sends part of a file; without that the browser can only
-    // restart from 0. Then fetch the whole file once, play it from memory, and jump.
-    var whole = null, pending = -1;
-    function canSeek() {
-      var s = video.seekable;
-      return s.length > 0 && s.end(s.length - 1) > 1;
-    }
-    function loadWhole() {
-      if (whole) return whole;
-      whole = fetch(video.currentSrc || video.src).then(function (r) { return r.blob(); }).then(function (blob) {
-        var t = video.currentTime, playing = !video.paused;
-        video.src = URL.createObjectURL(blob);
-        video.addEventListener('loadedmetadata', function () {
-          video.currentTime = pending > -1 ? CLIPS[pending][0] + 0.05 : t;
-          pending = -1;
-          if (playing) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
-        }, { once: true });
-      });
-      return whole;
-    }
-    function jump(i) {
-      if (video.readyState >= 1 && !canSeek()) { pending = i; loadWhole(); return; }
-      video.currentTime = CLIPS[i][0] + 0.05;
-      sync();
-    }
-
-    function sync() {
-      var t = video.currentTime, now = 0;
-      CLIPS.forEach(function (c, i) { if (t >= c[0]) now = i; });
-      if (now !== cur) {
-        if (cur > -1) { segs[cur].classList.remove('is-now'); segs[cur].removeAttribute('aria-current'); }
-        segs[now].classList.add('is-now');
-        segs[now].setAttribute('aria-current', 'true');
-        // keep the one tab stop on the current clip, unless focus is already on the dots
-        if (!bar.contains(document.activeElement)) segs.forEach(function (s, i) { s.tabIndex = i === now ? 0 : -1; });
-        cur = now;
-      }
-    }
-
-    function setPlaying(on) {
-      reel.classList.toggle('is-paused', !on);
-      play.setAttribute('aria-label', on ? 'Pause video' : 'Play video');
-      sync();
-    }
-    video.addEventListener('play', function () { setPlaying(true); });
-    video.addEventListener('pause', function () { setPlaying(false); });
-    video.addEventListener('timeupdate', sync);
-    video.addEventListener('seeked', sync);
-    video.addEventListener('loadedmetadata', sync);
-    play.addEventListener('click', function () {
-      if (video.paused) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
-      else video.pause();
-    });
-
-    // Start on its own only when nothing asks for stillness or less data.
-    var inFrame = window.self !== window.top;
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var still = document.documentElement.classList.contains('a11y-motion');
-    var saveData = navigator.connection && navigator.connection.saveData;
-    setPlaying(false);
-    if (inFrame) video.preload = 'none';
-    if (!inFrame && !reduce && !still && !saveData) {
-      var p = video.play();
-      if (p && p.catch) p.catch(function () { setPlaying(false); });
-    }
   })();
 
   /* ---------- Today band: now / next ---------- */

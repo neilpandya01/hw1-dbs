@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hall High School — v23 Light Blue, Centered Dots</title>
+  <title>Hall High School — v23 Today Band, Refined</title>
   <meta name="description" content="Hall High School, West Hartford, Connecticut — Home of the Warriors. Today's schedule in one band, game day and events, and the bulletin.">
   <meta name="theme-color" content="#0b2a5b">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -139,46 +139,41 @@
         <div class="t-date">
           <h2 id="today-h" class="t-day"><time datetime="2026-10-01">Thursday, October 1</time></h2>
           <p class="t-meta"><span class="pill">Even day</span> 7:30 AM – 2:10 PM</p>
-          <button type="button" class="more-btn" aria-expanded="false" aria-controls="today-more">
-            Bell schedule, lunch &amp; events
-            <svg class="chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
         </div>
 
-        <!-- NOW + DAY BAR: the bar sits at the band's middle, the now line centered over it -->
         <div class="t-now">
           <p class="t-now__text" id="now-text" aria-live="polite">Block 2 7:30 · Block 4 8:58 · Advisory 10:26 · Block 6 10:52 · Block 8 12:50</p>
-          <span class="t-bar__cap" aria-hidden="true">Block</span>
           <ol class="dayline" id="dayline" aria-hidden="true">
             <li data-start="07:30" data-end="08:52" style="--min:82"><span>2</span></li>
             <li data-start="08:58" data-end="10:20" style="--min:82"><span>4</span></li>
-            <li class="dayline__adv" data-start="10:26" data-end="10:46" style="--min:20"><span>Adv</span></li>
+            <li data-start="10:26" data-end="10:46" style="--min:20"><span>Adv</span></li>
             <li data-start="10:52" data-end="12:44" style="--min:112"><span>6 · lunch</span></li>
             <li data-start="12:50" data-end="14:10" style="--min:80"><span>8</span></li>
           </ol>
         </div>
 
-        <!-- LUNCH: names only (details are in the expanded menu); cycles, and the dots pick one (script.js) -->
+        <!-- LUNCH: cycles through today's menu; the dots pick one and stop it (script.js) -->
         <div class="t-lunch" id="t-lunch" aria-labelledby="t-lunch-h" role="group">
-          <div class="t-lunch__head">
-            <p class="t-label" id="t-lunch-h">Lunch</p>
-            <div class="t-lunch__dots" hidden></div>
-          </div>
+          <p class="t-label" id="t-lunch-h">Lunch</p>
           <ul class="t-lunch__items" aria-live="off">
             <li>Chicken teriyaki rice bowl</li>
-            <li>Black bean burrito</li>
+            <li>Black bean burrito <span class="tag">Vegetarian</span></li>
             <li>Salad bar &amp; fruit</li>
           </ul>
+          <div class="t-lunch__dots" hidden></div>
         </div>
 
-        <div class="t-quick">
-          <p class="t-label" id="t-quick-h">Quick links</p>
-          <ul class="t-portals" aria-labelledby="t-quick-h">
+        <div class="t-links">
+          <ul class="t-portals" aria-label="Portals">
             <li><a href="https://whps.powerschool.com/public/" target="_blank" rel="noopener">PowerSchool<span class="sr-only"> (opens in new tab)</span></a></li>
             <li><a href="https://whps.schoology.com/" target="_blank" rel="noopener">Schoology<span class="sr-only"> (opens in new tab)</span></a></li>
             <li><a href="https://student.naviance.com/hallhs" target="_blank" rel="noopener">Naviance<span class="sr-only"> (opens in new tab)</span></a></li>
             <li><a href="https://hall.whps.org/calendar">Calendar</a></li>
           </ul>
+          <button type="button" class="more-btn" aria-expanded="false" aria-controls="today-more">
+            Bell schedule, lunch &amp; events
+            <svg class="chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
       </div>
 
@@ -238,20 +233,8 @@
     <div class="top">
       <div class="wrap">
         <section class="banner" aria-labelledby="banner-title">
-          <!-- VIDEO: hall.whps.org's banner video (22 short clips). Without JS it has the browser's own controls;
-               with JS, a clip bar like the day bar shows where it is and jumps between clips (script.js). -->
-          <div class="banner__photo banner__video">
-            <video id="reel-video" src="../../shared/video/hall-banner.mp4" poster="../../shared/img/hall-banner-poster.jpg"
-                   muted loop playsinline preload="metadata" controls width="1280" height="720"
-                   aria-label="Video without sound: Hall students in labs, classes, the library, the arts, the cafeteria and the gym"></video>
-            <div class="reel" hidden>
-              <button type="button" class="reel__play" aria-label="Pause video">
-                <svg class="reel__icon reel__icon--pause" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>
-                <svg class="reel__icon reel__icon--play" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>
-              </button>
-              <div class="reel__dots" id="reel-bar" role="group" aria-label="Video clips"></div>
-              <span aria-hidden="true"></span>
-            </div>
+          <div class="banner__photo">
+            <img src="../../shared/img/hero-library.jpg" alt="Hall students working together with a multimeter in a science class" width="1600" height="899">
           </div>
           <div class="banner__panel">
             <div class="banner__mark">
@@ -448,7 +431,7 @@
         <li><a href="https://hall.whps.org/staff">Staff</a></li>
       </ul>
     </div>
-    <p class="wrap footer__fine">Design concept v23. The banner video is hall.whps.org’s own, re-encoded smaller. Today’s schedule, lunch, events and bulletin are sample data for Thursday, October 1, 2026; the Oct 9 early dismissal and PSAT details are invented for illustration. Preview a time of day with ?t=10:00 and the language offer with ?lang=es (or zh, pt, vi, ar).</p>
+    <p class="wrap footer__fine">Design concept v23. Today’s schedule, lunch, events and bulletin are sample data for Thursday, October 1, 2026; the Oct 9 early dismissal and PSAT details are invented for illustration. Preview a time of day with ?t=10:00 and the language offer with ?lang=es (or zh, pt, vi, ar).</p>
   </footer>
 </body>
 </html>

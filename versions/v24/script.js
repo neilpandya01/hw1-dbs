@@ -1,4 +1,4 @@
-/* v24 — Literata
+/* v24 — Banner Video
  * 1) Mobile menu toggle and nav dropdowns (v16; open on hover/focus in CSS, Escape closes).
  * 2) Language menu and browser-language offer (v17). Preview the offer with ?lang=es
  *    (or zh, pt, vi, ar). "No thanks" is remembered.
@@ -9,9 +9,7 @@
  *    doesn't move on its own with reduced motion or "Stop motion"; a dot picks an item
  *    and stops the cycle.
  * 5) Banner video and its clip dots: one dot per clip, the current one filled, beside a
- *    pause button. A dot jumps to its clip (arrow keys move between them). If the server
- *    can't serve part of a file (python -m http.server can't), the video is fetched whole
- *    once so jumping still works. It doesn't start on its own with reduced motion, "Stop motion", Data Saver,
+ *    pause button. A dot jumps to its clip (arrow keys move between them). It doesn't start on its own with reduced motion, "Stop motion", Data Saver,
  *    or inside the gallery's previews; it then shows the poster and a play button.
  * 6) Search (v03): suggestions from everyday words; some jump to this page's sections.
  * Without JS the video has the browser's own controls, the band's details are shown,
@@ -145,6 +143,7 @@
       b.type = 'button';
       b.className = 'reel__seg';
       b.tabIndex = i === 0 ? 0 : -1;
+      b.title = c[1];
       b.setAttribute('aria-label', 'Clip ' + (i + 1) + ' of ' + CLIPS.length + ': ' + c[1]);
       b.addEventListener('click', function () { jump(i); });
       b.addEventListener('keydown', function (e) {
@@ -159,28 +158,7 @@
       return b;
     });
 
-    // Jumping needs a server that sends part of a file; without that the browser can only
-    // restart from 0. Then fetch the whole file once, play it from memory, and jump.
-    var whole = null, pending = -1;
-    function canSeek() {
-      var s = video.seekable;
-      return s.length > 0 && s.end(s.length - 1) > 1;
-    }
-    function loadWhole() {
-      if (whole) return whole;
-      whole = fetch(video.currentSrc || video.src).then(function (r) { return r.blob(); }).then(function (blob) {
-        var t = video.currentTime, playing = !video.paused;
-        video.src = URL.createObjectURL(blob);
-        video.addEventListener('loadedmetadata', function () {
-          video.currentTime = pending > -1 ? CLIPS[pending][0] + 0.05 : t;
-          pending = -1;
-          if (playing) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
-        }, { once: true });
-      });
-      return whole;
-    }
     function jump(i) {
-      if (video.readyState >= 1 && !canSeek()) { pending = i; loadWhole(); return; }
       video.currentTime = CLIPS[i][0] + 0.05;
       sync();
     }
